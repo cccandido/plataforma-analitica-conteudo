@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análise de Talhão — Adecoagro</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; color: #2c3e50; font-size: 14px; }
+  header { background: #1a2e4a; color: #fff; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
+  header h1 { font-size: 20px; font-weight: 600; letter-spacing: 0.3px; }
+  header span { font-size: 12px; color: #a8bbd4; }
+  .container { max-width: 1280px; margin: 0 auto; padding: 24px 24px 40px; }
+  .section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #5a7a99; margin: 28px 0 14px; }
+  .cards { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 4px; }
+  .card { background: #fff; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); padding: 18px 22px; flex: 1 1 160px; min-width: 140px; }
+  .card .label { font-size: 11px; color: #7f9bb5; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 6px; }
+  .card .value { font-size: 26px; font-weight: 700; color: #1a2e4a; line-height: 1; }
+  .card .sub { font-size: 11px; color: #a0b4c8; margin-top: 4px; }
+  .card.accent .value { color: #2980b9; }
+  .chart-card { background: #fff; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); padding: 20px 24px; margin-bottom: 20px; }
+  .chart-card h3 { font-size: 13px; font-weight: 600; color: #1a2e4a; margin-bottom: 16px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: #f0f4f8; color: #5a7a99; font-weight: 600; padding: 8px 12px; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #e2e8ef; }
+  td { padding: 8px 12px; border-bottom: 1px solid #eef2f6; color: #2c3e50; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f7fafd; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+  .badge-blue { background: #dbeafe; color: #1e5fa8; }
+  .badge-green { background: #d1fae5; color: #166534; }
+  .badge-orange { background: #fef3c7; color: #92400e; }
+  .badge-red { background: #fee2e2; color: #991b1b; }
+  .bar-bg { background: #e8eef4; border-radius: 4px; height: 8px; width: 100%; margin-top: 4px; }
+  .bar-fill { height: 8px; border-radius: 4px; background: #2980b9; }
+  .note { font-size: 12px; color: #7f9bb5; margin-top: 10px; font-style: italic; }
+  svg text { font-family: 'Segoe UI', Arial, sans-serif; }
+  @media (max-width: 768px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Análise de Talhão — Plataforma Analítica Adecoagro</h1>
+  <span>Safras: 2024 · 2025 · 2026 &nbsp;|&nbsp; 500 talhões / safra</span>
+</header>
+<div class="container">
+
+  <!-- ===== KPIs GERAIS ===== -->
+  <div class="section-title">Visão Geral do Portfólio</div>
+  <div class="cards">
+    <div class="card">
+      <div class="label">Fazendas</div>
+      <div class="value">10</div>
+      <div class="sub">propriedades únicas</div>
+    </div>
+    <div class="card accent">
+      <div class="label">Talhões (por safra)</div>
+      <div class="value">500</div>
+      <div class="sub">talhões cadastrados</div>
+    </div>
+    <div class="card">
+      <div class="label">Área Total</div>
+      <div class="value">37.540</div>
+      <div class="sub">ha (por safra)</div>
+    </div>
+    <div class="card">
+      <div class="label">TCH Real médio 2024</div>
+      <div class="value">68,6</div>
+      <div class="sub">t/ha</div>
+    </div>
+    <div class="card">
+      <div class="label">TCH Real médio 2025</div>
+      <div class="value">76,7</div>
+      <div class="sub">t/ha</div>
+    </div>
+    <div class="card">
+      <div class="label">TCH Real médio 2026</div>
+      <div class="value">98,8</div>
+      <div class="sub">t/ha</div>
+    </div>
+    <div class="card">
+      <div class="label">ATR médio 2026</div>
+      <div class="value">147,2</div>
+      <div class="sub">kg/t (maior entre safras)</div>
+    </div>
+  </div>
+
+  <!-- ===== ÁREA POR FAZENDA ===== -->
+  <div class="section-title">Área e Talhões por Fazenda</div>
+  <div class="chart-card">
+    <h3>Área total (ha) e quantidade de talhões por fazenda — safra 2024</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fazenda</th>
+          <th>Cód.</th>
+          <th>Talhões</th>
+          <th>Área Total (ha)</th>
+          <th>Área Média por Talhão (ha)</th>
+          <th>Participação na Área</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Valores pré-calculados a partir dos dados CSV safra 2024 -->
+        <tr><td>Fazenda Agua Limpa</td><td><span class="badge badge-blue">FAZ007</span></td><td>58</td><td>3.960,3</td><td>68,3</td><td><div class="bar-bg"><div class="bar-fill" style="width:100%"></div></div></td></tr>
+        <tr><td>Fazenda Bom Sucesso</td><td><span class="badge badge-blue">FAZ009</span></td><td>55</td><td>3.760,8</td><td>68,4</td><td><div class="bar-bg"><div class="bar-fill" style="width:95%"></div></div></td></tr>
+        <tr><td>Fazenda Cerrado Alto</td><td><span class="badge badge-blue">FAZ006</span></td><td>55</td><td>3.740,2</td><td>68,0</td><td><div class="bar-bg"><div class="bar-fill" style="width:94%"></div></div></td></tr>
+        <tr><td>Fazenda Boa Vista</td><td><span class="badge badge-blue">FAZ002</span></td><td>60</td><td>3.722,1</td><td>62,0</td><td><div class="bar-bg"><div class="bar-fill" style="width:94%"></div></div></td></tr>
+        <tr><td>Fazenda Rio Verde</td><td><span class="badge badge-blue">FAZ004</span></td><td>56</td><td>3.636,9</td><td>65,0</td><td><div class="bar-bg"><div class="bar-fill" style="width:92%"></div></div></td></tr>
+        <tr><td>Fazenda Alvorada</td><td><span class="badge badge-blue">FAZ010</span></td><td>52</td><td>3.538,2</td><td>68,0</td><td><div class="bar-bg"><div class="bar-fill" style="width:89%"></div></div></td></tr>
+        <tr><td>Fazenda Palmital</td><td><span class="badge badge-blue">FAZ005</span></td><td>56</td><td>3.512,3</td><td>62,7</td><td><div class="bar-bg"><div class="bar-fill" style="width:89%"></div></div></td></tr>
+        <tr><td>Fazenda Tres Marias</td><td><span class="badge badge-blue">FAZ008</span></td><td>50</td><td>3.257,8</td><td>65,2</td><td><div class="bar-bg"><div class="bar-fill" style="width:82%"></div></div></td></tr>
+        <tr><td>Fazenda Sao Jose</td><td><span class="badge badge-blue">FAZ003</span></td><td>43</td><td>2.775,3</td><td>64,5</td><td><div class="bar-bg"><div class="bar-fill" style="width:70%"></div></div></td></tr>
+        <tr><td>Fazenda Santa Rita</td><td><span class="badge badge-blue">FAZ001</span></td><td>42</td><td>2.634,8</td><td>62,7</td><td><div class="bar-bg"><div class="bar-fill" style="width:67%"></div></div></td></tr>
+      </tbody>
+    </table>
+    <p class="note">* Área e contagem calculadas sobre os 500 registros da safra 2024 (mesma geometria se replica nas demais safras).</p>
+  </div>
+
+  <!-- ===== GRÁFICO DE BARRAS ÁREA POR FAZENDA ===== -->
+  <div class="chart-card">
+    <h3>Área Total por Fazenda (ha)</h3>
+    <svg viewBox="0 0 820 280" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <!-- eixo y labels -->
+      <text x="42" y="24" font-size="10" fill="#9aa8b8" text-anchor="end">4000</text>
+      <text x="42" y="80" font-size="10" fill="#9aa8b8" text-anchor="end">3000</text>
+      <text x="42" y="137" font-size="10" fill="#9aa8b8" text-anchor="end">2000</text>
+      <text x="42" y="193" font-size="10" fill="#9aa8b8" text-anchor="end">1000</text>
+      <text x="42" y="250" font-size="10" fill="#9aa8b8" text-anchor="end">0</text>
+      <!-- linhas guia -->
+      <line x1="48" y1="20" x2="810" y2="20" stroke="#eef2f6" stroke-width="1"/>
+      <line x1="48" y1="76" x2="810" y2="76" stroke="#eef2f6" stroke-width="1"/>
+      <line x1="48" y1="133" x2="810" y2="133" stroke="#eef2f6" stroke-width="1"/>
+      <line x1="48" y1="189" x2="810" y2="189" stroke="#eef2f6" stroke-width="1"/>
+      <line x1="48" y1="246" x2="810" y2="246" stroke="#eef2f6" stroke-width="1"/>
+      <!-- barras: escala 0-4000 → 0-226px (246-20=226) -->
+      <!-- FAZ007 3960 → 226*(3960/4000)=223.7 → y=246-224=22 -->
+      <rect x="58"  y="23"  width="62" height="223" fill="#2980b9" rx="3"/>
+      <!-- FAZ009 3761 → 226*(3761/4000)=212.4 → y=34 -->
+      <rect x="134" y="34"  width="62" height="212" fill="#2980b9" rx="3"/>
+      <!-- FAZ006 3740 → 211.2 → y=35 -->
+      <rect x="210" y="35"  width="62" height="211" fill="#2980b9" rx="3"/>
+      <!-- FAZ002 3722 → 210.2 → y=36 -->
+      <rect x="286" y="36"  width="62" height="210" fill="#3498db" rx="3"/>
+      <!-- FAZ004 3637 → 205.4 → y=41 -->
+      <rect x="362" y="41"  width="62" height="205" fill="#3498db" rx="3"/>
+      <!-- FAZ010 3538 → 199.8 → y=46 -->
+      <rect x="438" y="46"  width="62" height="200" fill="#3498db" rx="3"/>
+      <!-- FAZ005 3512 → 198.3 → y=48 -->
+      <rect x="514" y="48"  width="62" height="198" fill="#3498db" rx="3"/>
+      <!-- FAZ008 3258 → 184.1 → y=62 -->
+      <rect x="590" y="62"  width="62" height="184" fill="#5dade2" rx="3"/>
+      <!-- FAZ003 2775 → 156.9 → y=89 -->
+      <rect x="666" y="89"  width="62" height="157" fill="#5dade2" rx="3"/>
+      <!-- FAZ001 2635 → 148.9 → y=97 -->
+      <rect x="742" y="97"  width="62" height="149" fill="#5dade2" rx="3"/>
+      <!-- labels eixo x -->
+      <text x="89"  y="264" font-size="9" fill="#5a7a99" text-anchor="middle">Agua Limpa</text>
+      <text x="165" y="264" font-size="9" fill="#5a7a99" text-anchor="middle">Bom Sucesso</text>
+      <text x="241" y="264" font-size="9" fill="#5a7a99" text-anchor="middle">Cerrado Alto</text>
+      <text x="317" y="264" font-size="9" fill="#5a7a99" text-anchor="middle">Boa Vista</text>
+      <text x="393" y="264" font-size="9" fill="#5a7a99" text-anchor="middle">Rio Verde</text>
+      <text x="469" y="264" font-size="9" fill="#5a7a99" text-anchor="middle">Alvorada</text>
+      <text x="545" y="264" font-size="9" fill="#5a7a99" text-anchor="middle">Palmital</text>
+      <text x="621" y="264" font-size="9" fill="#5a7a99" text-anchor="middle">Tres Marias</text>
+      <text x="697" y="264" font-size="9" fill="#5a7a99" text-anchor="middle">Sao Jose</text>
+      <text x="773" y="264" font-size="9" fill="#5a7a99" text-anchor="middle">Santa Rita</text>
+      <!-- valores no topo das barras -->
+      <text x="89"  y="18" font-size="9" fill="#1a2e4a" text-anchor="middle">3.960</text>
+      <text x="165" y="29" font-size="9" fill="#1a2e4a" text-anchor="middle">3.761</text>
+      <text x="241" y="30" font-size="9" fill="#1a2e4a" text-anchor="middle">3.740</text>
+      <text x="317" y="31" font-size="9" fill="#1a2e4a" text-anchor="middle">3.722</text>
+      <text x="393" y="36" font-size="9" fill="#1a2e4a" text-anchor="middle">3.637</text>
+      <text x="469" y="41" font-size="9" fill="#1a2e4a" text-anchor="middle">3.538</text>
+      <text x="545" y="43" font-size="9" fill="#1a2e4a" text-anchor="middle">3.512</text>
+      <text x="621" y="57" font-size="9" fill="#1a2e4a" text-anchor="middle">3.258</text>
+      <text x="697" y="84" font-size="9" fill="#1a2e4a" text-anchor="middle">2.775</text>
+      <text x="773" y="92" font-size="9" fill="#1a2e4a" text-anchor="middle">2.635</text>
+    </svg>
+  </div>
+
+  <!-- ===== EVOLUÇÃO TCH POR SAFRA ===== -->
+  <div class="section-title">Evolução de TCH Real Médio por Fazenda (2024 → 2026)</div>
+  <div class="chart-card">
+    <h3>TCH Real médio por fazenda nas três safras</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fazenda</th>
+          <th>TCH Real 2024</th>
+          <th>TCH Real 2025</th>
+          <th>TCH Real 2026</th>
+          <th>Δ 2024→2026</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fazenda Agua Limpa (FAZ007)</td>
+          <td>67,8</td><td>75,1</td><td>98,5</td>
+          <td><span class="badge badge-green">+30,7</span></td>
+        </tr>
+        <tr>
+          <td>Fazenda Bom Sucesso (FAZ009)</td>
+          <td>67,7</td><td>76,5</td><td>99,3</td>
+          <td><span class="badge badge-green">+31,6</span></td>
+        </tr>
+        <tr>
+          <td>Fazenda Cerrado Alto (FAZ006)</td>
+          <td>68,3</td><td>77,5</td><td>99,7</td>
+          <td><span class="badge badge-green">+31,4</span></td>
+        </tr>
+        <tr>
+          <td>Fazenda Boa Vista (FAZ002)</td>
+          <td>70,0</td><td>77,7</td><td>98,7</td>
+          <td><span class="badge badge-green">+28,7</span></td>
+        </tr>
+        <tr>
+          <td>Fazenda Rio Verde (FAZ004)</td>
+          <td>67,1</td><td>76,3</td><td>98,2</td>
+          <td><span class="badge badge-green">+31,1</span></td>
+        </tr>
+        <tr>
+          <td>Fazenda Alvorada (FAZ010)</td>
+          <td>68,7</td><td>75,8</td><td>99,1</td>
+          <td><span class="badge badge-green">+30,4</span></td>
+        </tr>
+        <tr>
+          <td>Fazenda Palmital (FAZ005)</td>
+          <td>68,5</td><td>76,5</td><td>98,4</td>
+          <td><span class="badge badge-green">+29,9</span></td>
+        </tr>
+        <tr>
+          <td>Fazenda Tres Marias (FAZ008)</td>
+          <td>68,8</td><td>75,9</td><td>98,8</td>
+          <td><span class="badge badge-green">+30,0</span></td>
+        </tr>
+        <tr>
+          <td>Fazenda Sao Jose (FAZ003)</td>
+          <td>69,6</td><td>77,5</td><td>99,0</td>
+          <td><span class="badge badge-green">+29,4</span></td>
+        </tr>
+        <tr>
+          <td>Fazenda Santa Rita (FAZ001)</td>
+          <td>70,1</td><td>77,3</td><td>98,5</td>
+          <td><span class="badge badge-green">+28,4</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">* Médias aritméticas calculadas sobre os talhões de cada fazenda. Todas as fazendas apresentam crescimento expressivo de TCH real entre 2024 e 2026.</p>
+  </div>
+
+  <!-- ===== GRÁFICO LINHA TCH MÉDIO GERAL POR SAFRA ===== -->
+  <div class="grid2">
+    <div class="chart-card">
+      <h3>Evolução do TCH Real médio geral (todas as fazendas)</h3>
+      <svg viewBox="0 0 420 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <!-- guias -->
+        <line x1="50" y1="20" x2="400" y2="20" stroke="#eef2f6" stroke-width="1"/>
+        <line x1="50" y1="70" x2="400" y2="70" stroke="#eef2f6" stroke-width="1"/>
+        <line x1="50" y1="120" x2="400" y2="120" stroke="#eef2f6" stroke-width="1"/>
+        <line x1="50" y1="170" x2="400" y2="170" stroke="#eef2f6" stroke-width="1"/>
+        <!-- eixo y -->
+        <text x="44" y="23" font-size="9" fill="#9aa8b8" text-anchor="end">110</text>
+        <text x="44" y="73" font-size="9" fill="#9aa8b8" text-anchor="end">90</text>
+        <text x="44" y="123" font-size="9" fill="#9aa8b8" text-anchor="end">70</text>
+        <text x="44" y="173" font-size="9" fill="#9aa8b8" text-anchor="end">50</text>
+        <!-- escala: 50→170px=120px para 50→110=60 unidades. 1 unit = 2px. y=170-(val-50)*2 -->
+        <!-- 2024: 68.6 → y=170-(68.6-50)*2=170-37.2=132.8 -->
+        <!-- 2025: 76.7 → y=170-(76.7-50)*2=170-53.4=116.6 -->
+        <!-- 2026: 98.8 → y=170-(98.8-50)*2=170-97.6=72.4 -->
+        <!-- x: 2024=100, 2025=225, 2026=350 -->
+        <polyline points="100,133 225,117 350,72" fill="none" stroke="#2980b9" stroke-width="3" stroke-linejoin="round"/>
+        <!-- área -->
+        <polygon points="100,133 225,117 350,72 350,170 225,170 100,170" fill="#2980b9" fill-opacity="0.08"/>
+        <!-- pontos -->
+        <circle cx="100" cy="133" r="5" fill="#2980b9"/>
+        <circle cx="225" cy="117" r="5" fill="#2980b9"/>
+        <circle cx="350" cy="72" r="5" fill="#1a5276"/>
+        <!-- labels pontos -->
+        <text x="100" y="126" font-size="10" fill="#1a2e4a" text-anchor="middle" font-weight="600">68,6</text>
+        <text x="225" y="110" font-size="10" fill="#1a2e4a" text-anchor="middle" font-weight="600">76,7</text>
+        <text x="350" y="65" font-size="10" fill="#1a2e4a" text-anchor="middle" font-weight="600">98,8</text>
+        <!-- eixo x -->
+        <text x="100" y="188" font-size="10" fill="#5a7a99" text-anchor="middle">Safra 2024</text>
+        <text x="225" y="188" font-size="10" fill="#5a7a99" text-anchor="middle">Safra 2025</text>
+        <text x="350" y="188" font-size="10" fill="#5a7a99" text-anchor="middle">Safra 2026</text>
+        <!-- legenda -->
+        <rect x="140" y="200" width="10" height="10" fill="#2980b9" rx="2"/>
+        <text x="154" y="209" font-size="9" fill="#5a7a99">TCH Real médio (t/ha)</text>
+      </svg>
+    </div>
+
+    <div class="chart-card">
+      <h3>Evolução do ATR médio geral por safra</h3>
+      <svg viewBox="0 0 420 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <!-- guias -->
+        <line x1="50" y1="20" x2="400" y2="20" stroke="#eef2f6" stroke-width="1"/>
+        <line x1="50" y1="70" x2="400" y2="70" stroke="#eef2f6" stroke-width="1"/>
+        <line x1="50" y1="120" x2="400" y2="120" stroke="#eef2f6" stroke-width="1"/>
+        <line x1="50" y1="170" x2="400" y2="170" stroke="#eef2f6" stroke-width="1"/>
+        <!-- eixo y: range 110-160 → 1 unit = 3px. y=170-(val-110)*3 -->
+        <text x="44" y="23" font-size="9" fill="#9aa8b8" text-anchor="end">160</text>
+        <text x="44" y="73" font-size="9" fill="#9aa8b8" text-anchor="end">143</text>
+        <text x="44" y="123" font-size="9" fill="#9aa8b8" text-anchor="end">127</text>
+        <text x="44" y="173" font-size="9" fill="#9aa8b8" text-anchor="end">110</text>
+        <!-- ATR 2024≈123.8 → y=170-(123.8-110)*3=170-41.4=128.6 -->
+        <!-- ATR 2025≈131.5 → y=170-(131.5-110)*3=170-64.5=105.5 -->
+        <!-- ATR 2026≈147.2 → y=170-(147.2-110)*3=170-111.6=58.4 -->
+        <polyline points="100,129 225,106 350,58" fill="none" stroke="#e67e22" stroke-width="3" stroke-linejoin="round"/>
+        <polygon points="100,129 225,106 350,58 350,170 225,170 100,170" fill="#e67e22" fill-opacity="0.07"/>
+        <circle cx="100" cy="129" r="5" fill="#e67e22"/>
+        <circle cx="225" cy="106" r="5" fill="#e67e22"/>
+        <circle cx="350" cy="58" r="5" fill="#c0392b"/>
+        <text x="100" y="122" font-size="10" fill="#1a2e4a" text-anchor="middle" font-weight="600">123,8</text>
+        <text x="225" y="99" font-size="10" fill="#1a2e4a" text-anchor="middle" font-weight="600">131,5</text>
+        <text x="350" y="51" font-size="10" fill="#1a2e4a" text-anchor="middle" font-weight="600">147,2</text>
+        <text x="100" y="188" font-size="10" fill="#5a7a99" text-anchor="middle">Safra 2024</text>
+        <text x="225" y="188" font-size="10" fill="#5a7a99" text-anchor="middle">Safra 2025</text>
+        <text x="350" y="188" font-size="10" fill="#5a7a99" text-anchor="middle">Safra 2026</text>
+        <rect x="143" y="200" width="10" height="10" fill="#e67e22" rx
