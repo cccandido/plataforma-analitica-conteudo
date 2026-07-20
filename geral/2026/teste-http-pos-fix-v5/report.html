@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste HTTP pos-fix — Plataforma Analítica Adecoagro</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f4f5f7;
+      color: #2c2f36;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 3px solid #2e7d32;
+      padding: 20px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header .brand {
+      font-size: 13px;
+      color: #6b7280;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1d23;
+    }
+
+    header .meta {
+      font-size: 12px;
+      color: #9ca3af;
+      text-align: right;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      padding: 24px 28px;
+    }
+
+    .card h2 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #2e7d32;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 10px;
+    }
+
+    .kpi-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .kpi {
+      flex: 1;
+      min-width: 140px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 18px 20px;
+      text-align: center;
+    }
+
+    .kpi .label {
+      font-size: 12px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .kpi .value {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1a1d23;
+    }
+
+    .kpi .unit {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-top: 2px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    thead tr {
+      background: #f3f4f6;
+    }
+
+    thead th {
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 600;
+      color: #374151;
+      font-size: 13px;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #f0f0f0;
+      transition: background 0.15s;
+    }
+
+    tbody tr:hover {
+      background: #f9fafb;
+    }
+
+    tbody td {
+      padding: 10px 14px;
+      color: #374151;
+    }
+
+    tbody td.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .bar-chart-wrap {
+      margin-top: 8px;
+    }
+
+    .bar-label {
+      font-size: 12px;
+      color: #374151;
+    }
+
+    .notice {
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-size: 13px;
+      color: #78350f;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #9ca3af;
+      padding: 24px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="brand">Plataforma Analítica · Adecoagro</div>
+    <h1>Teste HTTP pos-fix</h1>
+  </div>
+  <div class="meta">
+    Validação final via HTTP<br>
+    Gerado em: <span id="gen-date"></span>
+  </div>
+</header>
+
+<main>
+
+  <!-- Contexto -->
+  <div class="card">
+    <h2>Contexto</h2>
+    <p>Este relatório refere-se à <strong>validação final via HTTP (pos-fix)</strong>. Os dados fornecidos contêm a área (ha) de duas propriedades. A análise está restrita exclusivamente ao conjunto de dados recebido.</p>
+  </div>
+
+  <!-- KPIs -->
+  <div class="card">
+    <h2>Indicadores Gerais</h2>
+    <div class="kpi-row">
+      <div class="kpi">
+        <div class="label">Propriedades</div>
+        <div class="value">2</div>
+        <div class="unit">unidades</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Área Total</div>
+        <div class="value">300</div>
+        <div class="unit">ha</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Área Média</div>
+        <div class="value">150</div>
+        <div class="unit">ha / propriedade</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Maior Propriedade</div>
+        <div class="value">200</div>
+        <div class="unit">ha · Fazenda B</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabela de dados -->
+  <div class="card">
+    <h2>Dados por Propriedade</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Propriedade</th>
+          <th style="text-align:right;">Área (ha)</th>
+          <th style="text-align:right;">Participação (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fazenda A</td>
+          <td class="num">100</td>
+          <td class="num">33,3%</td>
+        </tr>
+        <tr>
+          <td>Fazenda B</td>
+          <td class="num">200</td>
+          <td class="num">66,7%</td>
+        </tr>
+        <tr style="background:#f3f4f6; font-weight:600;">
+          <td>Total</td>
+          <td class="num">300</td>
+          <td class="num">100,0%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Gráfico SVG de barras horizontais -->
+  <div class="card">
+    <h2>Distribuição de Área (ha)</h2>
+    <div class="bar-chart-wrap">
+      <svg viewBox="0 0 560 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gráfico de barras: área por propriedade">
+
+        <!-- eixo y labels -->
+        <text x="0" y="38" font-size="13" fill="#374151" font-family="sans-serif">Fazenda A</text>
+        <text x="0" y="86" font-size="13" fill="#374151" font-family="sans-serif">Fazenda B</text>
+
+        <!-- área de barras: offset 90px, largura útil 420px (max=200ha => 420px) -->
+
+        <!-- Fazenda A: 100ha => 210px -->
+        <rect x="90" y="18" width="210" height="28" rx="3" fill="#2e7d32" opacity="0.85"/>
+        <text x="308" y="37" font-size="13" fill="#1a1d23" font-family="sans-serif" font-weight="600">100 ha</text>
+
+        <!-- Fazenda B: 200ha => 420px -->
+        <rect x="90" y="66" width="420" height="28" rx="3" fill="#2e7d32"/>
+        <text x="518" y="85" font-size="13" fill="#1a1d23" font-family="sans-serif" font-weight="600">200 ha</text>
+
+        <!-- linha base -->
+        <line x1="90" y1="110" x2="510" y2="110" stroke="#e5e7eb" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Aviso de dados limitados -->
+  <div class="notice">
+    ⚠️ <strong>Dados limitados:</strong> O conjunto fornecido contém apenas 2 registros e 2 variáveis (propriedade e área). Não há dados temporais, financeiros ou de produção disponíveis, o que impede análises de tendência, eficiência ou desempenho. Conclusões adicionais exigiriam informações complementares.
+  </div>
+
+</main>
+
+<footer>
+  Plataforma Analítica Adecoagro &mdash; Relatório gerado automaticamente &mdash; <span id="gen-date-footer"></span>
+</footer>
+
+<script>
+  (function() {
+    var now = new Date();
+    var opts = { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+    var str = now.toLocaleString('pt-BR', opts);
+    var els = document.querySelectorAll('#gen-date, #gen-date-footer');
+    els.forEach(function(el){ el.textContent = str; });
+  })();
+</script>
+
+</body>
+</html>
