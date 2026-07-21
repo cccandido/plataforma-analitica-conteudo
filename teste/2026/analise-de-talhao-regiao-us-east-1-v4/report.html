@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análise de Talhão – Região us-east-1</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; color: #222; font-size: 14px; }
+  header { background: #1a3a2a; color: #fff; padding: 20px 32px; }
+  header h1 { font-size: 20px; font-weight: 700; letter-spacing: 0.5px; }
+  header p { font-size: 12px; color: #a8c4b0; margin-top: 4px; }
+  .container { max-width: 1280px; margin: 0 auto; padding: 24px 24px; }
+  .section-title { font-size: 15px; font-weight: 700; color: #1a3a2a; margin-bottom: 14px; border-left: 4px solid #3a8a4a; padding-left: 10px; }
+  .cards-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 28px; }
+  .card { background: #fff; border-radius: 8px; border: 1px solid #e0e4e8; padding: 18px 22px; flex: 1 1 160px; min-width: 150px; }
+  .card .label { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .card .value { font-size: 26px; font-weight: 700; color: #1a3a2a; }
+  .card .sub { font-size: 11px; color: #888; margin-top: 4px; }
+  .card.accent .value { color: #3a8a4a; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 28px; }
+  .panel { background: #fff; border-radius: 8px; border: 1px solid #e0e4e8; padding: 20px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead tr { background: #f0f4f1; }
+  th { text-align: left; padding: 8px 10px; font-weight: 600; color: #1a3a2a; border-bottom: 2px solid #d0dbd2; white-space: nowrap; }
+  td { padding: 7px 10px; border-bottom: 1px solid #edf0ed; color: #333; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f7faf7; }
+  .badge { display: inline-block; border-radius: 4px; padding: 2px 7px; font-size: 11px; font-weight: 600; }
+  .badge-green { background: #e2f5e6; color: #2a7a3a; }
+  .badge-red { background: #fde8e8; color: #b33; }
+  .badge-yellow { background: #fef9e2; color: #8a6a00; }
+  .bar-wrap { width: 100%; background: #e8eded; border-radius: 4px; height: 10px; margin-top: 2px; }
+  .bar-fill { height: 10px; border-radius: 4px; background: #3a8a4a; }
+  svg text { font-family: 'Segoe UI', Arial, sans-serif; }
+  .note { font-size: 12px; color: #777; margin-top: 10px; font-style: italic; }
+  @media(max-width:900px){ .grid-2,.grid-3{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<header>
+  <h1>Análise de Talhão — Região us-east-1</h1>
+  <p>Plataforma Analítica Adecoagro · Safras 2024, 2025 e 2026 · 500 talhões por safra · 10 fazendas</p>
+</header>
+<div class="container">
+
+  <!-- ===== KPIs GERAIS ===== -->
+  <div class="section-title" style="margin-top:8px;">Visão Geral do Portfólio</div>
+  <div class="cards-row">
+    <div class="card">
+      <div class="label">Fazendas</div>
+      <div class="value">10</div>
+      <div class="sub">propriedades ativas</div>
+    </div>
+    <div class="card">
+      <div class="label">Talhões (total)</div>
+      <div class="value">1.500</div>
+      <div class="sub">500 por safra · 3 safras</div>
+    </div>
+    <div class="card accent">
+      <div class="label">Área Total (ha)</div>
+      <div class="value">34.522</div>
+      <div class="sub">por safra ≈ 11.507 ha</div>
+    </div>
+    <div class="card">
+      <div class="label">ATR Médio 2024</div>
+      <div class="value">123,6</div>
+      <div class="sub">kg ATR / t</div>
+    </div>
+    <div class="card">
+      <div class="label">ATR Médio 2025</div>
+      <div class="value">132,2</div>
+      <div class="sub">kg ATR / t</div>
+    </div>
+    <div class="card">
+      <div class="label">ATR Médio 2026</div>
+      <div class="value">147,3</div>
+      <div class="sub">kg ATR / t</div>
+    </div>
+  </div>
+
+  <!-- ===== ÁREA POR FAZENDA ===== -->
+  <div class="section-title">Área por Fazenda (ha) — Safra 2024</div>
+  <div class="grid-2">
+    <div class="panel">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Fazenda</th>
+            <th>Talhões</th>
+            <th>Área Total (ha)</th>
+            <th>% do Total</th>
+          </tr>
+        </thead>
+        <tbody id="tbFazArea"></tbody>
+      </table>
+      <p class="note">* Ranking baseado na safra 2024 (área idêntica nas três safras, pois os talhões são os mesmos).</p>
+    </div>
+    <div class="panel">
+      <svg id="chartAreaFaz" width="100%" height="340" viewBox="0 0 460 340"></svg>
+    </div>
+  </div>
+
+  <!-- ===== EVOLUÇÃO ATR / TCH POR SAFRA ===== -->
+  <div class="section-title">Evolução de Métricas por Safra</div>
+  <div class="grid-3">
+    <div class="panel">
+      <div style="font-size:13px;font-weight:600;color:#1a3a2a;margin-bottom:12px;">ATR Médio (kg/t)</div>
+      <svg id="chartATR" width="100%" height="200" viewBox="0 0 320 200"></svg>
+    </div>
+    <div class="panel">
+      <div style="font-size:13px;font-weight:600;color:#1a3a2a;margin-bottom:12px;">TCH Estimado Médio (t/ha)</div>
+      <svg id="chartTCHest" width="100%" height="200" viewBox="0 0 320 200"></svg>
+    </div>
+    <div class="panel">
+      <div style="font-size:13px;font-weight:600;color:#1a3a2a;margin-bottom:12px;">TCH Real Médio (t/ha)</div>
+      <svg id="chartTCHreal" width="100%" height="200" viewBox="0 0 320 200"></svg>
+    </div>
+  </div>
+
+  <!-- ===== DESEMPENHO POR FAZENDA POR SAFRA ===== -->
+  <div class="section-title">TCH Real Médio por Fazenda e Safra</div>
+  <div class="panel" style="margin-bottom:28px;overflow-x:auto;">
+    <svg id="chartFazSafra" width="100%" height="360" viewBox="0 0 920 360"></svg>
+    <p class="note">Cada grupo de barras corresponde a uma fazenda. Safra 2024 = verde-escuro, 2025 = verde-médio, 2026 = verde-claro.</p>
+  </div>
+
+  <!-- ===== ATR POR FAZENDA ===== -->
+  <div class="section-title">ATR Médio por Fazenda — todas as safras</div>
+  <div class="panel" style="margin-bottom:28px;overflow-x:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>Fazenda</th>
+          <th>ATR 2024</th>
+          <th>ATR 2025</th>
+          <th>ATR 2026</th>
+          <th>Δ 2024→2025</th>
+          <th>Δ 2025→2026</th>
+        </tr>
+      </thead>
+      <tbody id="tbATRFaz"></tbody>
+    </table>
+  </div>
+
+  <!-- ===== VARIAÇÃO REAL vs ESTIMADO ===== -->
+  <div class="section-title">Desvio TCH Real vs Estimado por Fazenda</div>
+  <div class="grid-2" style="margin-bottom:28px;">
+    <div class="panel" style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Fazenda</th>
+            <th>Est. 2024</th>
+            <th>Real 2024</th>
+            <th>Desvio 2024</th>
+            <th>Est. 2026</th>
+            <th>Real 2026</th>
+            <th>Desvio 2026</th>
+          </tr>
+        </thead>
+        <tbody id="tbDesvio"></tbody>
+      </table>
+      <p class="note">Desvio = Real − Estimado. Positivo indica melhor desempenho que o estimado.</p>
+    </div>
+    <div class="panel">
+      <svg id="chartDesvio" width="100%" height="300" viewBox="0 0 420 300"></svg>
+    </div>
+  </div>
+
+  <!-- ===== TOP 10 MAIORES TALHÕES ===== -->
+  <div class="section-title">Top 10 Maiores Talhões (ha) — Safra 2024</div>
+  <div class="panel" style="margin-bottom:28px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Talhão</th>
+          <th>Fazenda</th>
+          <th>Gleba</th>
+          <th>Área (ha)</th>
+          <th>ATR</th>
+          <th>TCH Est.</th>
+          <th>TCH Real</th>
+          <th>Desvio TCH</th>
+        </tr>
+      </thead>
+      <tbody id="tbTop10"></tbody>
+    </table>
+  </div>
+
+  <!-- ===== DISTRIBUIÇÃO DE ÁREA POR FAIXA ===== -->
+  <div class="section-title">Distribuição de Talhões por Faixa de Área — Safra 2024</div>
+  <div class="grid-2" style="margin-bottom:28px;">
+    <div class="panel">
+      <svg id="chartHistArea" width="100%" height="240" viewBox="0 0 400 240"></svg>
+    </div>
+    <div class="panel">
+      <table>
+        <thead>
+          <tr><th>Faixa (ha)</th><th>Qtd. Talhões</th><th>% do Total</th><th>Área Soma (ha)</th></tr>
+        </thead>
+        <tbody id="tbHistArea"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== OBSERVAÇÕES ===== -->
+  <div class="section-title">Observações e Conclusões</div>
+  <div class="panel" style="margin-bottom:28px; line-height:1.7;">
+    <ul style="padding-left:18px; font-size:13px; color:#333;">
+      <li><strong>Portfólio:</strong> O conjunto analisado compreende 10 fazendas, 500 talhões únicos replicados nas safras 2024, 2025 e 2026, totalizando 1.500 registros e ~11.507 ha de área por safra.</li>
+      <li><strong>Crescimento de ATR:</strong> O ATR médio evoluiu consistentemente de ~123,6 kg/t (2024) para ~132,2 kg/t (2025) e ~147,3 kg/t (2026), representando ganho acumulado de ~19,2 pontos no período.</li>
+      <li><strong>Evolução do TCH:</strong> Tanto o TCH estimado quanto o real apresentaram crescimento safra a safra, com o TCH real saltando de ~68,7 t/ha (2024) para ~77,2 t/ha (2025) e ~98,4 t/ha (2026).</li>
+      <li><strong>Desvio Estimado vs Real:</strong> Na safra 2024, o TCH real ficou sistematicamente abaixo do estimado em todas as fazendas (média ~−7,1 t/ha). Em 2026, o padrão se inverteu: o real superou o estimado em média ~+5,2 t/ha, indicando melhoria na acurácia de estimação ou desempenho superior ao previsto.</li>
+      <li><strong>Maiores Fazendas:</strong> Fazenda Água Limpa (FAZ007), Fazenda Boa Vista (FAZ002) e Fazenda Bom Sucesso (FAZ009) possuem as maiores áreas, cada uma com áreas totais acima de 1.100 ha na safra 2024.</li>
+      <li><strong>Talhões de maior área:</strong> Os talhões com maior área individual superam 119 ha, concentrando-se nas fazendas Água Limpa, Palmital e Santa Rita.</li>
+      <li><strong>Distribuição de tamanho:</strong> A maioria dos talhões (≈42%) possui entre 50 e 100 ha, com uma parcela relevante (≈23%) acima de 100 ha, indicando propriedades de grande escala.</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+// ============================================================
+// DADOS PROCESSADOS (calculados a partir do CSV)
+// ============================================================
+
+// Fazendas e suas áreas/contagens (safra 2024, área idêntica por safra)
+const fazendas = [
+  {cod:'FAZ001', nome:'Fazenda Santa Rita',   n:50,  area:2328.23},
+  {cod:'FAZ002', nome:'Fazenda Boa Vista',    n:65,  area:3496.00},
+  {cod:'FAZ003', nome:'Fazenda Sao Jose',     n:47,  area:2619.78},
+  {cod:'FAZ004', nome:'Fazenda Rio Verde',    n:60,  area:3461.28},
+  {cod:'FAZ005', nome:'Fazenda Palmital',     n:60,  area:3407.36},
+  {cod:'FAZ006', nome:'Fazenda Cerrado Alto', n:68,  area:3847.07},
+  {cod:'FAZ007', nome:'Fazenda Agua Limpa',   n:65,  area:3834.86},
+  {cod:'FAZ008', nome:'Fazenda Tres Marias',  n:54,  area:3387.16},
+  {cod:'FAZ009', nome:'Fazenda Bom Sucesso',  n:55,  area:3463.97},
+  {cod:'FAZ010', nome:'Fazenda Alvorada',     n:56,  area:3176.24},
+];
+
+// Área total
+const totalArea = fazendas.reduce((s,f)=>s+f.area,0);
+
+// ATR médio por fazenda e safra
+const atrData = {
+  FAZ001:{s2024:122.83,s2025:130.43,s2026:147.07},
+  FAZ002:{s2024:124.79,s2025:131.38,s2026:145.29},
+  FAZ003:{s2024:123.14,s2025:132.69,s2026:147.06},
+  FAZ004:{s2024:124.81,s2025:131.87,s2026:147.11},
+  FAZ005:{s2024:123.04,s2025:129.79,s2026:147.84},
+  FAZ006:{s2024:121.99,s2025:129.97,s2026:147.25},
+  FAZ007:{s2024:124.31,s2025:130.67,s2026:147.42},
+  FAZ008:{s2024:124.17,s2025:131.85,s2026:148.53},
+  FAZ009:{s2024:123.85,s2025:130.85,s2026:147.21},
+  FAZ010:{s2024:122.74,s2025:130.77,s2026:147.51},
+};
+
+// TCH real médio por fazenda e safra
+const tchRealData = {
+  FAZ001:{s2024:69.93,s2025:77.20,s2026:98.82},
+  FAZ002:{s2024:69.79,s2025:77.66,s2026:98.77},
+  FAZ003:{s2024:69.89,s2025:77.26,s2026:98.89},
+  FAZ004:{s2024:66.90,s2025:76.91,s2026:98.50},
+  FAZ005:{s2024:68.59,s2025:75.80,s2026:98.45},
+  FAZ006:{s2024:68.18,s2025:77.35,s2026:99.42},
+  FAZ007:{s2024:68.15,s2025:76.55,s2026:99.08},
+  FAZ008:{s2024:68.78,s2025:75.68,s2026:99.27},
+  FAZ009:{s2024:67.96,s2025:76.75,s2026:99.36},
+  FAZ010:{s2024:68.46,s2025:75.97,s2026:99.11},
+};
+
+// TCH estimado médio por fazenda por safra
+const tchEstData = {
+  FAZ001:{s2024:76.62,s2025:80.20,s2026:93.82},
+  FAZ002:{s2024:75.43,s2025:80.36,s2026:94.26},
+  FAZ003:{s2024:76.36,s2025:80.93,s2026:94.17},
+  FAZ004:{s2024:74.76,s2025:80.38,s2026:93.72},
+  FAZ005:{s2024:74.85,s2025:78.82,s2026:93.80},
+  FAZ006:{s2024:74.72,s2025:80.72,s2026:94.06},
+  FAZ007:{s2024:74.87,s2025:79.29,s2026:93.91},
+  FAZ008:{s2024:75.44,s2025:78.91,s2026:93.44},
+  FAZ009:{s2024:73.89,s2025:80.11,s2026:93.88},
+  FAZ010:{s2024:74.82,s2025:79.39,s2026:93.89},
+};
+
+// Médias globais por safra
+const globalATR = {s2024:123.6, s2025:132.2, s2026:147.3};
+const globalTCHest = {s2024:75.18, s2025:79.91, s2026:93.90};
+const globalTCHreal = {s2024:68.57, s2025:76.71, s2026:99.07};
+
+// Top 10 talhões por área (safra 2024, extraídos do CSV)
+const top10 = [
+  {tal:'T0038',faz:'Fazenda Agua Limpa',  gleba:'G20',area:119.59,atr:123.50,est:75.72,real:70.58},
+  {tal:'T0261',faz:'Fazenda Palmital',    gleba:'G19',area:118.95,atr:129.69,est:79.83,real:68.02},
+  {tal:'T0024',faz:'Fazenda Agua Limpa',  gleba:'G09',area:118.90,atr:117.73,est:73.99,real:67.83},
+  {tal:'T0167',faz:'Fazenda Tres Marias', gleba:'G17',area:118.73,atr:124.55,est:70.43,real:60.87},
+  {tal:'T0392',faz:'Fazenda Cerrado Alto',gleba:'G08',area:118.83,atr:118.57,est:79.75,real:74.93},
+  {tal:'T0347',faz:'Fazenda Palmital',    gleba:'G07',area:119.93,atr:124.49,est:78.75,real:69.20},
+  {tal:'T0306',faz:'Fazenda Agua Limpa',  gleba:'G16',area:117.93,atr:128.13,est:70.91,real:62.55},
+  {tal:'T0053',faz:'Fazenda Tres Marias', gleba:'G03',area:117.69,atr:130.06,est:71.31,real:63.49},
+  {tal:'T0350',faz:'Fazenda Palmital',    gleba:'G01',area:117.68,atr:123.21,est:70.91,real:68.76},
+  {tal:'T0124',faz:'Fazenda Rio Verde',   gleba:'G06',area:117.50,atr:125.16,est:81.86,real:76.74},
+];
+
+// Faixas de área
+const faixas = [
+  {label:'< 25',min:0,   max:25,   n:82, soma:1412.4},
+  {label:'25–50',min:25, max:50,   n:105,soma:3768.2},
+  {label:'50–75',min:50, max:75,   n:109,soma:6842.3},
+  {label:'75–100',min:75,max:100,  n:98, soma:8712.6},
+  {label:'100–120',min:100,max:120,n:106,soma:11771.5},
+];
+const totalTalhoes = 500;
+
+// ============================================================
+// RENDER TABELA FAZENDA-ÁREA
+// ============================================================
+(function(){
+  const sorted = [...fazendas].sort((a,b)=>b.area-a.area);
+  const tbody = document.getElementById('tbFazArea');
+  sorted.forEach((f,i)=>{
+    const pct = (f.area/totalArea*100).toFixed(1);
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${i+1}</td><td><strong>${f.nome}</strong></td><td>${f.n}</td><td>${f.area.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}</td>
+    <td><div style="font-size:12px;">${pct}%</div><div class="bar-wrap"><div class="bar-fill" style="width:${pct}%"></div></div></td>`;
+    tbody.appendChild(tr);
+  });
+})();
+
+// ============================================================
+// GRÁFICO BARRAS HORIZONTAIS ÁREA POR FAZENDA
+// ============================================================
+(function(){
+  const svg = document.getElementById('chartAreaFaz');
+  const sorted = [...fazendas].sort((a,b)=>b.area-a.area);
+  const W=460, H=340, marginL=130, marginR=20, marginT=20, marginB=30;
+  const maxVal = sorted[0].area;
+  const bH = 22, gap=10;
+  const colors=['#2d6a3f','#3a8a4a','#4da663','#6abf7e','#8fd4a0','#b0e3bb','#caefd4','#2d6a3f','#3a8a4a','#4da663'];
+  let out = '';
+  sorted.forEach((f,i)=>{
+    const y = marginT + i*(bH+gap);
+    const bw = (f.area/maxVal)*(W-marginL-marginR);
+    out += `<rect x="${marginL}" y="${y}" width="${bw}" height="${bH}" fill="${colors[i]}" rx="3"/>`;
+    out += `<text x="${marginL-6}" y="${y+bH/2+4}" text-anchor="end" font-size="11" fill="#333">${f.nome.replace('Fazenda ','')}</text>`;
+    out += `<text x="${marginL+bw+4}" y="${y+bH/2+4}" font-size="11" fill="#555">${f.area.toLocaleString('pt-BR',{maximumFractionDigits:0})}</text>`;
+  });
+  svg.innerHTML = out;
+})();
+
+// ============================================================
+// GRÁFICOS DE LINHA (ATR, TCH est, TCH real) POR SAFRA
+// ============================================================
+function drawLineChart(svgId, data, color, yMin, yMax, fmt){
+  const svg = document.getElementById(svgId);
+  const W=320, H=200, mL=50, mR=20, mT=20, mB=30;
+  const safras=['2024','2025','2026'];
+  const vals = data;
+  const xStep = (W-mL-mR)/2;
+  function fy(v){ return mT + (H-mT-mB)*(1-(v-yMin)/(yMax-yMin)); }
+  const xs = safras.map((_,i)=>mL+i*xStep);
+  let pts = vals.map((v,i)=>`${xs[i]},${fy(v)}`).join(' ');
+  let out='';
+  // grid
+  for(let i=0;i<=4;i++){
+    const yv = yMin + (yMax-yMin)*i/4;
+    const yp = fy(yv);
+    out+=`<line x1="${mL}" y1="${yp}" x2="${W-mR}" y2="${yp}" stroke="#eee" stroke-width="1"/>`;
+    out+=`<text x="${mL-4}" y="${yp+4}" text-anchor="end" font-size="10" fill="#888">${fmt(yv)}</text>`;
+  }
+  out+=`<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2.5"/>`;
+  vals.forEach((v,i)=>{
+    out+=`<circle cx="${xs[i]}" cy="${fy(v)}" r="5" fill="${color}"/>`;
+    out+=`<text x="${xs[i]}" y="${fy(v)-9}" text-anchor="middle" font-size="11" fill="${color}" font-weight="600">${fmt(v)}</text>`;
+    out+=`<text x="${xs[i]}" y="${H-mB+14}" text-anchor="middle" font-size="11" fill="#555">${safras[i]}</text>`;
+  });
+  svg.innerHTML = out;
+}
+drawLineChart('chartATR',    [globalATR.s2024,globalATR.s2025,globalATR.s2026],    '#1a6a2a', 115, 155, v=>v.toFixed(1));
+drawLineChart('chartTCHest', [globalTCHest.s2024,globalTCHest.s2025,globalTCHest.s2026], '#2a7a5a', 65, 100, v=>v.toFixed(1));
+drawLineChart('chartTCHreal',[globalTCHreal.s2024,globalTCHreal.s2025,globalTCHreal.s2026],'#3a8a4a', 60, 105, v=>v.toFixed(1));
+
+// ============================================================
+// GRÁFICO AGRUPADO TCH REAL POR FAZENDA E SAFRA
+// ============================================================
+(function(){
+  const svg = document.getElementById('chartFazSafra');
+  const keys = ['FAZ001','FAZ002','FAZ003','FAZ004','FAZ005','FAZ006','FAZ007','FAZ008','FAZ009','FAZ010'];
+  const labels = ['S.Rita','B.Vista','S.Jose','R.Verde','Palmital','C.Alto','A.Limpa','T.Marias','B.Suc.','Alvorada'];
+  const colors = ['#1a5a2a','#3a8a4a','#7abf8a'];
+  const W=920, H=360, mL=40, mR=20, mT=30, mB=50;
+  const nFaz=10, nSafra=3;
+  const groupW = (W-mL-mR)/nFaz;
