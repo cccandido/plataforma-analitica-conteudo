@@ -1,0 +1,74 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Resumo Climático Geral",
+      "rotulo": "Chuva Total (mm)",
+      "nota": "Soma de toda a precipitação registrada",
+      "coluna": "chuva_mm",
+      "agregacao": "soma"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Resumo Climático Geral",
+      "rotulo": "Temperatura Média (°C)",
+      "nota": "Média geral de temperatura",
+      "coluna": "temp_media_c",
+      "agregacao": "media"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Resumo Climático Geral",
+      "rotulo": "Umidade Média (%)",
+      "nota": "Média geral de umidade relativa",
+      "coluna": "umidade_media_pct",
+      "agregacao": "media"
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo_secao": "Evolução Temporal",
+      "titulo": "Precipitação Mensal (mm)",
+      "coluna_valor": "chuva_mm",
+      "agrupar_por": "mes",
+      "agregacao": "soma",
+      "limite": 12
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo_secao": "Evolução Temporal",
+      "titulo": "Temperatura Média Mensal (°C)",
+      "coluna_valor": "temp_media_c",
+      "agrupar_por": "mes",
+      "agregacao": "media",
+      "limite": 12
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparativo por Fazenda",
+      "titulo": "Chuva Média por Fazenda (mm)",
+      "coluna_valor": "chuva_mm",
+      "agrupar_por": "nome_fazenda",
+      "agregacao": "media",
+      "limite": 10
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Detalhamento por Talhão",
+      "titulo": "Ranking de Precipitação por Gleba",
+      "colunas": [
+        "nome_fazenda",
+        "gleba",
+        "ano",
+        "mes",
+        "chuva_mm",
+        "temp_media_c",
+        "umidade_media_pct",
+        "horas_sol"
+      ],
+      "ordenar_por": "chuva_mm",
+      "ordem": "desc",
+      "limite": 10,
+      "agregacao": "soma"
+    }
+  ]
+}
