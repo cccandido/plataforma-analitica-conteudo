@@ -1,0 +1,92 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Quadro de Funcionários - Visão Geral",
+      "rotulo": "Total de Colaboradores Ativos",
+      "nota": "Situação: Trabalhando, Férias, Licença e demais ativos",
+      "coluna": "Chave",
+      "agregacao": "contagem"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Quadro de Funcionários - Visão Geral",
+      "rotulo": "Total de Vínculos Fixos",
+      "nota": "Tipo de Contrato = Fixo",
+      "coluna": "Tipo de Contrato",
+      "agregacao": "contagem"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Quadro de Funcionários - Visão Geral",
+      "rotulo": "Total de Vínculos Temporários",
+      "nota": "Tipo de Contrato = Prazo determinado",
+      "coluna": "Tipo de Contrato",
+      "agregacao": "contagem"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Quadro de Funcionários - Por Área e Unidade",
+      "titulo": "Distribuição de Colaboradores por Área",
+      "coluna_valor": "Chave",
+      "agrupar_por": "Área",
+      "agregacao": "contagem",
+      "limite": 10
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Quadro de Funcionários - Por Área e Unidade",
+      "titulo": "Quadro de Funcionários por Unidade e Área (Fixo | Temporário | Total)",
+      "colunas": [
+        "Unidade",
+        "Área",
+        "Tipo de Contrato",
+        "Chave"
+      ],
+      "ordenar_por": "Unidade",
+      "ordem": "asc",
+      "limite": 50,
+      "agregacao": "contagem"
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Grau de Instrução",
+      "titulo": "Quadro de Grau de Instrução por Unidade (Superior Completo | Superior Incompleto)",
+      "colunas": [
+        "Unidade",
+        "Descrição (Instrução)",
+        "Tipo de Contrato",
+        "Chave"
+      ],
+      "ordenar_por": "Unidade",
+      "ordem": "asc",
+      "limite": 50,
+      "agregacao": "contagem"
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Movimentação do Quadro de Pessoal",
+      "titulo": "Movimentação Mensal por Área e Unidade (Admissões | Transferências | Demissões | Saldo)",
+      "colunas": [
+        "Unidade",
+        "Área",
+        "Admissão.1",
+        "Transferência",
+        "Demissão"
+      ],
+      "ordenar_por": "Unidade",
+      "ordem": "asc",
+      "limite": 50,
+      "agregacao": "contagem"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Movimentação do Quadro de Pessoal",
+      "titulo": "Movimentação de Pessoal por Unidade",
+      "coluna_valor": "Admissão.1",
+      "agrupar_por": "Unidade",
+      "agregacao": "contagem",
+      "limite": 10
+    }
+  ]
+}
