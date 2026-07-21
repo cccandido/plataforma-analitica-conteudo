@@ -1,0 +1,51 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "rotulo": "Área Total",
+      "nota": "Soma de todas as fazendas",
+      "coluna": "area",
+      "agregacao": "soma"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "rotulo": "Produção Total",
+      "nota": "Soma de todas as fazendas",
+      "coluna": "producao",
+      "agregacao": "soma"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparativo por Fazenda",
+      "titulo": "Área por Fazenda",
+      "coluna_valor": "area",
+      "agrupar_por": "propriedade",
+      "agregacao": "soma",
+      "limite": 10
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparativo por Fazenda",
+      "titulo": "Produção por Fazenda",
+      "coluna_valor": "producao",
+      "agrupar_por": "propriedade",
+      "agregacao": "soma",
+      "limite": 10
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Detalhamento",
+      "titulo": "Ranking de Fazendas por Produção",
+      "colunas": [
+        "propriedade",
+        "area",
+        "producao"
+      ],
+      "ordenar_por": "producao",
+      "ordem": "desc",
+      "limite": 10
+    }
+  ]
+}
