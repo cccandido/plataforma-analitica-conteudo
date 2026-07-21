@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teste design system HTTP</title>
+
+<style>
+  :root{
+    --green900:#0F2E1D;
+    --green700:#1B5E3A;
+    --green500:#2E8B57;
+    --green300:#7FC29B;
+    --green100:#E7F4EC;
+    --ink:#141A17;
+    --slate:#5B655F;
+    --line:#DDE4DF;
+    --paper:#FAFBF9;
+    --white:#FFFFFF;
+    --brick:#A23B2E;
+    --brick-soft:#FDECEA;
+    --shadow-soft:0 2px 10px rgba(15,46,29,0.06), 0 1px 2px rgba(15,46,29,0.04);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  .pa-container{max-width:1040px;margin:0 auto;padding:32px 28px 80px;}
+  .pa-titulo-pagina{font-size:22px;font-weight:700;color:var(--green900);margin:0 0 4px;}
+  .pa-subtitulo-pagina{font-size:13px;color:var(--slate);margin:0 0 32px;}
+
+  .pa-secao{margin-bottom:36px;}
+  .pa-secao-titulo{
+    font-size:12.5px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;
+    color:var(--slate);margin-bottom:14px;
+  }
+  .pa-grade{display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:16px;}
+
+  .pa-card{
+    background:var(--white);border-radius:16px;border:1px solid var(--line);
+    padding:20px 22px;box-shadow:var(--shadow-soft);
+  }
+  .pa-card-full{grid-column:1 / -1;}
+
+  .pa-kpi-rotulo{font-size:11.5px;font-weight:600;text-transform:uppercase;
+    letter-spacing:0.03em;color:var(--slate);margin-bottom:8px;}
+  .pa-kpi-valor{font-size:26px;font-weight:700;color:var(--green900);line-height:1.1;}
+  .pa-kpi-nota{font-size:12px;color:var(--slate);margin-top:6px;}
+  .pa-kpi-nota.alerta{color:var(--brick);}
+
+  .pa-chart-titulo{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:14px;}
+  .pa-chart-eixo{font-size:9.5px;fill:var(--slate);}
+  .pa-chart-valor{font-size:10px;fill:var(--ink);font-weight:600;}
+
+  table.pa-tabela{width:100%;border-collapse:collapse;font-size:13px;}
+  table.pa-tabela thead th{
+    text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:0.03em;
+    color:var(--slate);font-weight:700;padding:0 12px 10px;border-bottom:2px solid var(--line);
+  }
+  table.pa-tabela tbody td{padding:10px 12px;border-bottom:1px solid var(--line);color:var(--ink);}
+  table.pa-tabela tbody tr:last-child td{border-bottom:none;}
+
+  .pa-aviso{
+    border-left:3px solid var(--brick);background:var(--brick-soft);color:#6E2419;
+    padding:12px 16px;border-radius:8px;font-size:12.5px;margin-top:10px;
+  }
+</style>
+
+</head>
+<body>
+<div class="pa-container">
+  <div class="pa-titulo-pagina">Teste design system HTTP</div>
+  <div class="pa-subtitulo-pagina">Contagem de propriedades e soma de área</div>
+  
+    <div class="pa-secao">
+      <div class="pa-secao-titulo">Visão geral</div>
+      <div class="pa-grade">
+    <div class="pa-card">
+      <div class="pa-kpi-rotulo">Total de propriedades</div>
+      <div class="pa-kpi-valor">3</div>
+      
+    </div>
+    
+    <div class="pa-card">
+      <div class="pa-kpi-rotulo">Área total</div>
+      <div class="pa-kpi-valor">350 ha</div>
+      
+    </div>
+    </div>
+    </div>
+    
+    <div class="pa-secao">
+      <div class="pa-secao-titulo">Área por propriedade</div>
+      <div class="pa-grade">
+    <div class="pa-card">
+      <div class="pa-chart-titulo">Área por fazenda (ha)</div>
+      <svg width="220" height="140" viewBox="0 0 220 140">
+          <rect x="22" y="63.0" width="44" height="55.0" rx="5" fill="#2E8B57"/>
+          <text x="44.0" y="57.0" class="pa-chart-valor" text-anchor="middle">100</text>
+          <text x="44.0" y="134" class="pa-chart-eixo" text-anchor="middle">Fazenda A</text>
+        
+          <rect x="88" y="8.0" width="44" height="110.0" rx="5" fill="#2E8B57"/>
+          <text x="110.0" y="2.0" class="pa-chart-valor" text-anchor="middle">200</text>
+          <text x="110.0" y="134" class="pa-chart-eixo" text-anchor="middle">Fazenda B</text>
+        
+          <rect x="154" y="90.5" width="44" height="27.5" rx="5" fill="#2E8B57"/>
+          <text x="176.0" y="84.5" class="pa-chart-valor" text-anchor="middle">50</text>
+          <text x="176.0" y="134" class="pa-chart-eixo" text-anchor="middle">Fazenda C</text>
+        </svg>
+    </div>
+    
+    <div class="pa-card pa-card-full">
+      <div class="pa-chart-titulo">Detalhe por fazenda</div>
+      <table class="pa-tabela">
+        <thead><tr><th>Propriedade</th><th>Área (ha)</th></tr></thead>
+        <tbody><tr><td>Fazenda A</td><td>100</td></tr><tr><td>Fazenda B</td><td>200</td></tr><tr><td>Fazenda C</td><td>50</td></tr></tbody>
+      </table>
+    </div>
+    </div>
+    </div>
+    
+</div>
+</body>
+</html>
