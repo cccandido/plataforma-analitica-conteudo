@@ -1,0 +1,90 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Quadro de Funcionários - Visão Geral",
+      "rotulo": "Total de Colaboradores Ativos",
+      "nota": "Colaboradores com Situação ativa no período de referência",
+      "coluna": "Situação",
+      "agregacao": "contagem"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Quadro de Funcionários - Visão Geral",
+      "titulo": "Distribuição de Colaboradores por Área e Unidade",
+      "coluna_valor": "Chave",
+      "agrupar_por": "Área",
+      "agregacao": "contagem",
+      "limite": 10
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Quadro de Funcionários - Por Unidade",
+      "titulo": "Quadro de Funcionários: Área x Tipo de Contrato x Unidade",
+      "colunas": [
+        "Unidade",
+        "Área",
+        "Descrição (T. Contrato)",
+        "Tipo de Contrato",
+        "Situação",
+        "Chave"
+      ],
+      "ordenar_por": "Unidade",
+      "ordem": "asc",
+      "agregacao": "contagem",
+      "limite": 50
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Grau de Instrução",
+      "titulo": "Colaboradores com Nível Superior por Unidade",
+      "coluna_valor": "Chave",
+      "agrupar_por": "Descrição (Instrução)",
+      "agregacao": "contagem",
+      "limite": 10
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Grau de Instrução",
+      "titulo": "Grau de Instrução: Fixo x Temporário por Unidade",
+      "colunas": [
+        "Unidade",
+        "Descrição (Instrução)",
+        "Grau de Instrução",
+        "Tipo de Contrato",
+        "Descrição (T. Contrato)",
+        "Chave"
+      ],
+      "ordenar_por": "Unidade",
+      "ordem": "asc",
+      "agregacao": "contagem",
+      "limite": 50
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Movimentação do Quadro de Pessoal",
+      "titulo": "Movimentação do Mês: Admissões, Transferências e Demissões por Área e Unidade",
+      "colunas": [
+        "Unidade",
+        "Área",
+        "Admissão.1",
+        "Transferência",
+        "Demissão",
+        "Tipo de Desligamento"
+      ],
+      "ordenar_por": "Unidade",
+      "ordem": "asc",
+      "agregacao": "contagem",
+      "limite": 50
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Movimentação do Quadro de Pessoal",
+      "titulo": "Contratações, Transferências e Demissões por Unidade",
+      "coluna_valor": "Admissão.1",
+      "agrupar_por": "Unidade",
+      "agregacao": "contagem",
+      "limite": 10
+    }
+  ]
+}
