@@ -1,0 +1,79 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral de Colaboradores",
+      "rotulo": "Total de Colaboradores",
+      "nota": "Total de registros na base",
+      "coluna": "Cadastro",
+      "agregacao": "contagem"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral de Colaboradores",
+      "rotulo": "Colaboradores Ativos (Trabalhando)",
+      "nota": "Situação = Trabalhando",
+      "coluna": "Situação",
+      "agregacao": "contagem"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Distribuição por Área e Situação",
+      "titulo": "Colaboradores por Área",
+      "coluna_valor": "Cadastro",
+      "agrupar_por": "Área",
+      "agregacao": "contagem",
+      "limite": 10,
+      "ordem": "desc"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Distribuição por Área e Situação",
+      "titulo": "Colaboradores por Situação",
+      "coluna_valor": "Cadastro",
+      "agrupar_por": "Descrição (Situação)",
+      "agregacao": "contagem",
+      "limite": 10,
+      "ordem": "desc"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Perfil Demográfico",
+      "titulo": "Distribuição por Sexo",
+      "coluna_valor": "Cadastro",
+      "agrupar_por": "Sexo",
+      "agregacao": "contagem",
+      "limite": 5,
+      "ordem": "desc"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Perfil Demográfico",
+      "titulo": "Distribuição por Grau de Instrução",
+      "coluna_valor": "Cadastro",
+      "agrupar_por": "Descrição (Instrução)",
+      "agregacao": "contagem",
+      "limite": 10,
+      "ordem": "desc"
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Detalhamento de Colaboradores",
+      "titulo": "Listagem de Colaboradores",
+      "colunas": [
+        "Nome",
+        "Área",
+        "Título Reduzido (Cargo)",
+        "Admissão",
+        "Descrição (Situação)",
+        "Descrição (C.Custo)",
+        "Sexo",
+        "Descrição (Instrução)"
+      ],
+      "ordenar_por": "Admissão",
+      "ordem": "desc",
+      "limite": 50,
+      "agregacao": "contagem"
+    }
+  ]
+}
