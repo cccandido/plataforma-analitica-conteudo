@@ -1,0 +1,53 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "rotulo": "Total de Análises",
+      "coluna": "sk_analise_laboratorio",
+      "agregacao": "contagem"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "rotulo": "Valor Médio das Análises",
+      "coluna": "vl_analise",
+      "agregacao": "media"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "rotulo": "Variáveis Distintas",
+      "coluna": "cd_variavel",
+      "agregacao": "contagem"
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo_secao": "Evolução Temporal",
+      "titulo": "Evolução de Análises ao Longo do Tempo",
+      "coluna_valor": "sk_analise_laboratorio",
+      "agrupar_por": "dt_analise",
+      "agregacao": "contagem"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Distribuição por Área",
+      "titulo": "Quantidade de Análises por Área",
+      "coluna_valor": "sk_analise_laboratorio",
+      "agrupar_por": "cd_area",
+      "agregacao": "contagem",
+      "limite": 10
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Ranking de Variáveis",
+      "titulo": "Top 5 Variáveis Mais Recorrentes",
+      "coluna_valor": "sk_analise_laboratorio",
+      "agrupar_por": "cd_variavel",
+      "agregacao": "contagem",
+      "limite": 5,
+      "ordenar_por": "sk_analise_laboratorio",
+      "ordem": "desc"
+    }
+  ]
+}
