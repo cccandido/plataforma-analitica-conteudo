@@ -1,0 +1,148 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral — Escala das Unidades",
+      "rotulo": "Volume Total — Ivinhema",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Ivinhema"
+        }
+      ],
+      "cor": "primaria",
+      "insight": "Ivinhema domina com R$ 1.818.941 — 78,4% do volume total do período, mais de 3,6x o volume de Angélica.",
+      "nota": "78,4% do total"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral — Escala das Unidades",
+      "rotulo": "Volume Total — Angélica",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Angélica"
+        }
+      ],
+      "cor": "secundaria",
+      "insight": "Angélica acumula R$ 501.765 — 21,6% do total, com produção extremamente concentrada nos meses de maio e junho (97,6% do seu volume anual).",
+      "nota": "21,6% do total"
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Visão Geral — Escala das Unidades",
+      "titulo": "Participação no Volume Total por Unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "agrupar_por": "unidade",
+      "insight": "Ivinhema responde por 78,4% do volume total (R$ 1.818.941) contra 21,6% de Angélica (R$ 501.765) — relação de 3,6:1."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo_secao": "Evolução Mensal — Tendência e Sazonalidade",
+      "titulo": "Volume Mensal por Unidade (Comparativo)",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "insight": "Ivinhema mantém volume relevante ao longo do ano (pico em mai: R$ 301.151). Angélica é praticamente nula até abril e explode em jun (R$ 327.474), superando Ivinhema naquele mês — único momento do período. Ambas colapsam em outubro."
+    },
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Evolução Mensal — Tendência e Sazonalidade",
+      "titulo": "Anomalia Crítica — Outubro",
+      "insight": "Em outubro, o volume total cai para apenas R$ 2.250 — queda de 99% em relação ao pico de junho (R$ 581.140). Angélica registra R$ 0,00 e Ivinhema apenas R$ 2.250 (somente fermentação residual), confirmando parada quase total de ambas as unidades. Os meses de agosto, setembro e novembro não possuem registros — entressafra confirmada."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Drivers de Volume — Processos por Unidade",
+      "titulo": "Volume por Tipo de Processo — Ivinhema",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "agrupar_por": "tipo",
+      "filtro": [
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Ivinhema"
+        }
+      ],
+      "ordem": "desc",
+      "limite": 10,
+      "cor": "primaria",
+      "insight": "ivi_fermentacao concentra R$ 1.457.644 (80,1% do total da unidade). ivi_trat_caldo vem em segundo com R$ 334.442 (18,4%). Os demais 8 processos somam apenas 1,5%."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Drivers de Volume — Processos por Unidade",
+      "titulo": "Volume por Tipo de Processo — Angélica",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "agrupar_por": "tipo",
+      "filtro": [
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Angélica"
+        }
+      ],
+      "ordem": "desc",
+      "limite": 10,
+      "cor": "secundaria",
+      "insight": "ang_trat_caldo domina com R$ 485.794 (96,8%), porém com registros apenas nos meses 3–6 — o grande salto ocorre de abr (R$ 211) para mai (R$ 160.836), crescimento de 75.832%, marcando o início pleno da safra. ang_ete aparece em 2º com R$ 11.467."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Drivers de Volume — Processos por Unidade",
+      "titulo": "Comparativo de Processos Equivalentes: Angélica vs. Ivinhema",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "agrupar_por": "tipo",
+      "serie_por": "unidade",
+      "ordem": "desc",
+      "limite": 8,
+      "insight": "Tratamento de caldo: Angélica supera Ivinhema (R$ 485.794 vs R$ 334.442), mas em apenas 4 meses. Fermentação: Ivinhema domina com R$ 1.457.644 vs R$ 12,72 de Angélica — diferença de 114.594x. ETE: inversão — Angélica gera 172x mais que Ivinhema (R$ 11.467 vs R$ 66,60)."
+    },
+    {
+      "tipo": "grafico_area",
+      "titulo_secao": "Drivers de Volume — Processos por Unidade",
+      "titulo": "Evolução Mensal — ivi_fermentacao e ang_trat_caldo (Processos Âncora)",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "agrupar_por": "mes_analise",
+      "serie_por": "tipo",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "filtro": [
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "ivi_fermentacao sustenta volume elevado ao longo de todo o período (pico mai: R$ 231.582). ang_trat_caldo aparece apenas de mar a jun, com pico explosivo em jun (R$ 324.449). A sobreposição em mai–jun evidencia a janela de máxima operação simultânea das duas usinas."
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Detalhamento Completo dos Registros",
+      "titulo": "Todos os Registros — Mês × Tipo × Unidade × Valor",
+      "colunas": [
+        "mes_analise",
+        "tipo",
+        "unidade",
+        "soma_vl_variavel"
+      ],
+      "ordenar_por": "soma_vl_variavel",
+      "ordem": "desc",
+      "insight": "Tabela de referência completa para consulta granular. Ordenada por valor decrescente para facilitar a identificação dos maiores volumes. Utilize os filtros de unidade, mês e tipo para navegar nos subconjuntos de interesse."
+    }
+  ]
+}
