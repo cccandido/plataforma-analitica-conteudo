@@ -1,0 +1,91 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral Consolidada",
+      "rotulo": "Total Ivinhema",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "cor": "primaria",
+      "insight": "Ivinhema representa 78,4% do total geral acumulado (1.818.941,30), superando Angélica em 3,6× no volume total.",
+      "nota": "78,4% do total geral"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral Consolidada",
+      "rotulo": "Total Angélica",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "cor": "secundaria",
+      "insight": "Angélica representa 21,6% do total geral acumulado (501.764,89), com perfil operacional sazonal concentrado em mai-jun.",
+      "nota": "21,6% do total geral"
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Visão Geral Consolidada",
+      "titulo": "Participação no Volume Total por Unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "soma",
+      "insight": "Ivinhema concentra 78,4% (1.818.941) do volume total, contra 21,6% (501.764) de Angélica — diferença de 3,6×. As unidades têm vocações produtivas completamente distintas."
+    },
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Visão Geral Consolidada",
+      "titulo": "Inversão de Dominância — Mês 6",
+      "insight": "No mês 6, Angélica (327.474) supera Ivinhema (253.667) em +29% — único mês em que a unidade menor ultrapassa a maior em volume absoluto. Isso marca o pico da safra intensiva de trat_caldo em Angélica, enquanto Ivinhema segue seu ritmo regular de fermentação."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo_secao": "Evolução Mensal Comparativa",
+      "titulo": "Evolução Mensal do Volume por Unidade (Angélica × Ivinhema)",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "insight": "Ivinhema opera em regime estável durante todo o ano (pico no mês 5: 301.150). Angélica é praticamente nula de jan a abr, explode em mai (165.540) e atinge pico absoluto em jun (327.474), caindo abruptamente em seguida — padrão típico de safra concentrada. O mês 10 é anomalia: apenas 2.250 em Ivinhema e zero em Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparativo por Tipo de Processo",
+      "titulo": "Volume Acumulado por Tipo de Processo e Unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "tipo",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordenar_por": "soma_vl_variavel",
+      "ordem": "desc",
+      "limite": 10,
+      "insight": "ivi_fermentacao é o processo dominante absoluto: 1.457.644 acumulados, representando 62,8% do total geral. ang_trat_caldo é o principal de Angélica (485.794), com intensidade mensal superior à do ivi_trat_caldo quando em operação. ang_fermentacao é virtualmente nula (12,72 acumulado)."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparativo por Tipo de Processo",
+      "titulo": "Volume Mensal por Unidade — Mês a Mês (Barras Comparativas)",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "insight": "Visualização em barras lado a lado evidencia a sazonalidade extrema de Angélica (quase zero fora de mai-jun) versus a operação contínua de Ivinhema. O mês 10 expõe a anomalia operacional com volume consolidado de apenas 2.250."
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Detalhamento dos Dados",
+      "titulo": "Valores Integrais por Mês, Tipo e Unidade",
+      "colunas": [
+        "mes_analise",
+        "tipo",
+        "unidade",
+        "soma_vl_variavel"
+      ],
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "limite": 100,
+      "insight": "Tabela completa para consulta detalhada dos valores registrados por mês, tipo de processo e unidade — permite auditoria e verificação de registros individuais."
+    }
+  ]
+}
