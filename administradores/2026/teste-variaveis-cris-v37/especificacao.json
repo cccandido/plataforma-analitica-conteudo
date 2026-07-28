@@ -1,0 +1,98 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "📊 Visão Geral — Comparativo entre Unidades",
+      "rotulo": "Total Ivinhema",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "cor": "primaria",
+      "insight": "Ivinhema acumula R$ 1,82M — cerca de 3,6x o volume total de Angélica (R$ 501K), puxado principalmente pela fermentação.",
+      "nota": "Filtro: unidade = Ivinhema"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "📊 Visão Geral — Comparativo entre Unidades",
+      "rotulo": "Total Angélica",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "cor": "secundaria",
+      "insight": "Angélica concentra 78,5% de seu valor em um único tipo: ang_trat_caldo (R$ 485K), revelando dependência crítica dessa variável.",
+      "nota": "Filtro: unidade = Angélica"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "📊 Visão Geral — Comparativo entre Unidades",
+      "titulo": "Valor Total por Unidade e Tipo de Variável",
+      "agrupar_por": "tipo",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 17,
+      "cor": "primaria",
+      "insight": "ivi_fermentacao (R$ 1,46M) domina isoladamente o ranking — representa 62% de todo o volume consolidado das duas unidades. ang_trat_caldo vem em 2º lugar com R$ 485K."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo_secao": "📈 Evolução Mensal por Unidade",
+      "titulo": "Evolução Mensal do Valor Variável — Ivinhema vs Angélica",
+      "agrupar_por": "mes_analise",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "cor": "primaria",
+      "insight": "Ivinhema mantém volume alto e relativamente estável ao longo dos meses (entre R$ 157K e R$ 278K), enquanto Angélica explode nos meses 5 e 6 (R$ 165K e R$ 327K), sugerindo sazonalidade ou safra concentrada."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "📈 Evolução Mensal por Unidade",
+      "titulo": "Pico Mensal por Tipo — Top 5 Maiores Valores",
+      "agrupar_por": "tipo",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "maximo",
+      "ordem": "desc",
+      "limite": 5,
+      "cor": "terciaria",
+      "insight": "ang_trat_caldo registrou o maior pico pontual (R$ 324K em um único mês), superando até ivi_fermentacao (R$ 231K), indicando volatilidade elevada nessa variável de Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "🔍 Análise por Tipo de Processo",
+      "titulo": "Valor Médio Mensal por Tipo de Variável",
+      "agrupar_por": "tipo",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "media",
+      "ordem": "desc",
+      "limite": 10,
+      "cor": "secundaria",
+      "insight": "Em média mensal, ivi_fermentacao lidera com R$ 161,9K, seguido por ang_trat_caldo (R$ 121,4K) e ivi_trat_caldo (R$ 41,8K). Processos como fermentação e tratamento de caldo são os mais relevantes operacionalmente."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "🔍 Análise por Tipo de Processo",
+      "titulo": "Concentração de Valor: Participação % por Unidade",
+      "agrupar_por": "unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "cor": "quaternaria",
+      "insight": "Ivinhema representa 78,4% do valor total consolidado vs 21,6% de Angélica. Essa diferença estrutural exige análises normalizadas para comparações justas de eficiência entre unidades."
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "📋 Detalhamento Completo dos Registros",
+      "titulo": "Tabela Detalhada — Valores por Mês, Unidade e Tipo",
+      "colunas": [
+        "mes_analise",
+        "unidade",
+        "tipo",
+        "soma_vl_variavel"
+      ],
+      "ordenar_por": "soma_vl_variavel",
+      "ordem": "desc",
+      "limite": 50,
+      "insight": "Tabela completa para consulta granular dos dados. Permite identificar registros zerados (ex: ang_fermentacao acumulou apenas R$ 12,72 no período) e valores fora do padrão."
+    }
+  ]
+}
