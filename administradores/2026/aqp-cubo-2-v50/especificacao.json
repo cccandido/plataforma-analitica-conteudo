@@ -1,0 +1,102 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral do Programa",
+      "rotulo": "Área Efetiva Total Planejada",
+      "coluna": "area_efetiva_ha",
+      "agregacao": "soma",
+      "agrupar_por": "saf_ano_safra",
+      "cor": "primaria",
+      "insight": "115.058 ha planejados no total, sendo 82.149 ha na safra 2025 (~71%) e 32.910 ha na safra 2026 (~29%)."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral do Programa",
+      "rotulo": "Saldo Total a Plantar",
+      "coluna": "saldo_plantar",
+      "agregacao": "soma",
+      "cor": "secundaria",
+      "insight": "~60.017 ha ainda não plantados frente a 55.041 ha já executados — a operação está praticamente na metade do volume total planejado."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Visão Geral do Programa",
+      "titulo": "Área Plantada vs. Saldo a Plantar por Safra",
+      "coluna_valor": "area_plantada",
+      "agrupar_por": "saf_ano_safra",
+      "serie_por": "dsc_tipo_plantio",
+      "cor": "primaria",
+      "insight": "Safra 2025: 38.932 ha plantados vs. 43.216 ha de saldo (47% de execução). Safra 2026: 16.109 ha plantados vs. 16.801 ha de saldo (49%). O tipo de plantio é 99% mecanizado (113.952 ha)."
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Visão Geral do Programa",
+      "titulo": "Distribuição por Tipo de Plantio (Área Efetiva)",
+      "coluna_valor": "area_efetiva_ha",
+      "agrupar_por": "dsc_tipo_plantio",
+      "cor": "primaria",
+      "insight": "O plantio mecanizado domina com 113.952 ha (99% da área efetiva), enquanto o manual representa apenas 1.106 ha — confirmando operação altamente mecanizada."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Distribuição Regional",
+      "titulo": "Área Efetiva e Saldo a Plantar por Região",
+      "coluna_valor": "area_efetiva_ha",
+      "agrupar_por": "regiao",
+      "serie_por": "saf_ano_safra",
+      "ordem": "desc",
+      "cor": "primaria",
+      "insight": "IVI-H concentra a maior área (29.246 ha, 25% do total) e o maior saldo pendente (15.290 ha, 52% da área efetiva da região). ANG-B tem forte presença na safra 2026 (6.543 ha), sugerindo incorporação tardia ao programa."
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Distribuição Regional",
+      "titulo": "Top 6 Regiões por Saldo a Plantar",
+      "coluna_valor": "saldo_plantar",
+      "agrupar_por": "regiao",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 6,
+      "cor": "secundaria",
+      "insight": "IVI-H lidera com 15.290 ha de saldo pendente, seguida de IVI-F (8.196 ha) e ANG-A (5.794 ha) — as três regiões concentram a maior pressão operacional imediata."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Ciclo de Formação e Maturação",
+      "titulo": "Área Plantada vs. Saldo a Plantar por Ciclo de Formação",
+      "coluna_valor": "area_plantada",
+      "agrupar_por": "dsc_ciclo",
+      "serie_por": "saf_ano_safra",
+      "ordem": "desc",
+      "cor": "primaria",
+      "insight": "FORMAÇÃO 18 MESES domina com 71.777 ha (62% do total) e maior saldo pendente (37.750 ha). FORMAÇÃO INVERNO tem execução de ~50% (16.036 plantados vs. 16.145 de saldo). FORMAÇÃO ANO representa 10% do programa."
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Ciclo de Formação e Maturação",
+      "titulo": "Distribuição por Ciclo de Maturação (Área Efetiva)",
+      "coluna_valor": "area_efetiva_ha",
+      "agrupar_por": "ciclo_maturacao",
+      "cor": "terciaria",
+      "insight": "Ciclo MÉDIA domina com 65.489 ha (57%), seguido de TARDIA (26.131 ha, 23%) e PRECOCE (22.773 ha, 20%). Há 665 ha sem classificação de ciclo que merecem regularização cadastral."
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Variedades — Concentração e Risco Genético",
+      "titulo": "Top 10 Variedades por Área Plantada",
+      "coluna_valor": "area_plantada",
+      "agrupar_por": "dsc_variedade",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 10,
+      "cor": "primaria",
+      "insight": "CTC 9006 lidera com 10.399 ha plantados, seguida de CTC 9008 (9.376 ha) — as duas somam 36% do total plantado. RB12 7825 tem o maior saldo pendente (9.952 ha), indicando ser a variedade de maior expansão futura."
+    },
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Variedades — Concentração e Risco Genético",
+      "insight": "⚠️ Atenção: CTC 9006, CTC 9008, RB12 7825 e CTC 9007 concentram mais de 30.000 ha de saldo pendente — alta concentração em poucas variedades representa risco de diversidade genética. Adicionalmente, saldos negativos detectados (mínimo -20,55 ha) indicam inconsistências cadastrais que precisam de revisão."
+    }
+  ]
+}
