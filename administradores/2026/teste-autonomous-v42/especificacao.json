@@ -1,0 +1,107 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral da Operação",
+      "rotulo": "Área Total Plantada",
+      "coluna": "area_plantada",
+      "agregacao": "soma",
+      "cor": "primaria",
+      "insight": "54.973 ha plantados no total, com média de 8,73 ha por talhão e máximo de 68,43 ha — distribuição assimétrica com muitos talhões pequenos."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral da Operação",
+      "rotulo": "Saldo Total a Plantar",
+      "coluna": "saldo_plantar",
+      "agregacao": "soma",
+      "cor": "secundaria",
+      "insight": "Quase 60.000 ha com plantio não concluído somando as duas safras, sinalizando operação ainda em curso e demanda expressiva de recursos e logística."
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Visão Geral da Operação",
+      "titulo": "Área Plantada por Tipo de Plantio",
+      "coluna_valor": "area_plantada",
+      "agrupar_por": "dsc_tipo_plantio",
+      "agregacao": "soma",
+      "insight": "O plantio mecanizado domina com 53.877 ha (~98% do total), enquanto o manual representa apenas 1.096 ha (~2%) — operação essencialmente mecanizada."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparativo entre Safras",
+      "titulo": "Área Plantada vs. Saldo a Plantar por Safra",
+      "coluna_valor": "area_plantada",
+      "agrupar_por": "saf_ano_safra",
+      "serie_por": "dsc_ciclo",
+      "agregacao": "soma",
+      "insight": "Safra 2025 concentra 38.875 ha plantados; safra 2026 registra 16.098 ha (41% da 2025). O ciclo Formação 18 Meses é dominante e cresce proporcionalmente na safra 2026, indicando preferência estratégica."
+    },
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Comparativo entre Safras",
+      "titulo": "Atenção: Saldo Pendente Expressivo nas Duas Safras",
+      "insight": "Safra 2025 carrega 43.192 ha em saldo pendente; safra 2026 tem 16.787 ha em aberto. Para cada ha plantado na 2025, há ~1,11 ha ainda por plantar — a operação está substancialmente incompleta nas duas frentes."
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Distribuição por Região",
+      "titulo": "Top 8 Regiões por Área Plantada",
+      "coluna_valor": "area_plantada",
+      "agrupar_por": "regiao",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 8,
+      "cor": "primaria",
+      "insight": "IVI-H lidera com 13.957 ha plantados (25% do total) e também o maior saldo em aberto (15.290 ha). ANG-A (7.583 ha), IVI-F (7.241 ha) e IVI-E (5.614 ha) formam o segundo escalão."
+    },
+    {
+      "tipo": "grafico_mapa_calor",
+      "titulo_secao": "Distribuição por Região",
+      "titulo": "Saldo a Plantar por Região e Safra",
+      "coluna_valor": "saldo_plantar",
+      "agrupar_por": "regiao",
+      "serie_por": "saf_ano_safra",
+      "agregacao": "soma",
+      "insight": "IVI-H concentra o maior saldo na safra 2025 (14.722 ha). Na safra 2026, ANG-B (3.859 ha), IVI-E (3.216 ha) e IVI-F (2.465 ha) são as regiões com maior desafio operacional para completar o ciclo."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Variedades e Ciclos",
+      "titulo": "Área Plantada pelas Principais Variedades",
+      "coluna_valor": "area_plantada",
+      "agrupar_por": "dsc_variedade",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "ordenar_por": "area_plantada",
+      "limite": 10,
+      "cor": "terciaria",
+      "insight": "CTC 9006 (10.399 ha), CTC 9008 (9.334 ha) e RB12 7825 (7.571 ha) respondem por mais de 50% do total — concentração varietal elevada que representa risco agronômico. RB12 7825 tem o maior saldo pendente (9.952 ha), razão saldo/plantado de 1,31."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Variedades e Ciclos",
+      "titulo": "Área Plantada por Ciclo de Maturação",
+      "coluna_valor": "area_plantada",
+      "agrupar_por": "ciclo_maturacao",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "cor": "quaternaria",
+      "insight": "Maturação MÉDIA domina com 33.710 ha (62%), seguida de TARDIA com 11.199 ha (20%) e PRECOCE com 9.588 ha (17%). Há 477 ha sem classificação, possivelmente registros incompletos."
+    },
+    {
+      "tipo": "grafico_dispersao",
+      "titulo_secao": "Variedades e Ciclos",
+      "titulo": "Relação entre Área Efetiva e Área Plantada por Talhão",
+      "coluna_x": "area_efetiva_ha",
+      "coluna_y": "area_plantada",
+      "agrupar_por": "saf_ano_safra",
+      "agregacao": "soma",
+      "insight": "Correlação de 0,54 — positiva moderada. Talhões maiores tendem a ter mais área plantada, mas a dispersão é relevante: tamanho do talhão não determina o ritmo de execução; fatores logísticos e de frente de plantio têm papel decisivo."
+    }
+  ],
+  "filtro_interativo": {
+    "coluna": "saf_ano_safra",
+    "rotulo": "Safra"
+  }
+}
