@@ -1,0 +1,126 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "rotulo": "Total de Análises",
+      "coluna": "sk_analise_laboratorio",
+      "agregacao": "contagem",
+      "cor": "primaria",
+      "insight": "Base total de 11.388 registros laboratoriais, cobrindo duas unidades industriais no período principal de 2025–2026."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "rotulo": "Análises — Ivinhema",
+      "coluna": "sk_analise_laboratorio",
+      "agregacao": "contagem",
+      "filtro": [
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Ivinhema"
+        }
+      ],
+      "cor": "secundaria",
+      "insight": "Ivinhema concentra 9.980 registros (~87,6% do total), com 10 tipos de processo monitorados — cobertura significativamente maior que Angélica."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "rotulo": "Análises — Angélica",
+      "coluna": "sk_analise_laboratorio",
+      "agregacao": "contagem",
+      "filtro": [
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Angélica"
+        }
+      ],
+      "cor": "terciaria",
+      "insight": "Angélica soma 1.398 registros (~12,4% do total) com apenas 7 tipos de processo cobertos — oportunidade de ampliar cobertura analítica."
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo": "Participação por Unidade no Volume de Análises",
+      "titulo_secao": "Visão Geral",
+      "coluna_valor": "sk_analise_laboratorio",
+      "agregacao": "contagem",
+      "agrupar_por": "unidade",
+      "insight": "Ivinhema detém 87,6% dos registros versus 12,4% de Angélica — assimetria estrutural que reflete tanto porte quanto cobertura de processos distintos."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Volume de Análises por Tipo de Processo e Unidade",
+      "titulo_secao": "Comparativo por Processo",
+      "coluna_valor": "sk_analise_laboratorio",
+      "agregacao": "contagem",
+      "agrupar_por": "tipo",
+      "serie_por": "unidade",
+      "ordem": "desc",
+      "ordenar_por": "sk_analise_laboratorio",
+      "insight": "Ivinhema lidera em ivi_fermentacao (3.771 registros) e ivi_trat_caldo (3.635). Em Angélica, ang_ger_energia (348) e ang_ete (347) são os mais monitorados. Ang_trat_caldo (28 registros) é o maior outlier de valor, não de volume."
+    },
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Comparativo por Processo",
+      "insight": "⚠️ ALERTA: ang_trat_caldo (Angélica) apresenta apenas 28 registros, mas média de 17.350 e máximo de 166.583 — soma acumulada de 485.794, segunda maior entre todos os processos. Verifique se a unidade de medida está padronizada. Adicionalmente, ang_fermentacao em Angélica tem média de 0,054 versus 389 em Ivinhema (diferença de ~7.000x), possivelmente indicando período fora de safra ou falha de lançamento."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Evolução Mensal do Número de Análises — Ivinhema vs. Angélica",
+      "titulo_secao": "Tendência Temporal e Sazonalidade",
+      "coluna_valor": "sk_analise_laboratorio",
+      "agregacao": "contagem",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "insight": "Padrão sazonal claro: Ivinhema cresce de 897 análises em janeiro para pico de 1.578 em julho (+76%), alinhado à rampa da safra. Angélica segue tendência similar, de 100 para 234 análises em julho."
+    },
+    {
+      "tipo": "grafico_area",
+      "titulo": "Soma Mensal de Valores Analisados — Ivinhema vs. Angélica",
+      "titulo_secao": "Tendência Temporal e Sazonalidade",
+      "coluna_valor": "vl_analise",
+      "agregacao": "soma",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "insight": "Em junho, a soma de Angélica (327.474) supera a de Ivinhema (253.667) — fenômeno explicado pela escalada de ang_trat_caldo, cuja média sobe de 10.722 em maio para 32.445 em junho: sinal de alerta operacional no início intensivo da safra."
+    },
+    {
+      "tipo": "ranking",
+      "titulo": "Top 8 Processos por Soma Total de Valores",
+      "titulo_secao": "Comparativo por Processo",
+      "coluna_valor": "vl_analise",
+      "agregacao": "soma",
+      "agrupar_por": "tipo",
+      "ordem": "desc",
+      "limite": 8,
+      "insight": "ivi_fermentacao lidera com soma de 1.467.125, seguido de ang_trat_caldo (485.794) e ivi_trat_caldo (335.534). A presença de ang_trat_caldo em 2º lugar com apenas 28 registros evidencia a escala fora do padrão desse processo."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Somatório de vl_analise por Mês e Unidade",
+      "titulo_secao": "Tendência Temporal e Sazonalidade",
+      "colunas": [
+        "mes_analise",
+        "unidade",
+        "vl_analise"
+      ],
+      "agregacao": "soma",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "insight": "Consolidado mensal da soma de vl_analise por unidade. Destaque para junho, quando Angélica (327.474) supera Ivinhema (253.667) em volume de valores analisados."
+    }
+  ],
+  "filtro_interativo": {
+    "coluna": "unidade",
+    "rotulo": "Unidade"
+  }
+}
