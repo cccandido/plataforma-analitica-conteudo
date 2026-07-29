@@ -1,0 +1,106 @@
+{
+  "componentes": [
+    {
+      "tipo": "hero_numero",
+      "titulo_secao": "Visão Geral",
+      "coluna": "sk_fato_ordem_corte_muda",
+      "agregacao": "contagem",
+      "rotulo": "Total de Ordens de Corte",
+      "nota": "Registros válidos na base",
+      "insight": "891 ordens de corte de muda registradas, com 98,5% já finalizadas (fg_situacao = F) e apenas 13 ordens ainda abertas — o dado reflete predominantemente histórico consumado.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Visão Geral",
+      "titulo": "Distribuição de Ordens por Safra",
+      "coluna_valor": "sk_fato_ordem_corte_muda",
+      "agregacao": "contagem",
+      "agrupar_por": "cd_safra",
+      "insight": "Safra 2025 concentra 68,5% dos registros (610 ordens) contra 31,5% da safra 2026 (281 ordens), refletindo que o ciclo 2025 está mais avançado com mais ordens já lançadas."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "coluna": "qt_area",
+      "agregacao": "mediana",
+      "rotulo": "Área Mediana por Ordem (ha)",
+      "nota": "Média de 9,88 ha — use a mediana como referência típica",
+      "insight": "Mediana de 6,20 ha vs. média de 9,88 ha revela forte assimetria positiva. CV de 107% exige benchmarks por segmento, não pela média geral."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "coluna": "qt_area",
+      "agregacao": "soma",
+      "rotulo": "Área Total Safra 2025 (ha)",
+      "filtro": [
+        {
+          "coluna": "cd_safra",
+          "operador": "=",
+          "valor": "2025"
+        }
+      ],
+      "nota": "vs. 2.762,62 ha na safra 2026",
+      "insight": "Área total de 6.037,69 ha na safra 2025, proporção 2,19:1 em relação à 2026 — consistente com a proporção de registros, indicando tamanho médio de ordem equivalente entre safras (~9,90 ha vs ~9,83 ha)."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Análise por Instância",
+      "titulo": "Área Total Acumulada por Instância (ha)",
+      "coluna_valor": "qt_area",
+      "agregacao": "soma",
+      "agrupar_por": "cd_instancia",
+      "ordem": "desc",
+      "tamanho": "grande",
+      "insight": "Instância 3 lidera em área (4.278,78 ha) e instância 2 em número de ordens (346). A instância 1 acumula apenas 631,82 ha com média de ~2,6 ha por ordem — perfil muito distinto das demais (CV 111,5%), exigindo benchmarks separados."
+    },
+    {
+      "tipo": "grafico_mapa_calor",
+      "titulo_secao": "Análise por Instância",
+      "titulo": "Área Média por Ordem: Instância × Safra",
+      "coluna_valor": "qt_area",
+      "agregacao": "media",
+      "agrupar_por": "cd_instancia",
+      "serie_por": "cd_safra",
+      "insight": "Instância 1 opera com médias de 2,86 ha (2025) e 2,35 ha (2026), enquanto instâncias 2 e 3 trabalham com médias entre 10,7 e 14,3 ha — diferença de escala operacional relevante para calibrar metas por instância."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Estágios e Variedades",
+      "titulo": "Área Total por Estágio Fenológico (ha)",
+      "coluna_valor": "qt_area",
+      "agregacao": "soma",
+      "agrupar_por": "cd_estagio",
+      "ordem": "desc",
+      "destacar": "12",
+      "insight": "Estágio 12 lidera em área total (1.935,60 ha), seguido pelo 18 (1.708,14 ha). O estágio 95, com apenas 72 ordens, acumula 1.628,46 ha — média de 22,6 ha/ordem, a maior da base, indicando que estágios avançados movimentam muito mais material por ordem."
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Estágios e Variedades",
+      "titulo": "Top 5 Variedades por Área Total (ha)",
+      "coluna_valor": "qt_area",
+      "agregacao": "soma",
+      "agrupar_por": "cd_variedade",
+      "ordem": "desc",
+      "limite": 5,
+      "insight": "Variedades 400 (1.550,35 ha), 560 (1.492,16 ha) e 988 (1.352,74 ha) dominam o portfólio, com z-scores acima de +2,5 em relação à média das variedades — as três constituem o núcleo estratégico do programa de mudas."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Estágios e Variedades",
+      "titulo": "Ordens por Tipo de Corte e Safra (Parcial vs. Total)",
+      "coluna_valor": "sk_fato_ordem_corte_muda",
+      "agregacao": "contagem",
+      "agrupar_por": "fg_parcial_total",
+      "serie_por": "cd_safra",
+      "insight": "Cortes Totais somam 59% da área (5.198,92 ha) contra 41% dos Parciais (3.601,39 ha). A área média por ordem é praticamente equivalente entre os tipos — a distinção é essencialmente operacional, sem diferença estrutural de tamanho."
+    },
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Pontos de Atenção",
+      "insight": "O alinhamento entre estimativa e área executada é excelente: correlação de Spearman = 0,982 entre qt_estimada e qt_area, confirmando que o planejamento está muito aderente ao realizado. As 13 ordens ainda abertas (fg_situacao = A) representam apenas 1,5% do total — volume residual monitorável individualmente sem impacto material nos agregados."
+    }
+  ]
+}
