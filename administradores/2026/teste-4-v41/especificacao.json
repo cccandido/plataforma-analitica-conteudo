@@ -1,0 +1,123 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "rotulo": "Total Geral (Base Completa)",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "cor": "primaria",
+      "insight": "Total consolidado da base é de 2.320.706,18. Ivinhema responde por 78,4% e Angélica por 21,6% — assimetria expressiva de ~1,3 milhão entre as unidades."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "rotulo": "Total Ivinhema",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Ivinhema"
+        }
+      ],
+      "cor": "secundaria",
+      "insight": "Ivinhema acumula 1.818.941,30 (78,4% do total), puxada principalmente por ivi_fermentacao (1.457.643,66 — 62,8% de toda a base)."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "rotulo": "Total Angélica",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Angélica"
+        }
+      ],
+      "cor": "terciaria",
+      "insight": "Angélica acumula 501.764,89 (21,6% do total), com produção concentrada em apenas 2 meses intensos (maio–junho), atingindo o maior valor mensal da base em junho: 327.473,61."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo_secao": "Comparativo Mensal entre Unidades",
+      "titulo": "Evolução Mensal — Ivinhema vs. Angélica",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "insight": "Ivinhema opera de forma contínua e estável (157k–301k/mês de jan a jul, retomando em dez). Angélica explode em maio (165k) e atinge pico absoluto em junho (327k) — único mês em que supera Ivinhema (+73.806,74). Em julho, Angélica cai abruptamente para 2.883, encerrando a safra."
+    },
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Comparativo Mensal entre Unidades",
+      "titulo": "⚠️ Alerta: Meses 8, 9 e 11 Ausentes na Base",
+      "insight": "Nenhuma das duas unidades possui registros para os meses 8, 9 e 11. O mês 10 tem apenas 2.250 (Ivinhema). Pode ser parada de safra planejada no Centro-Oeste, mas a ausência total merece validação — pode ser lacuna de dado ou real parada operacional."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Distribuição por Processo (Tipo)",
+      "titulo": "Valor Acumulado por Tipo de Processo",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "agrupar_por": "tipo",
+      "ordem": "desc",
+      "cor": "primaria",
+      "insight": "Os 3 maiores processos concentram >99% do valor total: ivi_fermentacao (1.457.643), ang_trat_caldo (485.793) e ivi_trat_caldo (334.442). Fermentação de Ivinhema sozinha representa 62,8% de toda a base."
+    },
+    {
+      "tipo": "grafico_mapa_calor",
+      "titulo_secao": "Distribuição por Processo (Tipo)",
+      "titulo": "Valor por Processo × Mês (Mapa de Calor)",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "agrupar_por": "tipo",
+      "serie_por": "mes_analise",
+      "insight": "Revela a concentração temporal por processo: ang_trat_caldo quase inexiste antes de maio e explode em junho (324.449 — 66,8% de todo o processo no ano). ivi_fermentacao é consistente de jan a jul e retoma em dez."
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Distribuição por Processo (Tipo)",
+      "titulo": "Top 8 Processos por Valor Acumulado",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "agrupar_por": "tipo",
+      "ordem": "desc",
+      "limite": 8,
+      "cor": "secundaria",
+      "insight": "Os processos auxiliares (ETE, destilação, recepção, fab. açúcar, trat. água) representam coletivamente menos de 2% do total. ivi_fab_acucar é processo exclusivo de Ivinhema — Angélica não registra fabricação de açúcar."
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Distribuição por Processo (Tipo)",
+      "titulo": "Participação das Unidades no Total",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "agrupar_por": "unidade",
+      "insight": "Ivinhema detém 78,4% do valor total (1.818.941) contra 21,6% de Angélica (501.764). Mix produtivo completamente diferente: Ivinhema = fermentação + destilação + fab. açúcar; Angélica = trat. caldo concentrado + ETE expressivo."
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Detalhamento Completo",
+      "titulo": "Dados Completos — Todos os Registros",
+      "colunas": [
+        "mes_analise",
+        "unidade",
+        "tipo",
+        "soma_vl_variavel"
+      ],
+      "ordenar_por": "soma_vl_variavel",
+      "ordem": "desc",
+      "insight": "Consulta completa dos 125 registros da base. Ordenado por valor decrescente para facilitar a identificação dos processos e meses de maior impacto."
+    }
+  ],
+  "filtro_interativo": {
+    "coluna": "unidade",
+    "rotulo": "Unidade"
+  }
+}
