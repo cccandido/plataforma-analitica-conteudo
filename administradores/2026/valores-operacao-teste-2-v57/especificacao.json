@@ -1,0 +1,111 @@
+{
+  "componentes": [
+    {
+      "tipo": "hero_numero",
+      "titulo_secao": "Visão Geral",
+      "rotulo": "Total de Registros de Operações",
+      "coluna": "sk_fat_historico_valores_operacao",
+      "agregacao": "contagem",
+      "nota": "Todos referentes à Safra 2026",
+      "insight": "A base contém 521.920 registros de operações, todos da safra 2026, com custo médio por registro de R$ 219,25 — mas mediana de R$ 37,58, revelando forte assimetria: poucas operações de alto valor puxam a média.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "rotulo": "Valor Consumido Médio por Registro",
+      "coluna": "vl_consumido",
+      "agregacao": "media",
+      "nota": "Mediana: R$ 37,58 — dispersão muito alta (DP R$ 1.892)",
+      "insight": "A diferença de ~6x entre média (R$ 219,25) e mediana (R$ 37,58) confirma assimetria positiva extrema: a maioria das operações tem custo baixo, mas eventos pontuais de alto valor dominam o total."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "rotulo": "Valor Total Consumido (Safra 2026)",
+      "coluna": "vl_consumido",
+      "agregacao": "soma",
+      "insight": "O valor total consumido ultrapassa R$ 114 milhões identificados por centro de custo, com máximo individual de R$ 1.220.181 em um único registro."
+    },
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Visão Geral",
+      "insight": "⚠️ Custo médio, não volume físico, é o driver de valor: a correlação entre qt_consumida e vl_consumido é de apenas -0,017 (virtualmente nula), enquanto vl_custo_medio e vl_consumido têm correlação de 0,9975. O gestor deve monitorar variações no custo médio unitário, não no volume."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Distribuição Mensal dos Custos",
+      "titulo": "Valor Total Consumido por Mês",
+      "coluna_valor": "vl_consumido",
+      "agrupar_por": "cd_mes",
+      "agregacao": "soma",
+      "ordenar_por": "cd_mes",
+      "ordem": "asc",
+      "destacar": "MES03",
+      "cor": "primaria",
+      "insight": "MES03 lidera com R$ 13,1 mi, seguido por MES10 (R$ 11,5 mi) e MES04 (R$ 11,8 mi). MES01 registra apenas R$ 155.620 (cobertura parcial da safra). R$ 8,24 mi sem vínculo mensal indicam lacuna de qualidade de dados.",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo_secao": "Distribuição Mensal dos Custos",
+      "titulo": "Quantidade Consumida por Mês",
+      "coluna_valor": "qt_consumida",
+      "agrupar_por": "cd_mes",
+      "agregacao": "soma",
+      "ordenar_por": "cd_mes",
+      "ordem": "asc",
+      "cor": "secundaria",
+      "insight": "O pico físico está em MES04 (19,5 mi unidades) e MES07 (19,4 mi), enquanto o maior custo financeiro é em MES03 — operações de março têm custo médio unitário mais alto mesmo com volume físico semelhante."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparação entre Empresas",
+      "titulo": "Valor Total Consumido por Empresa",
+      "coluna_valor": "vl_consumido",
+      "agrupar_por": "cd_empresa",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "ordenar_por": "vl_consumido",
+      "destacar": "99",
+      "cor": "terciaria",
+      "insight": "Empresas *13 e *14 lideram com R$ 15,5 mi cada, seguidas por *10 (R$ 15,3 mi) e *11 (R$ 15,2 mi). A empresa '99' se destaca pelo custo médio unitário de R$ 304,42 — 39% acima da média geral —, merecendo investigação quanto à natureza de suas operações.",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Concentração por Centro de Custo e Operação",
+      "titulo": "Top 6 — Centros de Custo por Valor Consumido",
+      "coluna_valor": "vl_consumido",
+      "agrupar_por": "cd_centro_custo",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 6,
+      "cor": "primaria",
+      "insight": "CC 3005 lidera com R$ 35,8 mi — mais que o dobro do 2º colocado. Os três primeiros (3005, 3021 e 3004) concentram ~70% dos ~R$ 114 mi totais. Qualquer desvio orçamentário nesses centros terá impacto desproporcional."
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Concentração por Centro de Custo e Operação",
+      "titulo": "Top 5 — Operações por Valor Consumido",
+      "coluna_valor": "vl_consumido",
+      "agrupar_por": "cd_operacao",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 5,
+      "cor": "secundaria",
+      "insight": "Operação 1986 (R$ 15,3 mi) e 1985 (R$ 12,9 mi) juntas somam R$ 28,3 mi — ~25% de todo o valor consumido. São o principal alvo para revisão de eficiência operacional e monitoramento prioritário."
+    },
+    {
+      "tipo": "grafico_mapa_calor",
+      "titulo_secao": "Concentração por Centro de Custo e Operação",
+      "titulo": "Valor Consumido: Empresa × Mês",
+      "coluna_valor": "vl_consumido",
+      "agrupar_por": "cd_mes",
+      "serie_por": "cd_empresa",
+      "agregacao": "soma",
+      "insight": "O cruzamento empresa × mês confirma que MES03 foi o mais intenso para todas as unidades, com cada empresa grande registrando entre R$ 1,8 mi e R$ 1,98 mi — padrão sazonal consistente em toda a estrutura operacional.",
+      "tamanho": "full"
+    }
+  ]
+}
