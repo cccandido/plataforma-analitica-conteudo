@@ -1,0 +1,61 @@
+{
+  "componentes": [
+    {
+      "tipo": "hero_numero",
+      "titulo_secao": "Visão Geral do Quadro de Funcionários",
+      "rotulo": "Funcionários Ativos Únicos",
+      "coluna": "cpf",
+      "agregacao": "contagem_distintos",
+      "nota": "CPFs distintos — base com 13.768 registros totais (média de 2 registros por pessoa por atualizações históricas)",
+      "insight": "A empresa conta com 6.868 funcionários ativos únicos distribuídos em 5 unidades. Todos os registros estão com status 'Ativo', sem variabilidade de situação cadastral na base atual.",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Visão Geral do Quadro de Funcionários",
+      "insight": "⚠️ Filtros de Idade e Data de Nascimento não podem ser implementados agora: a base atual não contém nenhuma coluna de data de nascimento ou idade. Para viabilizar esses filtros, é necessário enriquecer os dados com uma tabela do sistema de RH (ex.: Sênior), realizando um join por matrícula ou CPF. O filtro por Unidade está disponível e funcional."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Distribuição por Unidade",
+      "titulo": "Funcionários Únicos por Unidade (CPFs Distintos)",
+      "coluna_valor": "cpf",
+      "agrupar_por": "unidade_cadastro",
+      "agregacao": "contagem_distintos",
+      "ordem": "desc",
+      "destacar": "Ivinhema",
+      "cor": "primaria",
+      "insight": "Ivinhema lidera com 3.103 funcionários únicos (45,1% do total), seguida de Angélica com 2.485 (36,1%) e Monte Alegre com 1.243 (18,1%). Juntas, as três unidades operacionais concentram 99,2% do quadro. São Paulo (52) e Itajaí (1) têm papel secundário/administrativo.",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Distribuição por Unidade",
+      "titulo": "Top Unidades — Participação no Quadro",
+      "coluna_valor": "cpf",
+      "agrupar_por": "unidade_cadastro",
+      "agregacao": "contagem_distintos",
+      "ordem": "desc",
+      "limite": 5,
+      "insight": "As três unidades do campo (Ivinhema, Angélica e Monte Alegre) dominam o quadro operacional. São Paulo e Itajaí representam estruturas administrativas ou de apoio com presença marginal."
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Detalhamento do Quadro",
+      "titulo": "Quadro de Funcionários — Detalhamento por Registro",
+      "colunas": [
+        "num_matricula",
+        "nome_funcionario",
+        "cpf",
+        "unidade_cadastro",
+        "status",
+        "dt_updated_at"
+      ],
+      "insight": "Tabela completa para consulta individual de colaboradores, com matrícula, nome, CPF, unidade, status e data da última atualização cadastral no sistema."
+    }
+  ],
+  "filtro_interativo": {
+    "coluna": "unidade_cadastro",
+    "rotulo": "Unidade"
+  }
+}
