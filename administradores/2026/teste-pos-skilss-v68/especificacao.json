@@ -1,0 +1,116 @@
+{
+  "componentes": [
+    {
+      "tipo": "hero_numero",
+      "titulo_secao": "Visão Geral do Faturamento",
+      "coluna": "vl_liquido",
+      "agregacao": "soma",
+      "rotulo": "Valor Líquido Total Faturado",
+      "nota": "16.730 registros · fev/2025 a abr/2026",
+      "insight": "R$ 337,5 milhões faturados em 14 meses de competência, com o faturamento concentrado em duas instâncias operacionais (23 e 20) que respondem por 99,5% desse total.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral do Faturamento",
+      "coluna": "vl_liquido",
+      "agregacao": "media",
+      "rotulo": "Ticket Médio por Registro",
+      "nota": "Mediana: R$ 4.687 — distância de 4,3× indica forte assimetria positiva",
+      "insight": "Média de R$ 20.273 versus mediana de R$ 4.687: a maioria dos eventos tem valor pequeno, mas eventos de alto valor (máx. R$ 2,2 mi) puxam a média. CV de 3,52 confirma dispersão extrema."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral do Faturamento",
+      "coluna": "vl_liquido",
+      "agregacao": "contagem",
+      "rotulo": "Registros com Valor Zero",
+      "filtro": [
+        {
+          "coluna": "vl_liquido",
+          "operador": "=",
+          "valor": 0
+        }
+      ],
+      "nota": "1,3% do total — podem ser ajustes ou serviços totalmente descontados",
+      "insight": "216 registros com vl_liquido = 0 merecem atenção operacional: podem representar serviços integralmente descontados ou lançamentos de ajuste sem impacto financeiro real."
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Concentração por Instância Operacional",
+      "titulo": "Participação no Valor Líquido Total por Instância",
+      "coluna_valor": "vl_liquido",
+      "agregacao": "soma",
+      "agrupar_por": "cd_instancia",
+      "insight": "Instância 23 detém 58,9% (R$ 199,6 mi) e instância 20 outros 40,7% (R$ 137,9 mi). A instância 10 responde por apenas 0,47% — qualquer análise de tendência deve focar nas duas instâncias dominantes.",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Concentração por Instância Operacional",
+      "titulo": "Desconto Médio por Registro — Instância 23 Aplica o Dobro",
+      "coluna_valor": "vl_desconto_servico",
+      "agregacao": "media",
+      "agrupar_por": "cd_instancia",
+      "ordem": "desc",
+      "destacar": "23",
+      "cor": "secundaria",
+      "insight": "Instância 23 tem desconto médio de R$ 7.321 por registro — mais que o dobro da instância 20 (R$ 2.502). Combinado com a variação de volume, pode estar comprimindo a margem líquida relativa da inst. 23 mesmo enquanto ela mantém liderança no bruto."
+    },
+    {
+      "tipo": "grafico_area",
+      "titulo_secao": "Evolução Temporal do Faturamento",
+      "titulo": "Valor Líquido Mensal por Instância (fev/2025 – abr/2026)",
+      "coluna_valor": "vl_liquido",
+      "agregacao": "soma",
+      "agrupar_por": "dt_pagamento",
+      "serie_por": "cd_instancia",
+      "ordenar_por": "dt_pagamento",
+      "insight": "Faturamento mensal estável entre R$ 21,4 mi e R$ 26,6 mi a partir de mar/2025. Destaque: inversão de liderança em mar/2026 — instância 20 (R$ 14,6 mi) supera pela primeira vez a instância 23 (R$ 12,0 mi), sinalizando mudança estrutural no mix de serviços que merece investigação de causa raiz.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Evolução Temporal do Faturamento",
+      "insight": "⚠️ Inversão histórica em março/2026: pela primeira vez na série, a instância 20 (R$ 14,6 mi) superou a instância 23 (R$ 12,0 mi) no mês. A participação da inst. 23 caiu de ~60-70% para ~50% do total mensal ao longo de 2025 — enquanto aplica descontos mais do que o dobro da inst. 20. Recomenda-se investigação de causa raiz."
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Composição do Faturamento por Tipo de Evento",
+      "titulo": "Top Eventos de Faturamento por Valor Líquido",
+      "coluna_valor": "vl_liquido",
+      "agregacao": "soma",
+      "agrupar_por": "cd_evento_faturamento",
+      "ordem": "desc",
+      "limite": 8,
+      "insight": "Evento 6 lidera com R$ 84,6 mi (25% do total). Os 4 maiores eventos (6, 14, 13 e 9) concentram 64,3% do valor faturado — qualquer impacto nesses tipos tem efeito desproporcional sobre o resultado total.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "grafico_mapa_calor",
+      "titulo_secao": "Composição do Faturamento por Tipo de Evento",
+      "titulo": "Valor Líquido por Evento × Instância",
+      "coluna_valor": "vl_liquido",
+      "agregacao": "soma",
+      "agrupar_por": "cd_evento_faturamento",
+      "serie_por": "cd_instancia",
+      "insight": "Evento 6 é compartilhado (inst. 23: R$ 47,2 mi; inst. 20: R$ 37,4 mi), enquanto eventos 14, 13, 8 e 7 são majoritariamente exclusivos da instância 23 — o que explica em parte sua liderança histórica no faturamento total."
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Unidades de Produção — Dispersão do Faturamento",
+      "titulo": "Top 10 Unidades de Produção por Valor Líquido",
+      "coluna_valor": "vl_liquido",
+      "agregacao": "soma",
+      "agrupar_por": "cd_unidade_producao_nvl1",
+      "ordem": "desc",
+      "limite": 10,
+      "insight": "UP 2 (R$ 32,5 mi, 9,6%) e UP 1240 (R$ 31,8 mi, 9,4%) lideram, mas o top 14 cobre apenas ~55% do total — o restante está pulverizado. UPs 1174, 330 e 487 têm z-scores elevados (2,92 / 2,55 / 2,78), indicando valor médio por evento acima do esperado e merecendo monitoramento.",
+      "tamanho": "full"
+    }
+  ],
+  "filtro_interativo": {
+    "coluna": "cd_instancia",
+    "rotulo": "Instância Operacional"
+  }
+}
