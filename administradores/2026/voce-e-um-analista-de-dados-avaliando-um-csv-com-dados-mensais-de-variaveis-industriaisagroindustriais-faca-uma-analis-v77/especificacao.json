@@ -1,0 +1,133 @@
+{
+  "componentes": [
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Achado Central",
+      "insight": "3 tipos concentram 98% do volume total (2.320.706 unidades): ivi_fermentacao sozinho representa 62,81% — e é a razão pela qual Ivinhema supera Angélica em 4:1 no agregado. Excluindo fermentação, Angélica supera Ivinhema.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Volume Total (todas as unidades)",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "nota": "Dominado por ivi_fermentacao (62,81% do total)",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Volume Ivinhema",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Ivinhema"
+        }
+      ],
+      "nota": "78,38% do total geral",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Volume Angélica",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Angelica"
+        }
+      ],
+      "nota": "21,62% do total — dominado por ang_trat_caldo",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Concentração por Tipo",
+      "titulo": "Top 10 Tipos por Volume Total",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "tipo",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 10,
+      "insight": "Apenas 3 tipos (ivi_fermentacao, ang_trat_caldo, ivi_trat_caldo) somam 98,15% do volume total. Os 14 tipos restantes são invisíveis na escala geral — precisam ser analisados separadamente.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparação Angélica × Ivinhema por Processo",
+      "titulo": "Volume por Processo Equivalente — Angélica vs Ivinhema",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "tipo",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "insight": "Em fermentacao, Ivinhema supera Angélica em 114.000x. Em trat_caldo, Angélica supera Ivinhema em 45%. Em ete, Angélica supera Ivinhema em 172x — assimetrias que apontam para rotas industriais completamente distintas (Angélica: foco em açúcar; Ivinhema: foco em etanol).",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo_secao": "Evolução Temporal",
+      "titulo": "Volume Mensal por Unidade (meses 1–12)",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordenar_por": "mes_analise",
+      "insight": "Angélica tem safra concentrada em maio-junho (pico de 327.474 em junho), com volumes próximos de zero nos demais meses. Ivinhema opera distribuída ao longo do ano (min 174.894 em jan, máx 301.151 em maio). Meses 8, 9 e 11 estão ausentes; outubro tem apenas 2 registros — possível entressafra ou falha de coleta.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "grafico_mapa_calor",
+      "titulo_secao": "Evolução Temporal",
+      "titulo": "Intensidade por Tipo e Mês (mapa de calor)",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "tipo",
+      "agregacao": "soma",
+      "insight": "Permite identificar visualmente quais tipos operam em quais meses, lacunas de coleta (meses 8, 9, 11 completamente vazios) e o comportamento atípico de outubro — apenas ivi_fermentacao com valor de 2.250, contra média mensal de ~190k.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Qualidade e Anomalias",
+      "titulo": "Registros com Problemas: Zeros, Unidade em Branco e Séries Truncadas",
+      "colunas": [
+        "mes_analise",
+        "tipo",
+        "unidade",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": "<=",
+          "valor": 0
+        }
+      ],
+      "insight": "7 registros zerados, todos em Angélica (ang_fermentacao em meses 3, 6, 10, 12 e ang_ger_energia no mês 10). Adicionalmente, 7 registros de agua_potavel possuem unidade em branco (nan) — problema de governança no ETL que precisa ser corrigido. ang_trat_caldo existe apenas em 4 meses (3–6), distorcendo médias e totais de Angélica.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Qualidade e Anomalias",
+      "titulo": "Coeficiente de Variação por Tipo (dispersão mensal)",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "tipo",
+      "agregacao": "coeficiente_variacao",
+      "ordem": "desc",
+      "insight": "Tipos com coeficiente de variação extremamente alto (como ang_trat_caldo e ang_fermentacao) sinalizam séries irregulares ou incompletas — não refletem sazonalidade real, mas provavelmente lacunas de coleta ou operação sazonal muito concentrada.",
+      "tamanho": "full"
+    }
+  ],
+  "filtro_interativo": {
+    "coluna": "unidade",
+    "rotulo": "Unidade"
+  }
+}
