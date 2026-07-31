@@ -1,0 +1,261 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral — Totais e Alertas",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Total soma_vl_variavel",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral — Totais e Alertas",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Total — Angelica",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Angelica"
+        }
+      ],
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral — Totais e Alertas",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Total — Ivinhema",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Ivinhema"
+        }
+      ],
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral — Totais e Alertas",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Registros com Valor Zero",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "contagem",
+      "filtro": [
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": "=",
+          "valor": 0
+        }
+      ],
+      "nota": "Alerta de qualidade de dados",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral — Totais e Alertas",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Maior Valor Individual",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "maximo",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Visão Geral — Participação por Tipo",
+      "titulo_aba": "Visão Geral",
+      "titulo": "Ranking de Tipos por soma_vl_variavel",
+      "agrupar_por": "tipo",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 10,
+      "insight": "Evidencia a concentração extrema de valor em poucos tipos de processo — os 3 primeiros respondem por aproximadamente 98% do total. Use Top N para controle dinâmico do número de itens exibidos."
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Visão Geral — Participação por Tipo",
+      "titulo_aba": "Visão Geral",
+      "titulo": "Participação % por Unidade no Total",
+      "agrupar_por": "unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "insight": "Mostra o peso relativo de cada unidade (Angelica, Ivinhema, nan) no total consolidado de soma_vl_variavel."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo_aba": "Comparação entre Unidades",
+      "titulo": "soma_vl_variavel por Tipo e Unidade (Agrupado)",
+      "agrupar_por": "tipo",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "serie_por": "unidade",
+      "ordem": "desc",
+      "ordenar_por": "soma_vl_variavel",
+      "tamanho": "full",
+      "insight": "Comparação direta entre Angelica e Ivinhema para cada tipo de processo. Processos exclusivos de uma unidade (fab_acucar, ger_vapor em Ivinhema; agua_potavel sem unidade) aparecerão sem barra correspondente na outra série."
+    },
+    {
+      "tipo": "grafico_mapa_calor",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo_aba": "Comparação entre Unidades",
+      "titulo": "Matriz Unidade × Tipo — Intensidade de soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "serie_por": "tipo",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "insight": "Identifica lacunas de correspondência entre unidades (células vazias) e disparidades de escala por processo. Células sem par entre unidades devem ser formatadas com cor distinta (cinza)."
+    },
+    {
+      "tipo": "grafico_dispersao",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo_aba": "Comparação entre Unidades",
+      "titulo": "Dispersão: Valor por Tipo — Angelica vs Ivinhema",
+      "coluna_x": "soma_vl_variavel",
+      "coluna_y": "soma_vl_variavel",
+      "agrupar_por": "tipo",
+      "insight": "Cada ponto representa um tipo de processo. Pontos próximos à diagonal y=x indicam escala proporcional entre unidades; desvios indicam distorções estruturais. Recomenda-se adicionar linha de referência y=x como elemento fixo."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo_secao": "Evolução Mensal",
+      "titulo_aba": "Evolução Mensal",
+      "titulo": "Evolução Mensal de soma_vl_variavel por Unidade",
+      "agrupar_por": "mes_analise",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "tamanho": "grande",
+      "insight": "Revela sazonalidade e meses com comportamento atípico por unidade. Atenção: meses 8, 9 e 11 estão ausentes na base — o eixo X deve exibir apenas os meses com dados (1–7, 10, 12) sem interpolação."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Evolução Mensal",
+      "titulo_aba": "Evolução Mensal",
+      "titulo": "Composição Mensal por Tipo (Barras Empilhadas)",
+      "agrupar_por": "mes_analise",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "serie_por": "tipo",
+      "ordenar_por": "mes_analise",
+      "tamanho": "full",
+      "insight": "Mostra como a composição de tipos varia mês a mês, evidenciando quais processos dominam em cada período."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Evolução Mensal",
+      "titulo_aba": "Evolução Mensal",
+      "titulo": "Contagem de Registros por Mês (Completude Temporal)",
+      "agrupar_por": "mes_analise",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "contagem",
+      "ordenar_por": "mes_analise",
+      "insight": "Sinaliza meses com menos registros do que o esperado e evidencia os meses completamente ausentes (8, 9 e 11). Útil para monitorar cobertura da base à medida que os dados são atualizados."
+    },
+    {
+      "tipo": "grafico_pequenos_multiplos",
+      "titulo_secao": "Processos Equivalentes — Angelica vs Ivinhema",
+      "titulo_aba": "Processos Equivalentes",
+      "titulo": "Evolução Mensal por Processo Equivalente — Angelica vs Ivinhema",
+      "agrupar_por": "mes_analise",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "serie_por": "tipo",
+      "ordenar_por": "mes_analise",
+      "tamanho": "full",
+      "insight": "Cada mini-gráfico representa um processo equivalente, comparando a evolução mensal das duas unidades na mesma escala. Permite identificar divergências de comportamento temporal entre Angelica e Ivinhema para o mesmo processo."
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Processos Equivalentes — Angelica vs Ivinhema",
+      "titulo_aba": "Processos Equivalentes",
+      "titulo": "Tabela de Paridade entre Unidades por Tipo",
+      "colunas": [
+        "tipo",
+        "unidade",
+        "soma_vl_variavel"
+      ],
+      "agregacao": "soma",
+      "insight": "Visão lado a lado de soma por tipo e unidade. Linhas com apenas uma unidade preenchida indicam processos sem par comparável (fab_acucar e ger_vapor apenas em Ivinhema; agua_potavel sem unidade). Aplicar formatação condicional para destacar ausências."
+    },
+    {
+      "tipo": "grafico_mapa_calor",
+      "titulo_secao": "Processos Equivalentes — Angelica vs Ivinhema",
+      "titulo_aba": "Processos Equivalentes",
+      "titulo": "Matriz Mês × Tipo — Intensidade Mensal por Processo",
+      "agrupar_por": "mes_analise",
+      "serie_por": "tipo",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "soma",
+      "tamanho": "full",
+      "insight": "Cruzamento mês × tipo revela quais processos concentram valor em quais períodos. Células vazias indicam ausência de registro naquele mês para aquele tipo — relevante para detectar irregularidades de cobertura."
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "titulo": "Registros com Valor Zero",
+      "colunas": [
+        "mes_analise",
+        "tipo",
+        "unidade",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": "=",
+          "valor": 0
+        }
+      ],
+      "insight": "Lista todos os registros com soma_vl_variavel = 0, permitindo monitoramento contínuo de ausências de valor. Aplicar formatação condicional com linha inteira em amarelo."
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "titulo": "Registros com Unidade em Branco / nan",
+      "colunas": [
+        "mes_analise",
+        "tipo",
+        "unidade",
+        "soma_vl_variavel"
+      ],
+      "insight": "Lista registros sem unidade vinculada (valor nan ou nulo no campo unidade). Aplicar formatação condicional com linha inteira em laranja. Monitorar surgimento de novos registros sem unidade à medida que a base é atualizada."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "titulo": "Distribuição de soma_vl_variavel por Tipo (com Referência de Percentis)",
+      "agrupar_por": "tipo",
+      "coluna_valor": "soma_vl_variavel",
+      "agregacao": "maximo",
+      "ordem": "desc",
+      "tamanho": "full",
+      "insight": "Evidencia a assimetria extrema da distribuição (CV > 2,97) e identifica visualmente os tipos com valores outliers. Recomenda-se adicionar linhas de referência para P10, P25, mediana, P75 e P90 para contextualizar a dispersão. Aplicar formatação condicional para valores acima do P90."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "rotulo": "Registros com Unidade em Branco",
+      "coluna": "unidade",
+      "agregacao": "contagem",
+      "nota": "Monitorar crescimento a cada atualização da base"
+    }
+  ],
+  "filtro_interativo": {
+    "coluna": "unidade",
+    "rotulo": "Unidade"
+  }
+}
