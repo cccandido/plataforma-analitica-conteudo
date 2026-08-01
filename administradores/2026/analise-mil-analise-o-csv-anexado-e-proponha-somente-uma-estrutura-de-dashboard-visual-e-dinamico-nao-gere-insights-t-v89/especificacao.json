@@ -1,0 +1,287 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Indicadores Gerais",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Total Soma VL Variável",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Indicadores Gerais",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Qtd. de Registros",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "contagem",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Indicadores Gerais",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Tipos/Processos Distintos",
+      "coluna": "tipo",
+      "agregacao": "contagem_distintos",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Indicadores Gerais",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Meses Distintos",
+      "coluna": "mes_analise",
+      "agregacao": "contagem_distintos",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Indicadores Gerais",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Maior Valor Individual",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "maximo",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Indicadores Gerais",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Menor Valor Individual",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "minimo",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Distribuição por Unidade",
+      "titulo_aba": "Visão Geral",
+      "titulo": "Total por Unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "cor": "primaria",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Distribuição por Unidade",
+      "titulo_aba": "Visão Geral",
+      "titulo": "Participação % por Unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "soma",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Distribuição por Unidade",
+      "titulo_aba": "Visão Geral",
+      "titulo": "Total por Mês por Unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo_aba": "Comparação entre Unidades",
+      "titulo": "Soma VL Variável por Tipo e Unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "tipo",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo_aba": "Comparação entre Unidades",
+      "titulo": "Top Tipos/Processos por Soma VL Variável",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "tipo",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 10
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo_aba": "Comparação entre Unidades",
+      "titulo": "Matriz Unidade × Tipo",
+      "colunas": [
+        "unidade",
+        "tipo",
+        "soma_vl_variavel"
+      ]
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo_secao": "Série Temporal",
+      "titulo_aba": "Evolução Mensal",
+      "titulo": "Evolução Mensal por Unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "grafico_area",
+      "titulo_secao": "Série Temporal",
+      "titulo_aba": "Evolução Mensal",
+      "titulo": "Composição Mensal por Tipo (Área Empilhada)",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Série Temporal",
+      "titulo_aba": "Evolução Mensal",
+      "titulo": "Matriz Mês × Tipo (Heat Map de Valor)",
+      "colunas": [
+        "mes_analise",
+        "tipo",
+        "unidade",
+        "soma_vl_variavel"
+      ]
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Processos Equivalentes",
+      "titulo_aba": "Processos Equivalentes",
+      "titulo": "Angelica vs. Ivinhema por Processo Equivalente",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "tipo",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo_secao": "Processos Equivalentes",
+      "titulo_aba": "Processos Equivalentes",
+      "titulo": "Evolução Mensal por Processo Equivalente e Unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Processos Equivalentes",
+      "titulo_aba": "Processos Equivalentes",
+      "titulo": "Tabela Comparativa: Tipo × Unidade × Mês",
+      "colunas": [
+        "tipo",
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ]
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "rotulo": "Registros com Unidade em Branco",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "contagem",
+      "filtro": [
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "nan"
+        }
+      ]
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "rotulo": "Registros com Valor Zero",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "contagem",
+      "filtro": [
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": "=",
+          "valor": 0
+        }
+      ]
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "rotulo": "Amplitude Interquartil (IQR)",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "amplitude_interquartil"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "rotulo": "Coeficiente de Variação",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "coeficiente_variacao"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "titulo": "Dispersão de Soma VL Variável por Tipo",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "tipo",
+      "agregacao": "desvio_padrao",
+      "ordem": "desc",
+      "cor": "quaternaria",
+      "tamanho": "full",
+      "insight": "Identifica quais tipos/processos concentram maior variabilidade nos valores — útil para rastrear outliers e inconsistências por processo."
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "titulo": "Tabela de Validação: Registros para Auditoria",
+      "colunas": [
+        "mes_analise",
+        "tipo",
+        "unidade",
+        "soma_vl_variavel"
+      ]
+    }
+  ],
+  "filtro_interativo": [
+    {
+      "coluna": "unidade",
+      "rotulo": "Unidade"
+    },
+    {
+      "coluna": "mes_analise",
+      "rotulo": "Mês de Análise"
+    },
+    {
+      "coluna": "tipo",
+      "rotulo": "Tipo / Processo"
+    }
+  ]
+}
