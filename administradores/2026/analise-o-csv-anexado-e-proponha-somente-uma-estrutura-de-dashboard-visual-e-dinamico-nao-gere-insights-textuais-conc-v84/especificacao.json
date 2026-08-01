@@ -1,0 +1,323 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Total soma_vl_variavel",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Qtd. de Registros",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "contagem",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Tipos/Processos Distintos",
+      "coluna": "tipo",
+      "agregacao": "contagem_distintos",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Meses Disponíveis",
+      "coluna": "mes_analise",
+      "agregacao": "contagem_distintos",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Maior Valor Individual",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "maximo",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "titulo": "soma_vl_variavel por Unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "titulo": "Participação % por Unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "soma",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "titulo": "Top 10 Tipos por Volume Total",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "tipo",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 10
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo_aba": "Comparação entre Unidades",
+      "rotulo": "Total — Angelica",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Angelica"
+        }
+      ],
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo_aba": "Comparação entre Unidades",
+      "rotulo": "Total — Ivinhema",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Ivinhema"
+        }
+      ],
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo_aba": "Comparação entre Unidades",
+      "titulo": "soma_vl_variavel por Tipo — Angelica vs Ivinhema",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "tipo",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo_aba": "Comparação entre Unidades",
+      "titulo": "Detalhe: Unidade × Tipo × soma_vl_variavel",
+      "colunas": [
+        "unidade",
+        "tipo",
+        "soma_vl_variavel"
+      ],
+      "ordenar_por": "soma_vl_variavel",
+      "ordem": "desc"
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo_secao": "Evolução Mensal",
+      "titulo_aba": "Evolução Mensal",
+      "titulo": "Evolução Mensal por Unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordenar_por": "mes_analise",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "grafico_area",
+      "titulo_secao": "Evolução Mensal",
+      "titulo_aba": "Evolução Mensal",
+      "titulo": "Composição Mensal por Tipo",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordenar_por": "mes_analise",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Evolução Mensal",
+      "titulo_aba": "Evolução Mensal",
+      "titulo": "Volume Mensal Total com Composição por Unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordenar_por": "mes_analise",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Evolução Mensal",
+      "titulo_aba": "Evolução Mensal",
+      "rotulo": "Meses com Dados",
+      "coluna": "mes_analise",
+      "agregacao": "contagem_distintos",
+      "nota": "Base atual: 9 de 12 meses (meses 8, 9 e 11 ausentes)"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Processos Equivalentes",
+      "titulo_aba": "Processos Equivalentes",
+      "titulo": "Processos Equivalentes — Angelica vs Ivinhema",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "tipo",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "tamanho": "full",
+      "insight": "Comparação direta dos processos homônimos entre unidades após remoção dos prefixos ang_/ivi_. Processos fab_acucar e ger_vapor existem apenas em Ivinhema; agua_potavel aparece sem unidade atribuída — sem par para comparação direta."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo_secao": "Processos Equivalentes",
+      "titulo_aba": "Processos Equivalentes",
+      "titulo": "Evolução Mensal por Processo e Unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "agregacao": "soma",
+      "ordenar_por": "mes_analise",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Processos Equivalentes",
+      "titulo_aba": "Processos Equivalentes",
+      "titulo": "Comparativo por Tipo entre Unidades",
+      "colunas": [
+        "tipo",
+        "unidade",
+        "soma_vl_variavel"
+      ],
+      "ordenar_por": "soma_vl_variavel",
+      "ordem": "desc"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "rotulo": "Registros com Valor Zero",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "contagem",
+      "filtro": [
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": "=",
+          "valor": 0
+        }
+      ],
+      "nota": "Podem indicar processo inativo ou ausência de dado",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "rotulo": "Maior Valor (Outlier)",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "maximo",
+      "nota": "Amplitude: 0 a 324.449 — CV=2,97 indica dispersão extrema",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "titulo": "Contagem de Registros por Mês e Unidade",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "agregacao": "contagem",
+      "ordenar_por": "mes_analise",
+      "tamanho": "grande",
+      "insight": "Identificar meses com subcobertura. Meses 8, 9 e 11 estão ausentes; mês 10 possui apenas 3 registros — muito abaixo da média dos demais meses."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "titulo": "Variabilidade por Tipo (Coeficiente de Variação)",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "tipo",
+      "agregacao": "coeficiente_variacao",
+      "ordem": "desc",
+      "tamanho": "grande",
+      "insight": "Tipos com CV mais alto (ivi_fab_acucar, ivi_ete, ang_fermentacao) são os mais instáveis mês a mês — candidatos prioritários para investigação de outliers."
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "titulo": "Top 10 Valores Extremos",
+      "colunas": [
+        "mes_analise",
+        "tipo",
+        "unidade",
+        "soma_vl_variavel"
+      ],
+      "ordenar_por": "soma_vl_variavel",
+      "ordem": "desc",
+      "limite": 10
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "titulo": "Registros com Valor Zero",
+      "colunas": [
+        "mes_analise",
+        "tipo",
+        "unidade",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": "=",
+          "valor": 0
+        }
+      ],
+      "ordenar_por": "mes_analise",
+      "ordem": "asc"
+    }
+  ],
+  "filtro_interativo": [
+    {
+      "coluna": "unidade",
+      "rotulo": "Unidade"
+    },
+    {
+      "coluna": "mes_analise",
+      "rotulo": "Mês de Análise"
+    },
+    {
+      "coluna": "tipo",
+      "rotulo": "Tipo / Processo"
+    }
+  ]
+}
