@@ -1,0 +1,132 @@
+{
+  "componentes": [
+    {
+      "tipo": "hero_numero",
+      "titulo_secao": "Panorama Geral",
+      "coluna": "sk_apto_insumo",
+      "agregacao": "contagem",
+      "rotulo": "Total de Apontamentos",
+      "nota": "Janeiro/2025 a Julho/2026 — menos de 0,01% de nulos nas métricas principais",
+      "insight": "A base reúne 90.402 registros com qualidade de dados excelente, formando uma base sólida para análise operacional.",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "coluna": "qt_total",
+      "agregacao": "soma",
+      "rotulo": "Volume Total Apontado",
+      "nota": "Soma de qt_total em todas as operações",
+      "insight": "181,27 milhões de unidades apontadas no período — mas 88%+ desse volume está concentrado em apenas 2 operações e 2 centros de custo."
+    },
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Panorama Geral",
+      "insight": "ATENÇÃO: Dois insumos (291731 e 368460) respondem por 90,4% de todo o volume. Qualquer análise de média global é enganosa — os dados têm dois universos distintos: operações de volume maciço (água residual e plantio MPB, com totais na casa dos milhões) e operações agronômicas do dia a dia (herbicidas, inseticidas, adubações), com totais típicos entre 1 e 200 unidades por apontamento."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Concentração de Volume por Operação",
+      "titulo": "Volume Total por Operação (Top 10)",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_operacao",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 10,
+      "destacar": "1ª Aplic Água Residual (M³)",
+      "cor": "primaria",
+      "insight": "As três primeiras operações (1ª e 2ª Aplic Água Residual + Plantio MPB) concentram 89,5% do volume total — 162 mi de 181 mi de unidades. As 17 demais operações de maior volume somadas não chegam a 11%.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Concentração de Volume por Operação",
+      "titulo": "Top Operações por Frequência de Apontamentos",
+      "coluna_valor": "sk_apto_insumo",
+      "agrupar_por": "de_operacao",
+      "agregacao": "contagem",
+      "ordem": "desc",
+      "limite": 6,
+      "insight": "A operação mais frequente é '1ª Aplic F Org Trator-Hm' (9.803 apontamentos), mas representa apenas 1,9% do volume total. Frequência operacional e volume apontado são métricas completamente descasadas nesta base."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Concentração por Centro de Custo e Insumo",
+      "titulo": "Volume Total por Centro de Custo",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_centro_custo",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "destacar": "3005",
+      "cor": "primaria",
+      "insight": "O CC 3005 acumula 128,9 milhões de unidades (71,1% do total) com z-score de 5,81 — concentração estatisticamente extrema. O CC 3017 é o segundo com 30,9 milhões (17,0%). Juntos, somam 88,1% do volume.",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Concentração por Centro de Custo e Insumo",
+      "titulo": "Participação dos 2 Principais Insumos no Volume Total",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_insumo",
+      "agregacao": "soma",
+      "limite": 3,
+      "insight": "O insumo 291731 sozinho responde por 67,0% do volume (121,5 mi) e o insumo 368460 por 23,4% (42,5 mi). Dois códigos de insumo = 90,4% de todo o volume apontado na base.",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Sistema de Aplicação e Variabilidade",
+      "titulo": "Volume Total por Sistema de Aplicação",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_sist_aplicacao",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "insight": "Aplicação Terrestre domina com 97,9% do volume (177,5 mi unidades) vs. 2,1% Aérea (3,8 mi). Resultado esperado dado que as operações de maior volume — água residual, fertirrigação e plantio MPB — são todas terrestres.",
+      "cor": "secundaria"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Sistema de Aplicação e Variabilidade",
+      "titulo": "Variabilidade (Coef. de Variação) por Operação — Top 8 mais frequentes",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_operacao",
+      "agregacao": "coeficiente_variacao",
+      "ordem": "desc",
+      "limite": 8,
+      "insight": "A '1ª Adub Foliar Aérea' (CV 4,35) e o 'Plantio Mecanizado MPB-Hm' (CV 4,23) são as operações com maior variabilidade interna — reflexo de que lotes e talhões têm áreas muito diferentes entre si. Alta variação sinaliza que médias simples dessas operações enganam; analisar por distribuição é mais seguro.",
+      "cor": "terciaria",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Sistema de Aplicação e Variabilidade",
+      "titulo": "Detalhamento: Operações × Sistema de Aplicação × Volume",
+      "colunas": [
+        "de_operacao",
+        "de_sist_aplicacao",
+        "cd_centro_custo",
+        "qt_total",
+        "qt_dose_programada",
+        "cd_insumo"
+      ],
+      "ordem": "desc",
+      "ordenar_por": "qt_total",
+      "limite": 20,
+      "insight": "Detalhamento das 20 maiores operações para consulta e validação operacional, com dose programada e insumo associado para cruzamento de coerência."
+    }
+  ],
+  "filtro_interativo": [
+    {
+      "coluna": "cd_centro_custo",
+      "rotulo": "Centro de Custo"
+    },
+    {
+      "coluna": "de_sist_aplicacao",
+      "rotulo": "Sistema de Aplicação"
+    },
+    {
+      "coluna": "dt_operacao",
+      "rotulo": "Período"
+    }
+  ]
+}
