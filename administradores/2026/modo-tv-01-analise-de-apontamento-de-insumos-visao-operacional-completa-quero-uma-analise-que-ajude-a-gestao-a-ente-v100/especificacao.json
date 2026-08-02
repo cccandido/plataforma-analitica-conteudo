@@ -1,0 +1,85 @@
+{
+  "componentes": [
+    {
+      "tipo": "hero_numero",
+      "titulo_secao": "Panorama Geral",
+      "coluna": "qt_total",
+      "agregacao": "soma",
+      "rotulo": "Volume Total de Insumos Aplicados",
+      "nota": "90.402 registros · 3 unidades · jan/2025 – jun/2026",
+      "insight": "181,3 milhões de unidades registradas em 18 meses — mas a mediana por apontamento é de apenas 24, revelando distribuição extremamente assimétrica: poucos eventos de altíssimo volume (água residual, MPB) puxam toda a média.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Panorama Geral",
+      "titulo": "Volume por Unidade Operacional (Instância)",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_instancia_x",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "destacar": "20",
+      "cor": "primaria",
+      "insight": "A instância 20 concentra 79,6% do volume total (144,3 mi), enquanto a instância 10 — com número de apontamentos próximo ao da instância 23 — representa apenas 2,0% do volume (3,6 mi). O quadro geral é quase uma cópia do comportamento da unidade 20.",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Concentração: Onde o Volume Está",
+      "titulo": "Volume por Centro de Custo — Top 10",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_centro_custo",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 10,
+      "destacar": "3005",
+      "cor": "primaria",
+      "insight": "CC 3005 sozinho responde por 71,1% do volume (128,9 mi), com z-score de 5,81 desvios acima da média dos demais centros — não é simplesmente 'o maior entre iguais', é um outlier estatístico. Os três primeiros CCs somam 95,4% do total.",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Concentração: Onde o Volume Está",
+      "titulo": "Volume vs. Frequência por Operação — Top 8 em Volume",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_operacao",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 8,
+      "insight": "As 2 operações de Água Residual somam 66% do volume com apenas 223 registros combinados. Já as 5 operações mais frequentes (30% dos registros) não chegam a 12% do volume. 'Plantio Mecanizado MPB-Hm' tem média 2.645× acima da mediana — eventos extremos que merecem verificação.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Sistema de Aplicação e Variabilidade",
+      "titulo": "Volume por Sistema de Aplicação (Terrestre vs. Aéreo)",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_sist_aplicacao",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "insight": "Sistema terrestre = 97,9% do volume (177,5 mi) com CV de 114,6% — variabilidade extrema. Sistema aéreo = 2,1% do volume com CV de apenas 4,9%, graças à padronização das operações biológicas (Cotesia, Trichogramma, Broca). O problema de consistência operacional está quase inteiramente no lado terrestre.",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Sistema de Aplicação e Variabilidade",
+      "titulo": "Variabilidade das Operações Principais (Coeficiente de Variação)",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_operacao",
+      "agregacao": "coeficiente_variacao",
+      "ordem": "desc",
+      "limite": 8,
+      "destacar": "Adubação Cobertura - Ha",
+      "cor": "secundaria",
+      "insight": "'Adubação Cobertura - Ha' lidera a variabilidade (CV 11,03) — operação recorrente cujas doses deveriam ser mais estáveis, sugerindo variação de área, produto ou erros de lançamento. As operações de Água Residual (CV 8–10) preocupam por dominar 66% do volume: inconsistência de dose em eventos tão pesados exige verificação com o responsável pelo CC 3005.",
+      "tamanho": "grande"
+    }
+  ],
+  "filtro_interativo": [
+    {
+      "coluna": "cd_instancia_x",
+      "rotulo": "Unidade Operacional"
+    }
+  ],
+  "modo_exibicao": "tv"
+}
