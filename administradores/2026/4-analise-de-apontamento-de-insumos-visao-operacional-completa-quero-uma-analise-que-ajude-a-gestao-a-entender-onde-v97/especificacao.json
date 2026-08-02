@@ -1,0 +1,124 @@
+{
+  "componentes": [
+    {
+      "tipo": "hero_numero",
+      "titulo_secao": "Panorama Geral",
+      "coluna": "qt_total",
+      "agregacao": "soma",
+      "rotulo": "Volume Total de Insumos Aplicados",
+      "nota": "90.402 registros · 3 unidades · Jan/2025 – Jun/2026",
+      "insight": "181,3 milhões de unidades aplicadas em 18 meses de operação. O volume está fortemente concentrado: mediana de apenas 24 por apontamento vs. média de 2.006, evidenciando que poucos eventos de grande escala dominam o total.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "coluna": "sk_apto_insumo",
+      "agregacao": "contagem",
+      "rotulo": "Total de Apontamentos",
+      "insight": "90.402 registros com menos de 0,002% de nulos em qt_total — base limpa para análise de volume."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "coluna": "cd_centro_custo",
+      "agregacao": "contagem_distintos",
+      "rotulo": "Centros de Custo Ativos"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "coluna": "cd_insumo",
+      "agregacao": "contagem_distintos",
+      "rotulo": "Insumos Distintos Registrados",
+      "insight": "Apesar da diversidade de insumos, apenas 2 respondem por 90,4% do volume total — concentração extrema que orienta toda a análise."
+    },
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Concentração de Volume",
+      "insight": "⚠️ 3 centros de custo concentram 95,5% do volume total — e o centro 3005 sozinho responde por 71,1% (128,9 milhões de unidades), com z-score de 5,81 desvios acima da média dos demais. Dentro dele, o cruzamento com a Unidade 20 representa 66,9% de todo o volume da base. Qualquer variação de processo nesse centro tem impacto imediato no resultado da empresa.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Concentração de Volume",
+      "titulo": "Top Centros de Custo por Volume Aplicado",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_centro_custo",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 7,
+      "insight": "O centro 3005 (128,9M) supera em 4x o segundo colocado (3017, 30,9M). Os demais 14+ centros somam apenas 4,5% do volume — a cauda é operacionalmente irrelevante em volume."
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Concentração de Volume",
+      "titulo": "Participação dos 2 Insumos Dominantes no Volume Total",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_insumo",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 3,
+      "insight": "Insumo 291731 (67,0%) e insumo 368460 (23,4%) somam 90,4% do volume total. O primeiro está ligado à 1ª Aplicação de Água Residual em m³ — operação de altíssima escala unitária que distorce qualquer análise baseada apenas em contagem de apontamentos."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo": "Volume Total por Unidade (Instância)",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_instancia_x",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "insight": "Unidade 20 concentra 79,6% do volume (144,3M) com menos registros que a Unidade 23 — que tem 18,4% do volume mas o maior número de apontamentos (36.332). A Unidade 10, com 23.639 registros, representa apenas 2% do volume: padrão de operações pequenas e pulverizadas.",
+      "tamanho": "grande",
+      "cor": "primaria"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo": "Volume Aplicado por Sistema de Aplicação e Unidade",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_sist_aplicacao",
+      "serie_por": "cd_instancia_x",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "insight": "Terrestre domina em todas as unidades (97,9% do total), mas a Unidade 10 tem o menor ratio terrestre/aéreo (9:1 vs. 75:1 na Unidade 20) — proporcionalmente usa mais aplicação aérea, sugerindo perfil de lavoura ou pragas-alvo diferente."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Operações: Volume vs. Frequência e Variabilidade",
+      "titulo": "Top Operações por Volume vs. por Frequência de Apontamentos",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_operacao",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 8,
+      "destacar": "1ª Aplic Água Resid. - M³",
+      "insight": "Divergência crítica: as operações de Água Residual (36,6% + 29,6%) e Plantio MPB (23,4%) dominam em VOLUME — mas as mais frequentes em apontamentos são herbicidas e adubação orgânica. Um painel baseado só em contagem subestimaria radicalmente o impacto das aplicações de água residual.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Operações: Volume vs. Frequência e Variabilidade",
+      "titulo": "Variabilidade Operacional por Operação (Coeficiente de Variação)",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_operacao",
+      "agregacao": "coeficiente_variacao",
+      "ordem": "desc",
+      "limite": 10,
+      "destacar": "Plantio Mecanizado MPB-Hm",
+      "insight": "Plantio Mecanizado MPB-Hm é a combinação mais preocupante: 3ª maior em volume (23,4% do total) e CV = 4,23 — alto volume com alta inconsistência. 'Adubação Cobertura - Ha' tem o maior CV (11,03) mas peso pequeno. As aplicações de broca (CV ~3,4) merecem atenção por frequência + variabilidade moderada.",
+      "tamanho": "grande"
+    }
+  ],
+  "filtro_interativo": [
+    {
+      "coluna": "cd_instancia_x",
+      "rotulo": "Unidade (Instância)"
+    },
+    {
+      "coluna": "de_sist_aplicacao",
+      "rotulo": "Sistema de Aplicação"
+    }
+  ]
+}
