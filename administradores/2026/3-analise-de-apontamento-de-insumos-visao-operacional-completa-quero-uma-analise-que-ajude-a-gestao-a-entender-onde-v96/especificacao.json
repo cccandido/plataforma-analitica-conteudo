@@ -1,0 +1,132 @@
+{
+  "componentes": [
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Ideia Central",
+      "insight": "O volume de insumos está hiper-concentrado: CC 83 sozinho responde por 71,1% do total e duas operações de Água Residuária somam 66,1% do volume — mas a operação mais frequente (Adubação F Org Trator, 9.803 apontamentos) é apenas a 4ª em volume. Há duas lógicas operacionais distintas na base que precisam ser lidas separadamente: peso volumétrico e frequência de execução."
+    },
+    {
+      "tipo": "hero_numero",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Volume Total Aplicado",
+      "coluna": "qt_total",
+      "agregacao": "soma",
+      "nota": "Mix de unidades: m³, ha, hm — volume dominado por Água Residuária (m³)",
+      "insight": "181,3 milhões de unidades registradas em ~18 meses (jan/2025–jul/2026). Mediana de apenas 24 vs. média de 2.006 — distribuição extremamente assimétrica, dominada por poucos registros de altíssimo volume.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Total de Apontamentos",
+      "coluna": "sk_apto_insumo",
+      "agregacao": "contagem",
+      "insight": "90.402 registros de apontamento na base, com qualidade boa (nulos em qt_total < 0,002%)."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Unidades (Instâncias)",
+      "coluna": "cd_instancia_x",
+      "agregacao": "contagem_distintos",
+      "insight": "3 unidades operacionais com comportamentos muito distintos em volume e frequência."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Centros de Custo Distintos",
+      "coluna": "cd_centro_custo",
+      "agregacao": "contagem_distintos",
+      "insight": "20+ centros de custo, mas apenas 3 concentram 95,4% do volume total — distribuição extremamente concentrada."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Concentração de Volume",
+      "titulo": "Volume Total por Unidade (Instância)",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_instancia_x",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "destacar": "20",
+      "cor": "primaria",
+      "insight": "Unidade 20 concentra 79,6% do volume (144,3M) com apenas 30.319 registros — menos que a unidade 23 (36.332 apontamentos, 18,4% do volume). A inversão volume/frequência revela que a unidade 20 executa operações de volume unitário muito maior (Água Residuária), enquanto a 23 é mais diversificada e operacionalmente intensa.",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Concentração de Volume",
+      "titulo": "Volume Total por Centro de Custo (Top 10)",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_centro_custo",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 10,
+      "destacar": "83",
+      "cor": "primaria",
+      "insight": "CC 83 = 71,1% do total (128,9M) — z-score de 5,89 em relação à média dos demais CCs, sustentado por 56.182 registros. CC 94 (17%) e CC 100 (7,3%) completam os 95,4% concentrados nos 3 primeiros. Os 17+ CCs restantes somam menos de 5%.",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Concentração de Volume",
+      "titulo": "Composição do Volume por Sistema de Aplicação",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_sist_aplicacao",
+      "agregacao": "soma",
+      "insight": "Terrestre domina com 97,9% do volume (177,5M). Aéreo representa apenas 2,1% (3,8M) — mas tem peso relativo maior na unidade 23, onde as operações de Broca e Drone são mais frequentes. A diferença é estrutural: operações de alto volume (irrigação, fertirrigação) são inerentemente terrestres."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Concentração de Volume",
+      "titulo": "Volume Total por Unidade e Sistema de Aplicação",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_instancia_x",
+      "serie_por": "de_sist_aplicacao",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "insight": "A unidade 20 domina o terrestre (142,4M). O aéreo da unidade 23 (1,5M) é próximo ao da unidade 20 (1,9M), indicando que o peso relativo do aéreo é proporcionalmente maior na unidade 23 — operações de defensivos via drone/avião têm mais presença lá."
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Operações: Volume vs. Frequência",
+      "titulo": "Top 7 Operações por Volume Total",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_operacao",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 7,
+      "insight": "1ª e 2ª Aplic Água Resid. - M³ somam 66,1% do volume total (119,9M) — ambas concentradas no CC 83. Plantio Mecanizado MPB-Hm é a 3ª (23,4%). As três primeiras operações representam ~90% do volume. Essa leitura requer atenção: o domínio da Água Residuária (m³) distorce a escala em relação a operações de ha ou hm."
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Operações: Volume vs. Frequência",
+      "titulo": "Top 7 Operações por Frequência de Apontamentos",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_operacao",
+      "agregacao": "contagem",
+      "ordem": "desc",
+      "limite": 7,
+      "insight": "1ª Aplic F Org Trator-Hm lidera com 9.803 apontamentos — mas é apenas a 4ª em volume. Herbicidas, Broca e Carreado dominam a frequência com volumes unitários baixos. Essa divergência confirma duas lógicas operacionais distintas: alto volume/baixa frequência (Água Residuária, Plantio) vs. baixo volume/alta repetição (Herbicidas, Defensivos)."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Variabilidade Operacional",
+      "titulo": "Coeficiente de Variação por Operação (Top Operações por CV)",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_operacao",
+      "agregacao": "coeficiente_variacao",
+      "ordem": "desc",
+      "limite": 10,
+      "destacar": "Adubação Cobertura - Ha",
+      "cor": "quaternaria",
+      "insight": "Adubação Cobertura - Ha tem o maior CV da base (11,03) — volume por execução varia de forma extremamente ampla, sinalizando inconsistência entre talhões ou operadores. 1ª Aplic Água Resid. (CV 10,19) e Controle de Formigas (8,59) seguem. Plantio Mecanizado - Hm (CV 7,03) merece atenção especial dado seu peso de 23,4% no volume total. Herbicidas, por contraste, não aparecem entre os mais variáveis — indicando padronização relativa nessa frente.",
+      "tamanho": "full"
+    }
+  ],
+  "filtro_interativo": [
+    {
+      "coluna": "cd_instancia_x",
+      "rotulo": "Unidade"
+    }
+  ]
+}
