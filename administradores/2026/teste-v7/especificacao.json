@@ -1,0 +1,73 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral da Força de Trabalho",
+      "rotulo": "Total de Colaboradores",
+      "nota": "Contagem total de registros de colaboradores",
+      "coluna": "Cadastro",
+      "agregacao": "contagem"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Visão Geral da Força de Trabalho",
+      "titulo": "Colaboradores por Situação",
+      "coluna_valor": "Cadastro",
+      "agrupar_por": "Descrição (Situação)",
+      "agregacao": "contagem",
+      "limite": 10
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Perfil Demográfico",
+      "titulo": "Distribuição por Sexo",
+      "coluna_valor": "Cadastro",
+      "agrupar_por": "Sexo",
+      "agregacao": "contagem",
+      "limite": 10
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Perfil Demográfico",
+      "titulo": "Distribuição por Grau de Instrução",
+      "coluna_valor": "Cadastro",
+      "agrupar_por": "Descrição (Instrução)",
+      "agregacao": "contagem",
+      "limite": 10
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Estrutura Organizacional",
+      "titulo": "Colaboradores por Área",
+      "coluna_valor": "Cadastro",
+      "agrupar_por": "Área",
+      "agregacao": "contagem",
+      "limite": 10
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Estrutura Organizacional",
+      "titulo": "Colaboradores por Tipo de Contrato",
+      "coluna_valor": "Cadastro",
+      "agrupar_por": "Descrição (T. Contrato)",
+      "agregacao": "contagem",
+      "limite": 10
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Detalhamento de Colaboradores",
+      "titulo": "Ranking de Cargos por Quantidade de Colaboradores",
+      "colunas": [
+        "Título Reduzido (Cargo)",
+        "Área",
+        "Descrição (Situação)",
+        "Descrição (T. Contrato)",
+        "Descrição (Instrução)"
+      ],
+      "ordenar_por": "Título Reduzido (Cargo)",
+      "ordem": "asc",
+      "limite": 20,
+      "agregacao": "contagem"
+    }
+  ]
+}
