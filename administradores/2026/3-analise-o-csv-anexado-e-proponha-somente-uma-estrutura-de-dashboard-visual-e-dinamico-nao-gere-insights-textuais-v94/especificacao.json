@@ -1,0 +1,306 @@
+{
+  "componentes": [
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Volume Total",
+      "coluna": "qt_total",
+      "agregacao": "soma",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Total de Registros",
+      "coluna": "qt_total",
+      "agregacao": "contagem",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Maior Valor Registrado",
+      "coluna": "qt_total",
+      "agregacao": "maximo",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Operações Distintas",
+      "coluna": "de_operacao",
+      "agregacao": "contagem_distintos",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "titulo": "Volume Total por Centro de Custo e Sistema de Aplicação",
+      "agrupar_por": "cd_centro_custo",
+      "coluna_valor": "qt_total",
+      "agregacao": "soma",
+      "serie_por": "de_sist_aplicacao",
+      "ordem": "desc",
+      "tamanho": "grande",
+      "insight": "Concentração estrutural: os centros de custo com maior volume respondem pela maior parte do total. A legenda por sistema de aplicação evidencia o mix Terrestre vs. Aéreo em cada centro."
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "titulo": "Top 10 Operações por Volume",
+      "agrupar_por": "de_operacao",
+      "coluna_valor": "qt_total",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 10,
+      "insight": "As operações mais volumosas concentram grande parte do total — útil para priorizar monitoramento operacional."
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "titulo": "Proporção por Sistema de Aplicação (Terrestre vs. Aéreo)",
+      "agrupar_por": "de_sist_aplicacao",
+      "coluna_valor": "qt_total",
+      "agregacao": "soma",
+      "insight": "O sistema Terrestre responde pela expressiva maioria do volume total; o Aéreo representa parcela minoritária. Acompanhe mudanças de mix ao filtrar por instância ou período."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Volume — Instância 10",
+      "coluna": "qt_total",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "cd_instancia_x",
+          "operador": "=",
+          "valor": 10
+        }
+      ],
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Volume — Instância 20",
+      "coluna": "qt_total",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "cd_instancia_x",
+          "operador": "=",
+          "valor": 20
+        }
+      ],
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Visão Geral",
+      "titulo_aba": "Visão Geral",
+      "rotulo": "Volume — Instância 23",
+      "coluna": "qt_total",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "cd_instancia_x",
+          "operador": "=",
+          "valor": 23
+        }
+      ],
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo_aba": "Comparação entre Unidades",
+      "titulo": "Volume por Operação × Instância (Top 15)",
+      "agrupar_por": "de_operacao",
+      "coluna_valor": "qt_total",
+      "agregacao": "soma",
+      "serie_por": "cd_instancia_x",
+      "ordem": "desc",
+      "limite": 15,
+      "tamanho": "full",
+      "insight": "Comparação lado a lado do volume de cada operação entre as instâncias 10, 20 e 23. Barras ausentes indicam operações exclusivas de uma única instância — candidatas a revisão de nomenclatura."
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo_aba": "Comparação entre Unidades",
+      "titulo": "Matriz Instância × Operação (Heatmap de Volume)",
+      "colunas": [
+        "de_operacao",
+        "cd_instancia_x",
+        "qt_total"
+      ],
+      "insight": "Visão cruzada completa operação × instância. Células sem valor indicam ausência da operação naquela instância — lacunas operacionais ou diferenças de nomenclatura a investigar."
+    },
+    {
+      "tipo": "grafico_dispersao",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo_aba": "Comparação entre Unidades",
+      "titulo": "Dose Programada vs. Qt Total por Instância",
+      "coluna_x": "qt_dose_programada",
+      "coluna_y": "qt_total",
+      "agrupar_por": "cd_instancia_x",
+      "tamanho": "grande",
+      "insight": "Correlação Spearman 0,756 entre dose programada e qt_total. Pontos fora da nuvem principal indicam outliers potenciais; a separação por cor de instância revela se alguma opera com doses sistematicamente diferentes."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo_aba": "Comparação entre Unidades",
+      "titulo": "Volume por Centro de Custo × Instância",
+      "agrupar_por": "cd_centro_custo",
+      "coluna_valor": "qt_total",
+      "agregacao": "soma",
+      "serie_por": "cd_instancia_x",
+      "ordem": "desc",
+      "insight": "Permite verificar se a concentração observada no centro de custo 3005 (referência: ~71% do total) se repete em todas as instâncias ou é característica de uma unidade específica."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo_secao": "Evolução Mensal",
+      "titulo_aba": "Evolução Mensal",
+      "titulo": "Volume Mensal por Instância",
+      "agrupar_por": "dt_operacao",
+      "coluna_valor": "qt_total",
+      "agregacao": "soma",
+      "serie_por": "cd_instancia_x",
+      "ordenar_por": "dt_operacao",
+      "tamanho": "full",
+      "insight": "Rastreia tendência temporal por instância. Identifica picos sazonais (safra/entressafra), quedas abruptas e divergências entre instâncias ao longo do tempo."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Evolução Mensal",
+      "titulo_aba": "Evolução Mensal",
+      "titulo": "Volume Mensal por Sistema de Aplicação",
+      "agrupar_por": "dt_operacao",
+      "coluna_valor": "qt_total",
+      "agregacao": "soma",
+      "serie_por": "de_sist_aplicacao",
+      "ordenar_por": "dt_operacao",
+      "tamanho": "grande",
+      "insight": "Acompanha a evolução do mix Terrestre/Aéreo mês a mês. Mudanças na proporção das barras indicam alterações de padrão operacional."
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Evolução Mensal",
+      "titulo_aba": "Evolução Mensal",
+      "titulo": "Variação Mensal (MoM) — Volume e Contagem de Registros",
+      "colunas": [
+        "dt_operacao",
+        "qt_total",
+        "cd_instancia_x",
+        "de_operacao"
+      ],
+      "insight": "Detalhamento período a período para leitura precisa de crescimento ou queda. Aplique formatação condicional: variação positiva em verde, negativa em vermelho."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Processos Equivalentes",
+      "titulo_aba": "Processos Equivalentes",
+      "titulo": "Volume por Processo Equivalente × Instância",
+      "agrupar_por": "de_operacao",
+      "coluna_valor": "qt_total",
+      "agregacao": "soma",
+      "serie_por": "cd_instancia_x",
+      "ordem": "desc",
+      "tamanho": "full",
+      "insight": "Comparação do mesmo processo entre instâncias após remoção de prefixos (ang_/ivi_). Barras ausentes revelam lacunas operacionais ou divergências de nomenclatura que precisam de padronização."
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Processos Equivalentes",
+      "titulo_aba": "Processos Equivalentes",
+      "titulo": "Matriz Processo Equivalente × Instância — Detalhamento",
+      "colunas": [
+        "de_operacao",
+        "cd_instancia_x",
+        "qt_total",
+        "qt_dose_programada"
+      ],
+      "insight": "Auditoria detalhada de volume e dose por processo equivalente por instância. Células sem valor (instância não executa o processo) devem ser destacadas em laranja via formatação condicional."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "rotulo": "Registros com qt_total = 0",
+      "coluna": "qt_total",
+      "agregacao": "contagem",
+      "filtro": [
+        {
+          "coluna": "qt_total",
+          "operador": "=",
+          "valor": 0
+        }
+      ],
+      "nota": "Filtrar e exportar para revisão operacional",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "rotulo": "Dose Média (qt_dose_programada)",
+      "coluna": "qt_dose_programada",
+      "agregacao": "media",
+      "tamanho": "padrao"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "titulo": "Distribuição de qt_total por Faixa (Identificação de Outliers)",
+      "agrupar_por": "cd_instancia_x",
+      "coluna_valor": "qt_total",
+      "agregacao": "maximo",
+      "serie_por": "de_sist_aplicacao",
+      "tamanho": "grande",
+      "insight": "A amplitude de qt_total vai de ~0,00042 a 54.135.000 com mediana de apenas 24 — assimetria extrema. Use escala logarítmica para visualizar a distribuição completa. Linhas de referência recomendadas: percentil 75 = 112, percentil 90 = 416."
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Qualidade dos Dados",
+      "titulo_aba": "Qualidade dos Dados",
+      "titulo": "Registros Problemáticos — Zerados, Outliers e Vazão Nula",
+      "colunas": [
+        "dt_operacao",
+        "cd_instancia_x",
+        "de_operacao",
+        "cd_centro_custo",
+        "qt_dose_programada",
+        "qt_total",
+        "qt_vazao_programada",
+        "fg_captacao_servico"
+      ],
+      "insight": "Tabela de validação: qt_total = 0 (fundo vermelho), qt_vazao_programada nula (54,3% da base — ícone de alerta), qt_total > percentil 90 (416) em laranja, qt_total > 100.000 em vermelho escuro. Use para exportar e encaminhar para revisão."
+    }
+  ],
+  "filtro_interativo": [
+    {
+      "coluna": "cd_instancia_x",
+      "rotulo": "Instância / Unidade"
+    },
+    {
+      "coluna": "dt_operacao",
+      "rotulo": "Período de Operação"
+    },
+    {
+      "coluna": "de_sist_aplicacao",
+      "rotulo": "Sistema de Aplicação"
+    }
+  ]
+}
