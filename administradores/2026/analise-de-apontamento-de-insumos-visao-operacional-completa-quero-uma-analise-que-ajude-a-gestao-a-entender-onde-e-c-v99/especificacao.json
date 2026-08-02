@@ -1,0 +1,147 @@
+{
+  "componentes": [
+    {
+      "tipo": "hero_numero",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Volume Total de Insumos Aplicados",
+      "coluna": "qt_total",
+      "agregacao": "soma",
+      "nota": "90.402 registros • 3 unidades • período jan/2025–jul/2026",
+      "insight": "181,3 milhões de unidades aplicadas no período — distribuição extremamente assimétrica: mediana de apenas 24 unidades por apontamento contra média de 2.006, evidenciando que grandes lançamentos pontuais (água residual, plantio MPB) puxam o consolidado.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Volume — Unidade 20",
+      "coluna": "qt_total",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "cd_instancia_x",
+          "operador": "=",
+          "valor": "20"
+        }
+      ],
+      "nota": "79,6% do total",
+      "insight": "Unidade 20 concentra 144,3 milhões de unidades — 40× mais que a unidade 10, diferença estrutural puxada pela operação de água residual exclusiva dessa unidade."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Volume — Unidade 23",
+      "coluna": "qt_total",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "cd_instancia_x",
+          "operador": "=",
+          "valor": "23"
+        }
+      ],
+      "nota": "18,4% do total",
+      "insight": "Unidade 23 responde por 33,4 milhões — lidera em Plantio MPB (23,5 mi) mas tem aplicação de água residual muito menor, sugerindo infraestrutura de fertirrigação diferente da unidade 20."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Volume — Unidade 10",
+      "coluna": "qt_total",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "cd_instancia_x",
+          "operador": "=",
+          "valor": "10"
+        }
+      ],
+      "nota": "2,0% do total",
+      "insight": "Unidade 10 aplica apenas 3,6 mi de volume, mas registra 23.639 boletins — maior proporção de apontamentos por volume, operando com insumos de dose unitária muito menor."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Concentração: Onde Está o Volume",
+      "titulo": "Volume Aplicado por Centro de Custo (Top 20)",
+      "coluna_valor": "qt_total",
+      "agregacao": "soma",
+      "agrupar_por": "cd_centro_custo",
+      "ordem": "desc",
+      "limite": 20,
+      "destacar": "3005",
+      "cor": "primaria",
+      "insight": "CC 3005 concentra 128,9 milhões de unidades — 71,1% do total. Os três primeiros CCs (3005, 3017 e 3023) acumulam 95,5% do volume. Qualquer ineficiência no CC 3005 tem impacto desproporcional no consolidado.",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Concentração: Onde Está o Volume",
+      "titulo": "Participação dos 2 Insumos Dominantes no Volume Total",
+      "coluna_valor": "qt_total",
+      "agregacao": "soma",
+      "agrupar_por": "cd_insumo",
+      "limite": 3,
+      "insight": "Insumo 291731 (água residual) = 67,0% e insumo 368460 (MPB de plantio) = 23,4% — juntos dominam 90,4% de todo o volume. Erros de registro nesses dois insumos distorcem todo o consolidado; validação de boletim prioritária é recomendada."
+    },
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Divergência Volume × Frequência",
+      "insight": "As operações que mais movem VOLUME (Água Residual 1ª e 2ª aplicação = 66% do total) são quase invisíveis em número de boletins. Já '1ª Aplic F Org Trator-Hm' lidera em frequência com 9.803 registros — mais que o dobro do segundo colocado — mas responde por apenas 1,9% do volume. Essa dissociação deve guiar prioridades: automação de apontamento nas operações de alta frequência/baixo volume (F Org, Herbicidas) e precisão de lançamento nas de baixa frequência/alto volume (Água Residual, MPB)."
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Divergência Volume × Frequência",
+      "titulo": "Top 6 Operações por Volume Total Aplicado",
+      "coluna_valor": "qt_total",
+      "agregacao": "soma",
+      "agrupar_por": "de_operacao",
+      "ordem": "desc",
+      "limite": 6,
+      "insight": "As 3 primeiras operações (1ª e 2ª Aplic Água Residual + Plantio MPB) somam 89,6% do volume total. Nenhuma delas aparece entre as mais frequentes em número de apontamentos — evidência clara da dissociação volume/frequência."
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Divergência Volume × Frequência",
+      "titulo": "Top 6 Operações por Número de Apontamentos",
+      "coluna_valor": "qt_total",
+      "agregacao": "contagem",
+      "agrupar_por": "de_operacao",
+      "ordem": "desc",
+      "limite": 6,
+      "insight": "'1ª Aplic F Org Trator-Hm' lidera com 9.803 registros, seguida de Herbicida (5.965) e Herb Carreado (5.224) — operações de alta demanda administrativa que movem pouco volume unitário. São as candidatas prioritárias para automação de apontamento."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Variabilidade e Sistema de Aplicação",
+      "titulo": "Coeficiente de Variação por Operação (Principais Operações)",
+      "coluna_valor": "qt_total",
+      "agregacao": "coeficiente_variacao",
+      "agrupar_por": "de_operacao",
+      "ordem": "desc",
+      "limite": 10,
+      "destacar": "1ª Aplic F Org Trator-Hm",
+      "cor": "terciaria",
+      "insight": "'1ª Aplic F Org Trator-Hm' (CV=2,80, 9.803 registros) e 'Plantio Mecanizado MPB-Hm' (CV=4,23) combinam alta frequência ou alto volume com dispersão elevada — sinal de falta de padronização de dose/talhão que merece ação imediata. Adubação Cobertura-Ha tem o maior CV (11,03), possivelmente por mistura de tipos distintos sob o mesmo código.",
+      "tamanho": "grande"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Variabilidade e Sistema de Aplicação",
+      "titulo": "Volume Aplicado por Sistema de Aplicação e Unidade",
+      "coluna_valor": "qt_total",
+      "agregacao": "soma",
+      "agrupar_por": "de_sist_aplicacao",
+      "serie_por": "cd_instancia_x",
+      "insight": "Aplicação terrestre = 177,5 mi (97,9%) vs. aérea = 3,8 mi (2,1%). O desequilíbrio é estrutural em todas as unidades — as operações de maior volume (água residual, plantio MPB) são 100% terrestres. A aplicação aérea (controle biológico de broca, defensivos) é minoritária e coerente com o perfil operacional da cana."
+    }
+  ],
+  "filtro_interativo": [
+    {
+      "coluna": "cd_instancia_x",
+      "rotulo": "Unidade"
+    },
+    {
+      "coluna": "cd_centro_custo",
+      "rotulo": "Centro de Custo"
+    }
+  ]
+}
