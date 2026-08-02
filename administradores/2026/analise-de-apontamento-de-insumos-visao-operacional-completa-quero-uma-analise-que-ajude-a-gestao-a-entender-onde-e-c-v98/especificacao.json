@@ -1,0 +1,175 @@
+{
+  "componentes": [
+    {
+      "tipo": "hero_numero",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Volume Total de Insumos Aplicados",
+      "coluna": "qt_total",
+      "agregacao": "soma",
+      "nota": "Jan/2025 – Jun/2026 · 90.402 apontamentos · 3 unidades operacionais",
+      "insight": "181,3 milhões de unidades aplicadas em 18 meses — mas a distribuição é extremamente assimétrica: mediana de 24 unidades por registro contra média de 2.005, sinalizando que poucos eventos de altíssimo volume (água residuária e plantio MPB) determinam quase todo o total.",
+      "tamanho": "full"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Registros com Valor",
+      "coluna": "qt_total",
+      "agregacao": "contagem",
+      "nota": "Apenas 2 nulos — qualidade de dados excelente"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Insumos Distintos",
+      "coluna": "cd_insumo",
+      "agregacao": "contagem_distintos",
+      "nota": "2 insumos = 90,4% do volume total"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Centros de Custo Ativos",
+      "coluna": "cd_centro_custo",
+      "agregacao": "contagem_distintos",
+      "nota": "3 centros = 95,5% do volume total"
+    },
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Panorama Geral",
+      "insight": "3 operações (Água Residuária 1ª+2ª + Plantio MPB) concentram 89,6% do volume total, 2 insumos somam 90,4% e 1 unidade (Unidade 20) responde por 79,6% — retirar essas camadas muda completamente o perfil operacional que a gestão precisa enxergar."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Concentração: Onde o Volume se Acumula",
+      "titulo": "Volume por Centro de Custo (Top 10)",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_centro_custo",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 10,
+      "destacar": "3005",
+      "cor": "primaria",
+      "tamanho": "grande",
+      "insight": "O centro 3005 concentra 71,1% do volume total (128,9 mi de unidades). Somados os três maiores centros (3005, 3017, 3023), chegamos a 95,5% do total — distribuição Pareto clássica onde os demais 12+ centros dividem menos de 5%."
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Concentração: Onde o Volume se Acumula",
+      "titulo": "Top 5 Insumos por Volume",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_insumo",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 5,
+      "insight": "O insumo 291731 sozinho representa 67% do volume total (121,5 mi); o insumo 368460 acrescenta 23,4% (42,5 mi). Juntos, dois insumos somam 90,4% de tudo — muito provavelmente a água residuária em suas duas aplicações, medida em m³."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Concentração: Onde o Volume se Acumula",
+      "titulo": "Top 10 Operações por Volume Total vs. Frequência de Apontamentos",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_operacao",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 10,
+      "cor": "primaria",
+      "insight": "As 3 operações de maior volume (1ª e 2ª Aplic Água Resid. + Plantio MPB) somam 89,6% do total, mas quase não aparecem entre as mais frequentes — sinal de que são eventos raros e massivos. A operação mais frequente (1ª Aplic F Org Trator-Hm, 9.803 registros) tem participação marginal no volume total."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Concentração: Onde o Volume se Acumula",
+      "titulo": "Top 10 Operações por Frequência de Apontamentos",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_operacao",
+      "agregacao": "contagem",
+      "ordem": "desc",
+      "limite": 10,
+      "cor": "secundaria",
+      "destacar": "1ª Aplic F Org Trator-Hm",
+      "insight": "A divergência entre as duas listas é um achado estrutural: operações de alto impacto rotineiro (defensivos, herbicidas, fertilizantes) acumulam milhares de apontamentos de baixo volume unitário — é nesse segundo nível que a gestão operacional diária acontece."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo": "Volume Total por Unidade Operacional",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_instancia_x",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "destacar": "20",
+      "cor": "primaria",
+      "tamanho": "grande",
+      "insight": "A Unidade 20 concentra 79,6% do volume (144,3 mi), mas tem contagem intermediária de registros (30.319). A Unidade 23 lidera em apontamentos (36.332) mas representa só 18,4% do volume. A Unidade 10 tem 1,99% do volume — a assimetria é estrutural, explicada pela infraestrutura de água residuária exclusiva da Unidade 20."
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo": "Participação no Volume Total por Unidade Operacional",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_instancia_x",
+      "agregacao": "soma",
+      "insight": "Unidade 20 domina com 79,6% do volume total (144,3 mi), seguida pela Unidade 23 com 18,4% (33,4 mi) e Unidade 10 com apenas 2,0% (3,6 mi) — distribuição altamente concentrada em uma única unidade."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo": "Variabilidade Operacional por Unidade (Coeficiente de Variação de qt_total)",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_instancia_x",
+      "agregacao": "coeficiente_variacao",
+      "ordem": "desc",
+      "cor": "terciaria",
+      "destacar": "20",
+      "insight": "A Unidade 20 tem CV de 91,3 — quase 3x o da Unidade 23 (32,9) e 10x o da Unidade 10 (9,2). Isso não é só escala: a Unidade 20 concentra operações de altíssimo volume e alta dispersão. A Unidade 10 apresenta o perfil operacional mais homogêneo e consistente."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparação entre Unidades",
+      "titulo": "Volume por Sistema de Aplicação e Unidade",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_sist_aplicacao",
+      "serie_por": "cd_instancia_x",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "insight": "A aplicação terrestre domina em todas as unidades: 97,9% do volume global (177,5 mi) é terrestre contra 2,1% aéreo (3,8 mi). A Unidade 20 aplica 142,4 mi terrestres; a via aérea, quando existe, é cirúrgica (controle biológico, adubação foliar) e marginal em volume dado que as unidades de maior peso são m³ de água residuária."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Variabilidade Operacional — Onde Padronizar",
+      "titulo": "Coeficiente de Variação por Operação (Top 10 mais Variáveis)",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_operacao",
+      "agregacao": "coeficiente_variacao",
+      "ordem": "desc",
+      "limite": 10,
+      "destacar": "Adubação Cobertura - Ha",
+      "cor": "quaternaria",
+      "tamanho": "grande",
+      "insight": "Adubação Cobertura - Ha lidera com CV 11,03 — o mais alto de todos. As operações de água residuária (CV >8) e plantio mecanizado (CV >4) têm variabilidade alta sobre volumes massivos, o que se traduz em desvios absolutos enormes. A operação mais frequente do dataset (1ª Aplic F Org Trator, 9.803 registros) tem CV 2,80 — alta para uma rotina de tamanha frequência, não é artefato de amostra pequena."
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Variabilidade Operacional — Onde Padronizar",
+      "titulo": "Detalhamento: Operações Críticas por Volume e Variabilidade",
+      "colunas": [
+        "de_operacao",
+        "qt_total",
+        "qt_dose_programada"
+      ],
+      "ordem": "desc",
+      "ordenar_por": "qt_total",
+      "insight": "Visão linha a linha para cruzar volume realizado e dose programada — correlação de Spearman 0,756 indica aderência razoável no geral, mas a dispersão elevada (CV da dose programada: 88,84) revela que para operações específicas de alto volume o planejamento pode divergir muito da execução."
+    }
+  ],
+  "filtro_interativo": [
+    {
+      "coluna": "cd_instancia_x",
+      "rotulo": "Unidade Operacional"
+    },
+    {
+      "coluna": "de_sist_aplicacao",
+      "rotulo": "Sistema de Aplicação"
+    }
+  ]
+}
