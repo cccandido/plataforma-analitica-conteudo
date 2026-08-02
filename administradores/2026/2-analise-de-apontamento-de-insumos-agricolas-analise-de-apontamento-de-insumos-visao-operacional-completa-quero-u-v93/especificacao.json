@@ -1,0 +1,168 @@
+{
+  "componentes": [
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Ideia Central",
+      "insight": "O volume de insumos está concentrado em 3 centros de custo (95% do total), 2 insumos (90%) e 3 operações (89%). A unidade 20 responde sozinha por 79,7% do volume — puxada pela aplicação de água residual. O desafio operacional central não é de volume, mas de padronização: CC 3005 tem CV interno de 138,9 e o Plantio MPB-Hm tem CV = 4,2 sobre insumo de alto custo unitário."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Volume Total Aplicado",
+      "coluna": "qt_total",
+      "agregacao": "soma",
+      "nota": "Unidades heterogêneas: m³ de água residual + doses de fitossanitários + unidades de muda"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Total de Apontamentos",
+      "coluna": "sk_apto_insumo",
+      "agregacao": "contagem"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Insumos Distintos",
+      "coluna": "cd_insumo",
+      "agregacao": "contagem_distintos"
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Panorama Geral",
+      "rotulo": "Centros de Custo Ativos",
+      "coluna": "cd_centro_custo",
+      "agregacao": "contagem_distintos"
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Concentração de Volume",
+      "titulo": "Volume Aplicado por Centro de Custo",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_centro_custo",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "destacar": "3005",
+      "cor": "primaria",
+      "tamanho": "grande",
+      "insight": "CC 3005 concentra 71,1% do volume total (128,9 mi de unidades) e 62% dos registros. Os três maiores centros (3005, 3017, 3023) somam 95,4% do volume — os demais 17+ centros dividem apenas 4,6%.",
+      "limite": 10
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Concentração de Volume",
+      "titulo": "Top 5 Insumos por Volume Aplicado",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_insumo",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 5,
+      "insight": "Dois insumos (291731 e 368460) somam 90,4% de todo o volume: o insumo 291731 representa 67% (1ª Aplic Água Resid.) e o 368460 representa 23,4% (Plantio MPB-Hm). Os 395 insumos restantes dividem apenas 9,6%."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparação Entre Unidades",
+      "titulo": "Volume Total por Unidade (cd_instancia_x)",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_instancia_x",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "destacar": "20",
+      "cor": "secundaria",
+      "tamanho": "grande",
+      "insight": "Unidade 20 responde por 79,7% do volume (144,3 mi) com menos registros que a unidade 23. Unidade 23 tem 18,4% do volume e mais registros (36.332), enquanto a unidade 10 tem 26% dos registros mas apenas 2% do volume — perfil de fitossanitários de baixa dose unitária."
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Comparação Entre Unidades",
+      "titulo": "Participação de Cada Unidade no Volume Total",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_instancia_x",
+      "agregacao": "soma",
+      "insight": "Unidade 20 domina com 79,6% do volume total (144,3 mi), seguida pela unidade 23 com 18,4% (33,4 mi) e unidade 10 com apenas 2,0% (3,6 mi) — concentração expressiva em uma única unidade, reflexo das aplicações massivas de água residual."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Comparação Entre Unidades",
+      "titulo": "Apontamentos por Unidade vs. Volume — Comparação de Perfil",
+      "coluna_valor": "sk_apto_insumo",
+      "agrupar_por": "cd_instancia_x",
+      "agregacao": "contagem",
+      "ordem": "desc",
+      "cor": "terciaria",
+      "insight": "A inversão entre ranking de registros (23 > 10 > 20) e ranking de volume (20 > 23 > 10) revela perfis operacionais radicalmente distintos: unidade 10 executa proteção fitossanitária intensa de baixo volume; unidade 20 executa poucas operações massivas de água residual."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Sistema de Aplicação",
+      "titulo": "Volume por Sistema de Aplicação (Terrestre vs. Aéreo)",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_sist_aplicacao",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "destacar": "Terrestre",
+      "cor": "primaria",
+      "insight": "Sistema terrestre corresponde a 97,9% do volume total (177,5 mi de unidades). A aplicação aérea (2,1% — 3,8 mi) é usada em controle biológico e inseticidas de baixa dose. O desequilíbrio é estrutural e esperado no perfil canavieiro, não representa anomalia."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Operações: Divergência Entre Volume e Frequência",
+      "titulo": "Top 10 Operações por Volume Aplicado",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_operacao",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "cor": "primaria",
+      "tamanho": "grande",
+      "limite": 10,
+      "insight": "Apenas 3 operações somam 89,5% do volume: 1ª Aplic Água Resid. (36,6%), 2ª Aplic Água Resid. (29,6%) e Plantio Mecanizado MPB-Hm (23,4%). As operações mais frequentes (herbicidas, broca, adubação orgânica) não aparecem no top de volume — inversão completa entre frequência e peso volumétrico."
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Operações: Divergência Entre Volume e Frequência",
+      "titulo": "Top 5 Operações Mais Frequentes (Nº de Apontamentos)",
+      "coluna_valor": "sk_apto_insumo",
+      "agrupar_por": "de_operacao",
+      "agregacao": "contagem",
+      "ordem": "desc",
+      "limite": 5,
+      "insight": "'1ª Aplic F Org Trator-Hm' lidera com 9.803 registros mas representa apenas 1,9% do volume. Herbicidas e aplicações de broca dominam em frequência — são operações de rotina com baixa dose unitária, exigindo controle de uniformidade de dose, não de volume total."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Variabilidade Operacional — Onde Padronizar",
+      "titulo": "Coeficiente de Variação por Centro de Custo",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_centro_custo",
+      "agregacao": "coeficiente_variacao",
+      "ordem": "desc",
+      "destacar": "3005",
+      "cor": "quaternaria",
+      "tamanho": "grande",
+      "insight": "CC 3005 tem o maior CV de todos os centros (138,9) — reflexo da coexistência de aplicações massivas de água residual e doses mínimas de fitossanitários no mesmo centro. CV interno alto não é erro, mas exige leitura separada por tipo de operação. O CC 3023 aparece em segundo (CV = 14,2)."
+    },
+    {
+      "tipo": "tabela",
+      "titulo_secao": "Variabilidade Operacional — Onde Padronizar",
+      "titulo": "Variabilidade por Operação de Alto Impacto (CV e Volume)",
+      "colunas": [
+        "de_operacao",
+        "qt_total",
+        "sk_apto_insumo"
+      ],
+      "ordem": "desc",
+      "ordenar_por": "qt_total",
+      "insight": "Operações críticas por variabilidade: 'Adubação Cobertura-Ha' (CV=11,0), '1ª Aplic Água Resid.' (CV=10,2), 'Plantio Mecanizado MPB-Hm' (CV=4,2 sobre 42,5 mi de unidades de muda de alto custo). Um CV de 4,2 em plantio MPB pode indicar inconsistência de população de plantas — impacto direto em produtividade da soqueira."
+    }
+  ],
+  "filtro_interativo": [
+    {
+      "coluna": "cd_instancia_x",
+      "rotulo": "Unidade"
+    },
+    {
+      "coluna": "cd_centro_custo",
+      "rotulo": "Centro de Custo"
+    }
+  ]
+}
