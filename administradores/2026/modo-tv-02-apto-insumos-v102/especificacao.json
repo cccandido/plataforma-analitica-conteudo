@@ -1,0 +1,72 @@
+{
+  "componentes": [
+    {
+      "tipo": "hero_numero",
+      "titulo_secao": "Panorama Geral",
+      "coluna": "qt_total",
+      "agregacao": "soma",
+      "rotulo": "Volume Total de Insumos Aplicados",
+      "nota": "90.402 registros · 3 unidades · 18 meses (jan/2025–jun/2026)",
+      "tamanho": "full",
+      "insight": "181,3 milhões de unidades no período, mas a distribuição é extremamente assimétrica: mediana de apenas 24 vs. média de 2.006 — reflexo da coexistência de operações de micro-dose com eventos massivos de Água Residual e Plantio MPB."
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Concentração por Unidade e Sistema de Aplicação",
+      "titulo": "Volume por Unidade Operacional",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_instancia_x",
+      "agregacao": "soma",
+      "insight": "A unidade 20 sozinha responde por 79,6% do volume total (144,3 mi), seguida pela 23 com 18,4% (33,4 mi) e pela 10 com apenas 2,0% (3,6 mi). A unidade 10 tem 5.689 apontamentos mas volume residual — executa operações de baixo volume unitário, enquanto a 20 domina pelas aplicações de Água Residual e Plantio MPB."
+    },
+    {
+      "tipo": "grafico_pizza",
+      "titulo_secao": "Concentração por Unidade e Sistema de Aplicação",
+      "titulo": "Volume por Sistema de Aplicação",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_sist_aplicacao",
+      "agregacao": "soma",
+      "cor": "secundaria",
+      "insight": "Sistema Terrestre representa 97,9% do volume (177,5 mi), Aéreo apenas 2,1% (3,8 mi). A proporção é consistente entre as três unidades e reflete a natureza das operações dominantes — Água Residual e Plantio MPB são inerentemente terrestres, não uma subexploração do modal aéreo."
+    },
+    {
+      "tipo": "ranking",
+      "titulo_secao": "Onde o Volume se Concentra",
+      "titulo": "Top Centros de Custo por Volume (CC 3005 concentra 71% do total)",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "cd_centro_custo",
+      "agregacao": "soma",
+      "ordem": "desc",
+      "limite": 7,
+      "insight": "CC 3005 acumula 128,9 mi de unidades (71,1%) e 62% dos apontamentos — é o coração operacional da base. CC 3017 exibe anomalia: 17% do volume com apenas 3,6% dos registros, implicando volume médio por apontamento muito superior à média, concentrando operações de Plantio MPB (média de 68.768/apto). Os três primeiros CCs somam 95,5% do volume."
+    },
+    {
+      "tipo": "destaque",
+      "titulo_secao": "Onde o Volume se Concentra",
+      "insight": "Divergência crítica — volume vs. frequência: as 3 operações que mais pesam em volume (1ª e 2ª Aplic Água Residual + Plantio MPB) somam 89,5% do total em poucos centenas de registros. Já as 5 mais frequentes (Fertilizante Orgânico, Herbicidas, Broca) moldam a rotina diária com milhares de apontamentos mas representam menos de 20% do volume. Planejamento logístico e de insumos deve focar nas aplicações de Água Residual e MPB; gestão operacional do dia a dia responde às demais."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo_secao": "Variabilidade Operacional — Onde Padronizar",
+      "titulo": "Coeficiente de Variação por Operação (CV — quanto maior, mais irregular)",
+      "coluna_valor": "qt_total",
+      "agrupar_por": "de_operacao",
+      "agregacao": "coeficiente_variacao",
+      "ordem": "desc",
+      "destacar": "Plantio Mecanizado - Hm",
+      "tamanho": "full",
+      "insight": "Plantio Mecanizado (CV 7,03 em ~4.000 registros robustos) é a principal oportunidade de padronização — variabilidade real de processo, não ruído amostral, com impacto direto no stand de plantas. Água Residual 1ª Aplic (CV 10,19, máximo de 54 mi vs. mediana 60,6) justifica auditoria de lançamento para verificar registros de naturezas incomparáveis misturados."
+    }
+  ],
+  "filtro_interativo": [
+    {
+      "coluna": "cd_instancia_x",
+      "rotulo": "Unidade Operacional"
+    },
+    {
+      "coluna": "de_sist_aplicacao",
+      "rotulo": "Sistema de Aplicação"
+    }
+  ],
+  "modo_exibicao": "tv"
+}
