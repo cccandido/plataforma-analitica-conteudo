@@ -1,0 +1,791 @@
+{
+  "componentes": [
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Recepção e Extração — Consumo Massa (kg)",
+      "titulo_secao": "Massa — Recepção e Extração",
+      "titulo_aba": "Massa",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_recep_extr"
+        },
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        }
+      ],
+      "insight": "Consumo bruto mensal (soma, kg) de Recepção e Extração — Angélica vs Ivinhema. Meses sem registro aparecem como ausência de dado, não como zero. NOTA: na base real, a coluna 'tipo' contém os identificadores de grupo+usina e 'aba' contém Massa/Especifico (inversão em relação ao schema do enunciado)."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Recepção e Extração — Consumo Massa (L)",
+      "titulo_secao": "Massa — Recepção e Extração",
+      "titulo_aba": "Massa",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_recep_extr"
+        },
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "L"
+        }
+      ],
+      "insight": "Consumo bruto mensal (soma, L) de Recepção e Extração — Angélica vs Ivinhema. Mantido separado de kg conforme regra de não misturar unidades distintas."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Tratamento do Caldo — Consumo Massa (kg)",
+      "titulo_secao": "Massa — Tratamento do Caldo",
+      "titulo_aba": "Massa",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_trat_caldo"
+        }
+      ],
+      "insight": "Consumo bruto mensal (kg) — Angélica tem dados a partir de mês mais tardio (5 registros vs 8 de Ivinhema); meses sem dado exibidos como ausência."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Fermentação — Consumo Massa (kg)",
+      "titulo_secao": "Massa — Fermentação",
+      "titulo_aba": "Massa",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_fermentacao"
+        }
+      ],
+      "insight": "Consumo bruto mensal (kg) de Fermentação — Angélica vs Ivinhema, cada usina com 8 registros no período 2026."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Destilação — Consumo Massa (kg)",
+      "titulo_secao": "Massa — Destilação",
+      "titulo_aba": "Massa",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_destilacao"
+        }
+      ],
+      "insight": "Consumo bruto mensal (kg) de Destilação — Angélica vs Ivinhema, 8 registros cada."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Fábrica de Açúcar — Consumo Massa (kg)",
+      "titulo_secao": "Massa — Fábrica de Açúcar / Tratamento de Água",
+      "titulo_aba": "Massa",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_fab_acucar"
+        }
+      ],
+      "insight": "Consumo bruto mensal (kg) — Angélica tem 4 registros, Ivinhema 7; meses ausentes exibidos como ausência de dado."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Tratamento de Água — Consumo Massa (kg)",
+      "titulo_secao": "Massa — Fábrica de Açúcar / Tratamento de Água",
+      "titulo_aba": "Massa",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_trat_agua"
+        }
+      ],
+      "insight": "Consumo bruto mensal (kg) de Tratamento de Água — Angélica vs Ivinhema, 8 registros cada."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Geração de Vapor — Consumo Massa (kg) ⚠ conversão t→kg para Ivinhema",
+      "titulo_secao": "Massa — Geração de Vapor / Energia / ETE / Água Potável",
+      "titulo_aba": "Massa",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_ger_vapor"
+        }
+      ],
+      "insight": "LIMITAÇÃO: Ivinhema possui 3 registros em toneladas (471 t) que deveriam ser convertidos para kg (×1000) antes de somar com os 8 registros em kg (60.440,69 kg). A plataforma não suporta campo calculado inline — recomenda-se criar coluna derivada 'valor_kg_normalizado' na view/tabela fonte aplicando CASE WHEN unidade_medida='t' THEN soma_vl_variavel*1000 ELSE soma_vl_variavel END."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Geração de Energia — Consumo Massa (kg)",
+      "titulo_secao": "Massa — Geração de Vapor / Energia / ETE / Água Potável",
+      "titulo_aba": "Massa",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_ger_energia"
+        }
+      ],
+      "insight": "Consumo bruto mensal (kg) de Geração de Energia — Angélica e Ivinhema com 7 registros cada."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "ETE — Consumo Massa (kg)",
+      "titulo_secao": "Massa — Geração de Vapor / Energia / ETE / Água Potável",
+      "titulo_aba": "Massa",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_ete"
+        }
+      ],
+      "insight": "Consumo bruto mensal (kg) de ETE — Angélica e Ivinhema com 5 registros cada."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Água Potável — Consumo Massa (kg)",
+      "titulo_secao": "Massa — Geração de Vapor / Energia / ETE / Água Potável",
+      "titulo_aba": "Massa",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "agua_potavel"
+        },
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        }
+      ],
+      "insight": "Série única sem divisão por usina — campo 'unidade' é nulo para água potável. 6 registros disponíveis em 2026."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Recepção e Extração — Consumo Específico (g/t)",
+      "titulo_secao": "Específico — Recepção e Extração",
+      "titulo_aba": "Específico",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_recep_extr"
+        },
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": ">",
+          "valor": 0
+        }
+      ],
+      "insight": "Consumo específico mensal (média, g/t) de Recepção e Extração — zeros excluídos da média conforme regra. Angélica vs Ivinhema, 8 registros cada."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Tratamento do Caldo — Consumo Específico (g/t)",
+      "titulo_secao": "Específico — Tratamento do Caldo",
+      "titulo_aba": "Específico",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_trat_caldo"
+        },
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": ">",
+          "valor": 0
+        }
+      ],
+      "insight": "Consumo específico mensal (média, g/t) de Tratamento do Caldo — zeros excluídos; Angélica com menos meses de dado que Ivinhema."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Fermentação — Consumo Específico (g/L)",
+      "titulo_secao": "Específico — Fermentação",
+      "titulo_aba": "Específico",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/L"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_fermentacao"
+        },
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": ">",
+          "valor": 0
+        }
+      ],
+      "insight": "Consumo específico mensal (média, g/L) de Fermentação — g/L mantido separado de g/m³ (regra de não misturar unidades). Angélica e Ivinhema com 10 registros cada."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Fermentação — Consumo Específico (g/m³)",
+      "titulo_secao": "Específico — Fermentação",
+      "titulo_aba": "Específico",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/m³"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_fermentacao"
+        },
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": ">",
+          "valor": 0
+        }
+      ],
+      "insight": "Consumo específico mensal (média, g/m³) de Fermentação — componente separado de g/L conforme regra 1. Ambas usinas com 8 registros."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Destilação — Consumo Específico (g/t)",
+      "titulo_secao": "Específico — Destilação",
+      "titulo_aba": "Específico",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_destilacao"
+        },
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": ">",
+          "valor": 0
+        }
+      ],
+      "insight": "Consumo específico mensal (média, g/t) de Destilação — única unidade com dados bilaterais (Angélica e Ivinhema). g/L e g/m³ existem somente para Ivinhema (ver componentes dedicados)."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Destilação — Consumo Específico (g/L) [somente Ivinhema]",
+      "titulo_secao": "Específico — Destilação",
+      "titulo_aba": "Específico",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ivi_destilacao"
+        },
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/L"
+        },
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": ">",
+          "valor": 0
+        }
+      ],
+      "insight": "LIMITAÇÃO: Angélica não possui dados de g/L para Destilação — série única de Ivinhema. Comparação bilateral não é possível com a base atual."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Destilação — Consumo Específico (g/m³) [somente Ivinhema]",
+      "titulo_secao": "Específico — Destilação",
+      "titulo_aba": "Específico",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ivi_destilacao"
+        },
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/m³"
+        },
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": ">",
+          "valor": 0
+        }
+      ],
+      "insight": "LIMITAÇÃO: Angélica não possui dados de g/m³ para Destilação — série única de Ivinhema, 8 registros."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Fábrica de Açúcar — Consumo Específico (g/t)",
+      "titulo_secao": "Específico — Fábrica de Açúcar / Tratamento de Água",
+      "titulo_aba": "Específico",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_fab_acucar"
+        },
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": ">",
+          "valor": 0
+        }
+      ],
+      "insight": "Consumo específico mensal (média, g/t) de Fábrica de Açúcar — Angélica com 4 registros, Ivinhema com 7; meses ausentes exibidos como ausência."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Tratamento de Água — Consumo Específico (g/t)",
+      "titulo_secao": "Específico — Fábrica de Açúcar / Tratamento de Água",
+      "titulo_aba": "Específico",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_trat_agua"
+        },
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": ">",
+          "valor": 0
+        }
+      ],
+      "insight": "Consumo específico mensal (média, g/t) de Tratamento de Água — Angélica vs Ivinhema, 8 registros cada."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Geração de Vapor — Consumo Específico (g/t)",
+      "titulo_secao": "Específico — Geração de Vapor / Energia / ETE / Água Potável",
+      "titulo_aba": "Específico",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_ger_vapor"
+        },
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": ">",
+          "valor": 0
+        }
+      ],
+      "insight": "Consumo específico mensal (média, g/t) de Geração de Vapor — a conversão t→kg da Regra 2 aplica-se apenas à Massa; o Específico deste grupo só tem g/t."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Geração de Energia — Consumo Específico (g/t)",
+      "titulo_secao": "Específico — Geração de Vapor / Energia / ETE / Água Potável",
+      "titulo_aba": "Específico",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_ger_energia"
+        },
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": ">",
+          "valor": 0
+        }
+      ],
+      "insight": "Consumo específico mensal (média, g/t) — Angélica tem 1 registro com valor = 0 (mês 1/2026) corretamente excluído da média pelo filtro > 0. Angélica 9 registros fonte, Ivinhema 6."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "ETE — Consumo Específico (g/t)",
+      "titulo_secao": "Específico — Geração de Vapor / Energia / ETE / Água Potável",
+      "titulo_aba": "Específico",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_ete"
+        },
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": ">",
+          "valor": 0
+        }
+      ],
+      "insight": "Consumo específico mensal (média, g/t) de ETE — Angélica 7 registros, Ivinhema 5."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Água Potável — Consumo Específico (g/t)",
+      "titulo_secao": "Específico — Geração de Vapor / Energia / ETE / Água Potável",
+      "titulo_aba": "Específico",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "ordem": "asc",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "agua_potavel"
+        },
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "soma_vl_variavel",
+          "operador": ">",
+          "valor": 0
+        }
+      ],
+      "insight": "Série única sem divisão por usina — campo 'unidade' é nulo para água potável. Média excluindo zeros, 6 registros disponíveis."
+    }
+  ],
+  "filtro_interativo": [
+    {
+      "coluna": "unidade",
+      "rotulo": "Usina"
+    },
+    {
+      "coluna": "mes_analise",
+      "rotulo": "Mês"
+    }
+  ],
+  "modo_exibicao": "normal"
+}
