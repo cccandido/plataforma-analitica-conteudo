@@ -1,0 +1,2132 @@
+{
+  "componentes": [
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Recepção e Extração — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Recepção e Extração",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ivi_recep_extr"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Ivinhema consome consistentemente 3x–5x mais insumo (kg) que Angélica na Recepção e Extração ao longo de todos os meses — a divergência é estrutural e não pontual. Meses sem registro aparecem como gap de dado."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Recepção e Extração — Evolução Mensal (kg) — Angélica",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Recepção e Extração",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ang_recep_extr"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Componente auxiliar — ver gráfico acima para comparação Ivinhema vs Angélica em kg."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Recepção e Extração — Total Acumulado por Usina (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Recepção e Extração",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Ivinhema acumula entre 3x e 5x o volume de Angélica em kg no período analisado."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Recepção e Extração — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Recepção e Extração",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês para Ivinhema e Angélica em kg — jan a ago com cobertura densa; out e dez com dados incompletos."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Recepção e Extração — Evolução Mensal (L)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Recepção e Extração — L",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "L"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Em litros, Ivinhema e Angélica têm magnitudes similares na Recepção e Extração — contraste com a disparidade em kg, sugerindo insumos quimicamente distintos nos dois subconjuntos."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Recepção e Extração — Total Acumulado por Usina (L)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Recepção e Extração — L",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "L"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Totais acumulados em L por usina para Recepção e Extração."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Recepção e Extração — Detalhe Mensal (L)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Recepção e Extração — L",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "L"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês em litros para ambas as usinas."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Tratamento do Caldo — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Tratamento do Caldo",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "tamanho": "grande",
+      "insight": "Maior grupo em consumo bruto absoluto. Ivinhema supera Angélica de 10x a 100x em kg — Angélica só aparece a partir de março com volumes muito menores. Ivinhema atinge pico de ~2,26 M kg em maio."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Tratamento do Caldo — Total Acumulado por Usina (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Tratamento do Caldo",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "destacar": "Ivinhema",
+      "insight": "Ivinhema acumula volume ordens de magnitude acima de Angélica. A cobertura de Angélica começa em março, então sua soma inclui apenas 6 meses."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Tratamento do Caldo — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Tratamento do Caldo",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Angélica não tem registros em janeiro e fevereiro — esses meses aparecem como ausência de dado."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Fermentação — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Fermentação",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "As duas usinas são quase espelho — diferença menor que 1% em todos os meses. Esse padrão pode indicar o mesmo insumo lançado em espelho ou receita idêntica de processo."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Fermentação — Total Acumulado por Usina (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Fermentação",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Totais praticamente idênticos entre as usinas — segundo maior grupo em volume bruto, na casa de milhões de kg por mês."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Fermentação — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Fermentação",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Diferença inferior a 1% entre usinas em todos os meses — padrão de lançamento espelhado merece verificação operacional."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Destilação — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Destilação",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Assim como a Fermentação, as duas usinas apresentam volumes praticamente idênticos mês a mês (diferença < 1%). Pico compartilhado em abril (~214 mil kg)."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Destilação — Total Acumulado por Usina (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Destilação",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Totais acumulados equivalentes entre as usinas — padrão espelho mantido ao longo da safra."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Destilação — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Destilação",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês — diferenças mínimas entre usinas em todos os registros disponíveis."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Fábrica de Açúcar — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Fábrica de Açúcar",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Ivinhema tem cobertura mais ampla e consumo maior em abril-maio. Angélica tem registros ausentes em vários meses — possivelmente grupo não operava (entressafra de açúcar)."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Fábrica de Açúcar — Total Acumulado por Usina (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Fábrica de Açúcar",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Totais acumulados por usina — considerar que Angélica tem menos meses com dados, o que subestima seu acumulado."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Fábrica de Açúcar — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Fábrica de Açúcar",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Meses sem registro para Angélica indicam possível não-operação do grupo naquele período."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Tratamento de Água — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Tratamento de Água",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Valores idênticos entre usinas em jan, fev, abr e ago — anomalia que pode indicar lançamento espelhado ou insumo compartilhado. Divergência real apenas em junho (Ivinhema 23.920 vs Angélica 15.631 kg, ~35% acima)."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Tratamento de Água — Total Acumulado por Usina (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Tratamento de Água",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Totais próximos entre usinas — a diferença acumulada é pequena, concentrada no mês de junho."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Tratamento de Água — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Tratamento de Água",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês — valores idênticos em múltiplos meses merecem verificação com a equipe de operações."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Geração de Vapor — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Geração de Vapor",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Valores 100% idênticos entre Ivinhema e Angélica em todos os meses — padrão de lançamento espelhado mais evidente desta análise. Recomenda-se verificação operacional."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Geração de Vapor — Total Acumulado por Usina (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Geração de Vapor",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Totais acumulados idênticos — reforça hipótese de insumo compartilhado ou lançamento duplicado."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Geração de Vapor — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Geração de Vapor",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês — coincidência total entre usinas em todos os registros."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Geração de Vapor — Evolução Mensal (t) — Ivinhema",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Geração de Vapor — t",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "t"
+        },
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Ivinhema"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Ivinhema possui 3 registros em toneladas para Geração de Vapor — Angélica não tem registros nesta unidade. Série única, cobertura parcial."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Geração de Vapor — Total Acumulado (t) — Ivinhema",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Geração de Vapor — t",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "t"
+        },
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Ivinhema"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Total acumulado em toneladas exclusivo de Ivinhema — não comparável com Angélica por ausência de dados nessa unidade."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Geração de Vapor — Detalhe Mensal (t) — Ivinhema",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Geração de Vapor — t",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "t"
+        },
+        {
+          "coluna": "unidade",
+          "operador": "=",
+          "valor": "Ivinhema"
+        }
+      ],
+      "insight": "Apenas 3 registros disponíveis — cobertura parcial."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Geração de Energia — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Geração de Energia",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "tamanho": "grande",
+      "destacar": "Angelica",
+      "insight": "Principal divergência da aba Massa: Angélica cresce consistentemente de fevereiro a julho (pico de 22.899 kg), enquanto Ivinhema permanece baixo e errático (máx. 5.400 kg em julho). Diferença de até 4x em julho."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Geração de Energia — Total Acumulado por Usina (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Geração de Energia",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "destacar": "Angelica",
+      "insight": "Angélica acumula volume substancialmente superior a Ivinhema — única divergência real e crescente desta aba."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Geração de Energia — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Geração de Energia",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Ivinhema não tem registro em janeiro — gap de dado, não zero. Angélica cresce mês a mês até julho."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "ETE — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "ETE",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Valores idênticos nos meses com registros para ambas as usinas — padrão espelho. Cobertura parcial (fev a jun), com meses sem dados."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "ETE — Total Acumulado por Usina (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "ETE",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Totais acumulados idênticos — cobertura e valores espelhados entre usinas."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "ETE — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "ETE",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Apenas 5 meses com registros — cobertura parcial, possivelmente refluxo da operação de ETE."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Água Potável — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Água Potável",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "soma",
+      "insight": "Série única (sem identificação de usina). Consumo muito baixo — ordem de grandeza de dezenas de kg por mês, uso residual confirmado."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Água Potável",
+      "rotulo": "Total Acumulado — Água Potável (kg)",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Total do período sem separação por usina — consumo residual de água potável na unidade kg."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Água Potável — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Água Potável",
+      "colunas": [
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Série sem usina identificada — detalhe mês a mês."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Recepção e Extração — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Recepção e Extração",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Ivinhema oscila entre ~239 e ~712 g/t com queda ao longo da safra — ganho de eficiência à medida que a operação se estabiliza. Angélica tem cobertura parcial a partir de março."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Recepção e Extração — Média do Período por Usina (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Recepção e Extração",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Média do período em g/t por usina — desconsiderando valores nulos. Diferença menor do que no bruto, indicando que parte da disparidade de kg é proporcional ao volume processado."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Recepção e Extração — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Recepção e Extração",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês em g/t para ambas as usinas."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Tratamento do Caldo — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Tratamento do Caldo",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "tamanho": "grande",
+      "destacar": "Ivinhema",
+      "insight": "Ivinhema consome mais insumo por tonelada que Angélica — pico de 76.667 g/t em agosto (dado único, cautela). Angélica mantém faixas menores (~23.933 g/t em agosto), indicando diferença estrutural de eficiência entre as plantas."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Tratamento do Caldo — Média do Período por Usina (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Tratamento do Caldo",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "destacar": "Ivinhema",
+      "insight": "Ivinhema acima de Angélica na média do período — divergência real de eficiência por tonelada processada."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Tratamento do Caldo — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Tratamento do Caldo",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Angélica sem dados em jan-fev. Valor de agosto de Ivinhema (76.667 g/t) baseado em registro único — interpretar com cautela."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Fermentação — Evolução Mensal (g/L)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Fermentação",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/L"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Angélica oscila de 603 (mai) a 740 (jul) g/L. Ivinhema tem menos pontos disponíveis mas ordem de grandeza similar."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Fermentação — Média do Período por Usina (g/L)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Fermentação",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/L"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Média do período em g/L por usina — cobertura assimétrica pode influenciar a comparação."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Fermentação — Detalhe Mensal (g/L)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Fermentação",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/L"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês em g/L para ambas as usinas."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Fermentação — Evolução Mensal (g/m³)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Fermentação — g/m³",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/m³"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Em junho, Ivinhema registra 5.721 g/m³ contra 4.867 g/m³ de Angélica (~18% acima). Cobertura de pontos limitada."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Fermentação — Média do Período por Usina (g/m³)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Fermentação — g/m³",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/m³"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Média do período em g/m³ — Ivinhema acima de Angélica com poucos pontos de dados."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Fermentação — Detalhe Mensal (g/m³)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Fermentação — g/m³",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/m³"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês em g/m³ — cobertura limitada a alguns meses."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Destilação — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Destilação",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Evolução mensal do consumo específico de Destilação em g/t para ambas as usinas."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Destilação — Média do Período por Usina (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Destilação",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Média do período em g/t por usina para o grupo Destilação."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Destilação — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Destilação",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês em g/t para ambas as usinas."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Destilação — Evolução Mensal (g/L)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Destilação — g/L",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/L"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Consumo específico de Destilação em g/L — Ivinhema com registros nesta unidade; verificar cobertura de Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Destilação — Média do Período por Usina (g/L)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Destilação — g/L",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/L"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Média do período em g/L por usina para Destilação."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Destilação — Detalhe Mensal (g/L)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Destilação — g/L",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/L"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês em g/L."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Destilação — Evolução Mensal (g/m³)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Destilação — g/m³",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/m³"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Registros de g/m³ na Destilação exclusivos de Ivinhema segundo a análise — série única ou com cobertura assimétrica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Destilação — Média do Período por Usina (g/m³)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Destilação — g/m³",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/m³"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Média do período em g/m³ para Destilação."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Destilação — Detalhe Mensal (g/m³)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Destilação — g/m³",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/m³"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês em g/m³ — cobertura verificar por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Fábrica de Açúcar — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Fábrica de Açúcar",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Evolução mensal do consumo específico da Fábrica de Açúcar — cobertura de Angélica pode ser parcial em alguns meses."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Fábrica de Açúcar — Média do Período por Usina (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Fábrica de Açúcar",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Média do período em g/t por usina para Fábrica de Açúcar."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Fábrica de Açúcar — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Fábrica de Açúcar",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês — meses ausentes de Angélica indicam possível não-operação do grupo."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Tratamento de Água — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Tratamento de Água",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Evolução mensal do consumo específico do Tratamento de Água — verificar divergência em junho, onde o bruto mostrou queda de Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Tratamento de Água — Média do Período por Usina (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Tratamento de Água",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Média do período em g/t por usina."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Tratamento de Água — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Tratamento de Água",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês — atenção para meses com valores idênticos entre usinas."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Geração de Vapor — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Geração de Vapor",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Valores praticamente idênticos entre usinas mês a mês (ex.: mai ambas 270,07 g/t; fev ambas 135,85 g/t) — padrão espelho que reflete o mesmo observado no consumo bruto."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Geração de Vapor — Média do Período por Usina (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Geração de Vapor",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Médias idênticas — padrão espelho confirmado no específico."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Geração de Vapor — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Geração de Vapor",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês — valores idênticos entre usinas confirmados."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Geração de Energia — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Geração de Energia",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Padrão de lançamento esparso — Angélica com zero em janeiro (desconsiderar), depois valores pontuais. Limitar confiança nas comparações dado o baixo número de registros."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Geração de Energia — Média do Período por Usina (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Geração de Energia",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Média do período — interpretar com cautela devido à cobertura esparsa e presença de zeros."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Geração de Energia — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Geração de Energia",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês — registros esparsos, zero de Angélica em janeiro deve ser excluído da média."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "ETE — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "ETE",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "serie_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "tamanho": "grande",
+      "insight": "Grupo com maior variabilidade relativa da aba Específico. Angélica atinge 2.775 g/t em julho e 1.452 g/t em agosto. Ivinhema tem anomalia em agosto (1.275 g/t) após valores baixos nos meses anteriores. Ambas têm picos tardios na safra."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "ETE — Média do Período por Usina (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "ETE",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Médias dominadas pelos picos tardios — a variabilidade é mais informativa do que a média nesse grupo."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "ETE — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "ETE",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês — pico de Angélica em julho (2.775 g/t) e de Ivinhema em agosto (1.275 g/t) merecem investigação operacional."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Água Potável — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Água Potável",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "agregacao": "media",
+      "insight": "Série única sem identificação de usina. Valores muito baixos (0,6 g/t em março) — uso residual confirmado. Cobertura esparsa ao longo dos meses."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Água Potável",
+      "rotulo": "Média do Período — Água Potável (g/t)",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Média do período sem separação por usina — consumo específico residual de água potável em g/t."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Água Potável — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Água Potável",
+      "colunas": [
+        "mes_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Série sem usina identificada — detalhe mês a mês em g/t."
+    }
+  ],
+  "filtro_interativo": null,
+  "modo_exibicao": "normal"
+}
