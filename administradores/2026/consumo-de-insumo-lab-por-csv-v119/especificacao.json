@@ -1,0 +1,1695 @@
+{
+  "componentes": [
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Recepção e Extração — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Recepção e Extração",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "ivi_recep_extr"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "ang_recep_extr"
+        }
+      ],
+      "insight": "Evolução mensal do consumo bruto (kg) em Recepção e Extração para cada usina. Meses sem registro aparecem como ausência de dado."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Recepção e Extração — Total Acumulado (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Recepção e Extração",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Total acumulado no período por usina em Recepção e Extração — permite ver qual usina concentra maior consumo absoluto."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Recepção e Extração — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Recepção e Extração",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo bruto (kg) em Recepção e Extração por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Tratamento do Caldo — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Tratamento do Caldo",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo bruto (kg) em Tratamento do Caldo comparando Ivinhema e Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Tratamento do Caldo — Total Acumulado (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Tratamento do Caldo",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Total acumulado por usina em Tratamento do Caldo."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Tratamento do Caldo — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Tratamento do Caldo",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo bruto (kg) em Tratamento do Caldo por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Fermentação — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Fermentação",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo bruto (kg) em Fermentação comparando Ivinhema e Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Fermentação — Total Acumulado (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Fermentação",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Total acumulado por usina em Fermentação."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Fermentação — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Fermentação",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo bruto (kg) em Fermentação por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Destilação — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Destilação",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo bruto (kg) em Destilação comparando Ivinhema e Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Destilação — Total Acumulado (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Destilação",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Total acumulado por usina em Destilação."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Destilação — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Destilação",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo bruto (kg) em Destilação por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Fábrica de Açúcar — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Fábrica de Açúcar",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo bruto (kg) em Fábrica de Açúcar comparando Ivinhema e Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Fábrica de Açúcar — Total Acumulado (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Fábrica de Açúcar",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Total acumulado por usina em Fábrica de Açúcar."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Fábrica de Açúcar — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Fábrica de Açúcar",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo bruto (kg) em Fábrica de Açúcar por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Tratamento de Água — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Tratamento de Água",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo bruto (kg) em Tratamento de Água comparando Ivinhema e Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Tratamento de Água — Total Acumulado (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Tratamento de Água",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Total acumulado por usina em Tratamento de Água."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Tratamento de Água — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Tratamento de Água",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo bruto (kg) em Tratamento de Água por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Geração de Vapor — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Geração de Vapor",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo bruto (kg) em Geração de Vapor comparando Ivinhema e Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Geração de Vapor — Total Acumulado (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Geração de Vapor",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Total acumulado por usina em Geração de Vapor."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Geração de Vapor — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Geração de Vapor",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo bruto (kg) em Geração de Vapor por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Geração de Energia — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Geração de Energia",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo bruto (kg) em Geração de Energia comparando Ivinhema e Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Geração de Energia — Total Acumulado (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Geração de Energia",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Total acumulado por usina em Geração de Energia."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Geração de Energia — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Geração de Energia",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo bruto (kg) em Geração de Energia por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "ETE — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "ETE",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo bruto (kg) em ETE comparando Ivinhema e Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "ETE — Total Acumulado (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "ETE",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Total acumulado por usina em ETE."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "ETE — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "ETE",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "kg"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo bruto (kg) em ETE por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Água Potável — Evolução Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Água Potável",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo bruto de Água Potável. Não há separação por usina para este grupo — série única consolidada."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Água Potável",
+      "titulo_aba": "Massa",
+      "rotulo": "Total Acumulado — Água Potável (kg)",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "soma",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Total do período para Água Potável — grupo sem identificação de usina, tratado como série única."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Água Potável — Detalhe Mensal (kg)",
+      "titulo_aba": "Massa",
+      "titulo_secao": "Água Potável",
+      "colunas": [
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Massa"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo bruto de Água Potável (série única, sem distinção de usina)."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Recepção e Extração — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Recepção e Extração",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo específico (g/t) em Recepção e Extração — média mensal por usina, desconsiderando nulos."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Recepção e Extração — Média do Período (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Recepção e Extração",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Média do período por usina em Recepção e Extração (g/t) — indica eficiência relativa à produção."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Recepção e Extração — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Recepção e Extração",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo específico (g/t) em Recepção e Extração por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Tratamento do Caldo — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Tratamento do Caldo",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo específico (g/t) em Tratamento do Caldo comparando Ivinhema e Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Tratamento do Caldo — Média do Período (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Tratamento do Caldo",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Média do período por usina em Tratamento do Caldo (g/t)."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Tratamento do Caldo — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Tratamento do Caldo",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo específico (g/t) em Tratamento do Caldo por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Fermentação — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Fermentação",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo específico (g/t) em Fermentação comparando Ivinhema e Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Fermentação — Média do Período (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Fermentação",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Média do período por usina em Fermentação (g/t)."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Fermentação — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Fermentação",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo específico (g/t) em Fermentação por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Destilação — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Destilação",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo específico (g/t) em Destilação comparando Ivinhema e Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Destilação — Média do Período (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Destilação",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Média do período por usina em Destilação (g/t)."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Destilação — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Destilação",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo específico (g/t) em Destilação por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Fábrica de Açúcar — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Fábrica de Açúcar",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo específico (g/t) em Fábrica de Açúcar comparando Ivinhema e Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Fábrica de Açúcar — Média do Período (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Fábrica de Açúcar",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Média do período por usina em Fábrica de Açúcar (g/t)."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Fábrica de Açúcar — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Fábrica de Açúcar",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo específico (g/t) em Fábrica de Açúcar por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Tratamento de Água — Evolução Mensal (g/m³)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Tratamento de Água",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/m³"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo específico (g/m³) em Tratamento de Água comparando Ivinhema e Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Tratamento de Água — Média do Período (g/m³)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Tratamento de Água",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/m³"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Média do período por usina em Tratamento de Água (g/m³)."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Tratamento de Água — Detalhe Mensal (g/m³)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Tratamento de Água",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/m³"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo específico (g/m³) em Tratamento de Água por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Geração de Vapor — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Geração de Vapor",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo específico (g/t) em Geração de Vapor comparando Ivinhema e Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Geração de Vapor — Média do Período (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Geração de Vapor",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Média do período por usina em Geração de Vapor (g/t)."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Geração de Vapor — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Geração de Vapor",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo específico (g/t) em Geração de Vapor por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Geração de Energia — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Geração de Energia",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo específico (g/t) em Geração de Energia comparando Ivinhema e Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "Geração de Energia — Média do Período (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Geração de Energia",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Média do período por usina em Geração de Energia (g/t)."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Geração de Energia — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Geração de Energia",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo específico (g/t) em Geração de Energia por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "ETE — Evolução Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "ETE",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "serie_por": "unidade",
+      "ordenar_por": "mes_analise",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo específico (g/t) em ETE comparando Ivinhema e Angélica."
+    },
+    {
+      "tipo": "grafico_barra",
+      "titulo": "ETE — Média do Período (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "ETE",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "unidade",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Média do período por usina em ETE (g/t)."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "ETE — Detalhe Mensal (g/t)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "ETE",
+      "colunas": [
+        "unidade",
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "unidade_medida",
+          "operador": "=",
+          "valor": "g/t"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "!=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo específico (g/t) em ETE por usina."
+    },
+    {
+      "tipo": "grafico_linha",
+      "titulo": "Água Potável — Evolução Mensal (g/L)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Água Potável",
+      "coluna_valor": "soma_vl_variavel",
+      "agrupar_por": "mes_analise",
+      "ordenar_por": "mes_analise",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Evolução mensal do consumo específico de Água Potável — série única sem separação por usina. Meses sem registro aparecem como ausência de dado."
+    },
+    {
+      "tipo": "kpi",
+      "titulo_secao": "Água Potável",
+      "titulo_aba": "Específico",
+      "rotulo": "Média do Período — Água Potável (g/L)",
+      "coluna": "soma_vl_variavel",
+      "agregacao": "media",
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Média do período para Água Potável — grupo sem identificação de usina, tratado como série única."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Água Potável — Detalhe Mensal (g/L)",
+      "titulo_aba": "Específico",
+      "titulo_secao": "Água Potável",
+      "colunas": [
+        "mes_analise",
+        "ano_analise",
+        "soma_vl_variavel"
+      ],
+      "filtro": [
+        {
+          "coluna": "aba",
+          "operador": "=",
+          "valor": "Especifico"
+        },
+        {
+          "coluna": "tipo",
+          "operador": "=",
+          "valor": "agua_potavel"
+        }
+      ],
+      "insight": "Detalhe mês a mês do consumo específico de Água Potável (série única, sem distinção de usina)."
+    }
+  ],
+  "filtro_interativo": null,
+  "modo_exibicao": "normal"
+}
